@@ -1,0 +1,3 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeCompatibleUnits - Started
+GetDukeCompatibleUnits - Processing - 1 out of 6
