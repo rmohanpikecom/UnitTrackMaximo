@@ -1,0 +1,7 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetWorkorders_DYN - Started
+GetWorkorders_DYN - Processing - 1 out of 2
+GetWorkorders_DYN - Processing - 2 out of 2
+GetWorkorders_DYN - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetDukeCompatibleUnits - Started
+GetWorkorders_DYN - Processing Completed

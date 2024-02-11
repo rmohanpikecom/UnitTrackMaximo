@@ -1,0 +1,36 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetWorkorders_DYN - Started
+GetWorkorders_DYN - Processing - 1 out of 3
+GetWorkorders_DYN - Processing - 2 out of 3
+GetWorkorders_DYN - Processing - 3 out of 3
+GetWorkorders_DYN - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetDukeCompatibleUnits - Started
+GetDukeCompatibleUnits - Processing - 1 out of 2
+GetDukeCompatibleUnits - Details - Processing - 1 out of 6
+GetDukeCompatibleUnits - Details - Processing - 2 out of 6
+GetDukeCompatibleUnits - Details - Processing - 3 out of 6
+GetDukeCompatibleUnits - Details - Processing - 4 out of 6
+GetDukeCompatibleUnits - Details - Processing - 5 out of 6
+GetDukeCompatibleUnits - Details - Processing - 6 out of 6
+GetDukeCompatibleUnits - Processing - 2 out of 2
+GetDukeCompatibleUnits - Details - Processing - 1 out of 6
+GetDukeCompatibleUnits - Details - Processing - 2 out of 6
+GetDukeCompatibleUnits - Details - Processing - 3 out of 6
+GetDukeCompatibleUnits - Details - Processing - 4 out of 6
+GetDukeCompatibleUnits - Details - Processing - 5 out of 6
+GetDukeCompatibleUnits - Details - Processing - 6 out of 6
+GetWorkorders_DYN - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+GetDukeCompatibleUnits - Processing - 1 out of 3
+GetDukeCompatibleUnits - Processing - 2 out of 3
+GetDukeCompatibleUnits - Processing - 3 out of 3
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+GetDukeProjectTaskData - Processing - 1 out of 15
+GetDukeProjectTaskData - Processing - 2 out of 15
+GetDukeProjectTaskData - Processing - 3 out of 15
+GetDukeProjectTaskData - Processing - 4 out of 15
+GetDukeProjectTaskData - Processing - 5 out of 15
+GetDukeProjectTaskData - Processing - 6 out of 15
+GetDukeProjectTaskData - Processing - 7 out of 15
+GetDukeProjectTaskData - Processing - 8 out of 15
+GetDukeProjectTaskData - Processing - 9 out of 15
