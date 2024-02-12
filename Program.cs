@@ -585,16 +585,7 @@ namespace UnitTrackMaximo
                         string @SUBTASK = ds.Tables[0].Rows[i]["Sub_Task_Number"].ToString()!;
                         string @SERVICE_ITEM = ds.Tables[0].Rows[i]["Service_Item"].ToString()!;
                         string @Quantity = ds.Tables[0].Rows[i]["Quanity"].ToString()!;
-                        string @EffectiveDate = ds.Tables[0].Rows[i]["EffectiveDate"].ToString()!;
-
-                        //string @Project = "23-01219-000";
-                        //string @PARENT_TASKNO = "8684746";
-                        //string @SUBTASK = "55456-8684746";
-                        //string @SERVICE_ITEM = "OAA34 - SWITCHING DELAY RATE";
-                        //string @Quantity = "15";
-                        //string @EffectiveDate = "2023-07-17";
-
-                      
+                        string @EffectiveDate = Convert.ToDateTime(ds.Tables[0].Rows[i]["EffectiveDate"]).ToString("yyyy-MM-dd")!;
 
                         var configuration = new ConfigurationBuilder()
                            .AddJsonFile("DBQueries.json", optional: false, reloadOnChange: true)
