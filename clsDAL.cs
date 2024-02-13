@@ -339,6 +339,53 @@ namespace UnitTrackMaximo
         }
         #endregion
 
+        #region SQL_Oracle_Push_Data_GetList
+        public static DataSet SQL_Oracle_Push_Data_GetList()
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_SQL_ORACLE_PUSH_DATA_GETLISTT";
+
+            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd);
+            DataTable dt = ds.Tables[0];
+            return ds;
+        }
+        #endregion
+
+        #region SQL_Oracle_Update_Data_GetList
+        public static DataSet SQL_Oracle_Update_Data_GetList()
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_SQL_ORACLE_UPDATE_DATA_GETLISTT";
+
+            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd);
+            DataTable dt = ds.Tables[0];
+            return ds;
+        }
+        #endregion
+
+        #region SQL_Duke_NLR_DataUpdate
+        public static int SQL_Duke_NLR_DataUpdate(string TransactionNumber, string OracleStatus, string OracleMessage,string UnprocessTransactionId, string CompatibleUnitId)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_SQL_ORACLE_NLR_DATA_UPDATE";
+            SqlParameter[] commandParameters =
+            {
+                new SqlParameter("@TransactionNumber",SqlDbType.NVarChar,100),
+                new SqlParameter("@OracleStatus",SqlDbType.NVarChar,100),
+                new SqlParameter("@OracleMessage",SqlDbType.NVarChar,500),
+                new SqlParameter("@UnprocessTransactionId",SqlDbType.NVarChar,100),
+                new SqlParameter("@CompatibleUnitId",SqlDbType.NVarChar,100),
+            };
+            commandParameters[0].Value = TransactionNumber;
+            commandParameters[1].Value = OracleStatus;
+            commandParameters[2].Value = OracleMessage;
+            commandParameters[3].Value = UnprocessTransactionId;
+            commandParameters[4].Value = CompatibleUnitId;
+
+            return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+        }
+        #endregion
+
         #endregion
 
     }
