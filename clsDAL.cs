@@ -22,20 +22,20 @@ namespace UnitTrackMaximo
 
         #region 
 
-        #region Dynamics_ProjectTask_GetList
-        public static DataSet Dynamics_ProjectTask_GetList()
+        #region Dynamics_WorkOrders_GetList
+        public static DataSet Dynamics_WorkOrders_GetList()
         {
             var configuration = Config();
             string BatchSize = System.Configuration.ConfigurationManager.AppSettings["BatchSize"]!.ToString();
             string dsn = dynConnectionString;
-            string cmd = configuration.GetSection("qryProjectTaskGetList").Value!;
+            string cmd = configuration.GetSection("qryDynWorkOrderGetList").Value!;
             DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.Text, cmd);
             return ds;
         }
         #endregion
 
-        #region SQL_ProjectTask_Create
-        public static int SQL_ProjectTask_Create(string Parent_Task_Number, string Parent_Task_Id, string Project_Number, string Project_Id, string BusinessUnitName, string ProcessDate)
+        #region Dynamics_WorkOrder_Create
+        public static int Dynamics_WorkOrder_Create(string Parent_Task_Number, string Parent_Task_Id, string Project_Number, string Project_Id, string BusinessUnitName, string ProcessDate)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
             string cmd = "SP_DUKE_DYN_WORKORDERS_CREATE";
@@ -61,11 +61,29 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-        #region SQL_MaximoUnits_Create
-        public static int SQL_MaximoUnits_Create(string Station_Detail_ID, string Payment_Status, string Work_Function, string Estimate_Quantity, string Compatible_Unit_Quantity, string Completed_Date, string Compatible_Unit_Changed_By, string Compatible_Unit_Changed_Date, string Compatible_Unit_Station, string Parent_Compatible_Unit_Name, string Parent_Compatible_Unit_Description, string Payment_Type, string Field_To_From, string Field_ID_To, string Serial_Number, string Manufacturer, string Vendor_Id, int WorkOrder_id)
+        #region SQL_WorkOrder_GetList
+        public static DataSet SQL_WorkOrder_GetList(int Status)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_MAXIMO_COMPATIBLE_UNITS_CREATE";
+            string cmd = "SP_DUKE_SQL_WORKORDER_GETLIST";
+
+            SqlParameter[] commandParameters =
+           {
+                new SqlParameter("@Status_Id ",SqlDbType.Int)
+            };
+            commandParameters[0].Value = Status;
+
+            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+            DataTable dt = ds.Tables[0];
+            return ds;
+        }
+        #endregion
+
+        #region Maximo_MaximoUnits_Create
+        public static int Maximo_MaximoUnits_Create(string Station_Detail_ID, string Payment_Status, string Work_Function, string Estimate_Quantity, string Compatible_Unit_Quantity, string Completed_Date, string Compatible_Unit_Changed_By, string Compatible_Unit_Changed_Date, string Compatible_Unit_Station, string Parent_Compatible_Unit_Name, string Parent_Compatible_Unit_Description, string Payment_Type, string Field_To_From, string Field_ID_To, string Serial_Number, string Manufacturer, string Vendor_Id, int WorkOrder_id)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_MAXIMO_UNITS_CREATE";
 
             SqlParameter[] commandParameters =
             {
@@ -111,6 +129,21 @@ namespace UnitTrackMaximo
         }
         #endregion
 
+        #region SQL_WorkOrder_StatusUpdate
+        public static int SQL_WorkOrder_StatusUpdate(int WorkOrder_Id)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_SQL_WORKORDER_UPDATE";
+            SqlParameter[] commandParameters =
+            {
+                new SqlParameter("@WorkOrder_Id",SqlDbType.Int)
+            };
+            commandParameters[0].Value = WorkOrder_Id;
+
+            return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+        }
+        #endregion
+
         #region SQL_Update_ServiceItem
         public static int SQL_Update_ServiceItem()
         {
@@ -121,32 +154,11 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-
-
-        #region SQL_ProjectTask_GetList
-        public static DataSet SQL_ProjectTask_GetList(int Status)
+        #region SQL_Update_SubTaskDetails
+        public static int SQL_Update_SubTaskDetails(string WorkOrder_Id, string Sub_Task_Number, string Sub_Task_Name, string Sub_Task_Id, string Sub_Task_Billable_Flag, string Sub_Task_Crew_Leader, string Sub_Task_Project_Flag)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_SQL_PROJECT_TASK_GETLIST";
-
-            SqlParameter[] commandParameters =
-           {
-                new SqlParameter("@Status_Id ",SqlDbType.Int)
-            };
-            commandParameters[0].Value = Status;
-
-            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd, commandParameters);
-            DataTable dt = ds.Tables[0];
-            return ds;
-        }
-        #endregion
-
-
-        #region SQL_MaximoUnits_Create
-        public static int Update_SubTaskDetails(string WorkOrder_Id, string Sub_Task_Number, string Sub_Task_Name, string Sub_Task_Id, string Sub_Task_Billable_Flag, string Sub_Task_Crew_Leader, string Sub_Task_Project_Flag)
-        {
-            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_SQL_SUB_TASK_UPDATE";
+            string cmd = "SP_DUKE_SQL_SUBTASK_UPDATE";
 
             SqlParameter[] commandParameters =
             {
@@ -170,28 +182,6 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-
-        #region SQL_ProjectTask_StatusUpdate
-        public static int SQL_ProjectTask_StatusUpdate(int WorkOrder_Id , string status_details, string status_message)
-        {
-            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_SQL_PROJECT_TASK_UPDATE";
-            SqlParameter[] commandParameters =
-            {
-                new SqlParameter("@WorkOrder_Id",SqlDbType.Int),
-                new SqlParameter("@Status_Details",SqlDbType.NVarChar,50),
-                new SqlParameter("@Status_Message",SqlDbType.NVarChar,500)
-            };
-            commandParameters[0].Value = WorkOrder_Id;
-            commandParameters[1].Value = status_details;
-            commandParameters[2].Value = status_message;
-
-            return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
-        }
-        #endregion
-
-
-
         #region SQL_NLR_GetList
         public static DataSet SQL_NLR_GetList()
         {
@@ -204,13 +194,11 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-
-
-        #region Oracle_ProjectTask_NLR_Create
-        public static int Oracle_ProjectTask_NLR_Create(string PARAM_PROJ_TO_BILL, string PARAM_WONO_TO_BILL, string PARAM_SUBTASK_TO_BILL, string PARAM_UNIT_TO_BILL, string PARAM_QUANTITY, string PARAM_WE_DATE, string ERROR_CODES, string ORACLE_TASK_NO, string ORACLE_SUBTASK, string PARENT_BILLABLE_FLAG, string SUBTASK_BILLABLE_CHARGEABLE_FLAG, string RATE_SCHEDUL_ERROR, string PROJ_TASK_DETAILS, string PROJECT_NUMBER, string PROJECT_NAME, string SUBTASK_PROJECT, string PARENT_WO_NUMBER, string PARENT_WO_NAME, string PARENT_BILLABLE, string PARENT_CHARGEABLE, string TOP_TASK_ID, string SUBTASK_WO_NUMBER, string SUBTASK_WO_NAME, string SUBTASK_WO_BILLABLE, string SUBTASK_WO_CHARGEABLE, string CREW_LEADER, string RATE_SCHEDULE_DETAILS, string EXP_NAME, string RATE_SCHEDULE_NAME, string UNIT_NAME, string RATE, string UNIT_OF_MEASURE, string RATE_START_DATE, string RATE_END_DATE, string FBDILOADER, string EXPENDITUREDATE, string PERSONNAME, string PERSONNUMBER, string HUMANRESOURCEASSIGNMENT, string PROJECTNAME, string PROJECTNUMBER, string TASK_NAME, string TASK_NUMBER, string EXPENDITURETYPE, string EXPENDITUREORGANIZATION, string CONTRACTNUMBER, string FUNDINGSOURCENUMBER, string NONLABORRESOURCE, string NONLABORRESOURCEORGANIZATION, string QUANTITY, string WORKTYPE, string ADDITIONALINFO, string PROJID, string NLRID, string TASKID, string EXISTINGQTYINPPM, string REGION, string LEGALENTITY, string BUSINESSUNIT,string Compatible_Unit_Id)
+        #region Oracle_NLR_Create
+        public static int Oracle_NLR_Create(string PARAM_PROJ_TO_BILL, string PARAM_WONO_TO_BILL, string PARAM_SUBTASK_TO_BILL, string PARAM_UNIT_TO_BILL, string PARAM_QUANTITY, string PARAM_WE_DATE, string ERROR_CODES, string ORACLE_TASK_NO, string ORACLE_SUBTASK, string PARENT_BILLABLE_FLAG, string SUBTASK_BILLABLE_CHARGEABLE_FLAG, string RATE_SCHEDUL_ERROR, string PROJ_TASK_DETAILS, string PROJECT_NUMBER, string PROJECT_NAME, string SUBTASK_PROJECT, string PARENT_WO_NUMBER, string PARENT_WO_NAME, string PARENT_BILLABLE, string PARENT_CHARGEABLE, string TOP_TASK_ID, string SUBTASK_WO_NUMBER, string SUBTASK_WO_NAME, string SUBTASK_WO_BILLABLE, string SUBTASK_WO_CHARGEABLE, string CREW_LEADER, string RATE_SCHEDULE_DETAILS, string EXP_NAME, string RATE_SCHEDULE_NAME, string UNIT_NAME, string RATE, string UNIT_OF_MEASURE, string RATE_START_DATE, string RATE_END_DATE, string FBDILOADER, string EXPENDITUREDATE, string PERSONNAME, string PERSONNUMBER, string HUMANRESOURCEASSIGNMENT, string PROJECTNAME, string PROJECTNUMBER, string TASK_NAME, string TASK_NUMBER, string EXPENDITURETYPE, string EXPENDITUREORGANIZATION, string CONTRACTNUMBER, string FUNDINGSOURCENUMBER, string NONLABORRESOURCE, string NONLABORRESOURCEORGANIZATION, string QUANTITY, string WORKTYPE, string ADDITIONALINFO, string PROJID, string NLRID, string TASKID, string EXISTINGQTYINPPM, string REGION, string LEGALENTITY, string BUSINESSUNIT, string Compatible_Unit_Id)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_ORACLE_PROJECT_TASK_NLR_DATA_CREATE";
+            string cmd = "SP_DUKE_NLR_DATA_CREATE";
 
             SqlParameter[] commandParameters =
             {
@@ -344,10 +332,10 @@ namespace UnitTrackMaximo
         #endregion
 
         #region SQL_CU_Data_Update
-        public static int SQL_CU_Data_Update(int CompatibleUnitId , string StatusDetails, string MessageDetails)
+        public static int SQL_CU_Data_Update(int CompatibleUnitId, string StatusDetails, string MessageDetails)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_SQL_CU_DATA_UPDATE";           
+            string cmd = "SP_DUKE_SQL_CU_DATA_UPDATE";
             SqlParameter[] commandParameters =
             {
                 new SqlParameter("@CompatibleUnitId",SqlDbType.Int),
@@ -359,28 +347,16 @@ namespace UnitTrackMaximo
             commandParameters[1].Value = StatusDetails;
             commandParameters[2].Value = MessageDetails;
 
-            int res = SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd , commandParameters);            
+            int res = SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
             return res;
         }
         #endregion
 
-        #region SQL_Oracle_Push_Data_GetList
-        public static DataSet SQL_Oracle_Push_Data_GetList()
+        #region SQL_Oracle_PPM_GetList
+        public static DataSet SQL_Oracle_PPM_GetList()
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_SQL_ORACLE_PUSH_DATA_GETLISTT";
-
-            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd);
-            DataTable dt = ds.Tables[0];
-            return ds;
-        }
-        #endregion
-
-        #region SQL_Oracle_Update_Data_GetList
-        public static DataSet SQL_Oracle_Update_Data_GetList()
-        {
-            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_SQL_ORACLE_UPDATE_DATA_GETLISTT";
+            string cmd = "SP_DUKE_SQL_ORACLE_PPM_GETLIST";
 
             DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd);
             DataTable dt = ds.Tables[0];
@@ -389,7 +365,7 @@ namespace UnitTrackMaximo
         #endregion
 
         #region SQL_Duke_NLR_DataUpdate
-        public static int SQL_Duke_NLR_DataUpdate(string TransactionNumber, string OracleStatus, string OracleMessage,string UnprocessTransactionId, string CompatibleUnitId)
+        public static int SQL_Duke_NLR_DataUpdate(string TransactionNumber, string OracleStatus, string OracleMessage, string UnprocessTransactionId, string CompatibleUnitId)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
             string cmd = "SP_DUKE_SQL_ORACLE_NLR_DATA_UPDATE";
@@ -408,6 +384,18 @@ namespace UnitTrackMaximo
             commandParameters[4].Value = CompatibleUnitId;
 
             return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+        }
+        #endregion
+
+        #region SQL_Oracle_PC_GetList
+        public static DataSet SQL_Oracle_PC_GetList()
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_SQL_ORACLE_PC_GETLIST";
+
+            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd);
+            DataTable dt = ds.Tables[0];
+            return ds;
         }
         #endregion
 

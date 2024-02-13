@@ -1,0 +1,301 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetWorkorders_DYN - Started
+GetWorkorders_DYN - Processing - 1 out of 5
+GetWorkorders_DYN - Processing - 2 out of 5
+GetWorkorders_DYN - Processing - 3 out of 5
+GetWorkorders_DYN - Processing - 4 out of 5
+GetWorkorders_DYN - Processing - 5 out of 5
+GetWorkorders_DYN - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 5
+GetDukeMaximoUnits_Details - Details - Processing - 1 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 2 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 3 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 4 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 5 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 6 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 7 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 8 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 9 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 10 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 11 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 12 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 13 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 14 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 15 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 16 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 17 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 18 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 19 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 20 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 21 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 22 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 23 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 24 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 25 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 26 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 27 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 28 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 29 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 30 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 31 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 32 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 33 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 34 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 35 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 36 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 37 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 38 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 39 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 40 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 41 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 42 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 43 out of 44
+GetDukeMaximoUnits_Details - Details - Processing - 44 out of 44
+GetDukeMaximoUnits - Processing - 2 out of 5
+GetDukeMaximoUnits_Details - Details - Processing - 1 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 2 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 3 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 4 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 5 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 6 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 7 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 8 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 9 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 10 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 11 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 12 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 13 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 14 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 15 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 16 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 17 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 18 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 19 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 20 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 21 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 22 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 23 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 24 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 25 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 26 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 27 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 28 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 29 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 30 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 31 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 32 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 33 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 34 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 35 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 36 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 37 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 38 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 39 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 40 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 41 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 42 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 43 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 44 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 45 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 46 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 47 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 48 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 49 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 50 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 51 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 52 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 53 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 54 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 55 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 56 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 57 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 58 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 59 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 60 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 61 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 62 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 63 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 64 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 65 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 66 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 67 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 68 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 69 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 70 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 71 out of 72
+GetDukeMaximoUnits_Details - Details - Processing - 72 out of 72
+GetDukeMaximoUnits - Processing - 3 out of 5
+GetDukeMaximoUnits_Details - Details - Processing - 1 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 2 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 3 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 4 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 5 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 6 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 7 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 8 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 9 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 10 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 11 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 12 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 13 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 14 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 15 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 16 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 17 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 18 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 19 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 20 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 21 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 22 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 23 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 24 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 25 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 26 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 27 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 28 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 29 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 30 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 31 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 32 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 33 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 34 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 35 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 36 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 37 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 38 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 39 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 40 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 41 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 42 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 43 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 44 out of 45
+GetDukeMaximoUnits_Details - Details - Processing - 45 out of 45
+GetDukeMaximoUnits - Processing - 4 out of 5
+GetDukeMaximoUnits_Details - Details - Processing - 1 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 2 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 3 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 4 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 5 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 6 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 7 out of 8
+GetDukeMaximoUnits_Details - Details - Processing - 8 out of 8
+GetDukeMaximoUnits - Processing - 5 out of 5
+GetDukeMaximoUnits_Details - Details - Processing - 1 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 2 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 3 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 4 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 5 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 6 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 7 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 8 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 9 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 10 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 11 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 12 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 13 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 14 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 15 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 16 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 17 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 18 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 19 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 20 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 21 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 22 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 23 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 24 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 25 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 26 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 27 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 28 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 29 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 30 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 31 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 32 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 33 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 34 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 35 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 36 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 37 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 38 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 39 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 40 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 41 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 42 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 43 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 44 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 45 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 46 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 47 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 48 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 49 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 50 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 51 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 52 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 53 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 54 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 55 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 56 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 57 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 58 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 59 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 60 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 61 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 62 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 63 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 64 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 65 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 66 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 67 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 68 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 69 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 70 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 71 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 72 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 73 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 74 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 75 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 76 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 77 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 78 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 79 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 80 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 81 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 82 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 83 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 84 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 85 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 86 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 87 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 88 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 89 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 90 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 91 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 92 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 93 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 94 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 95 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 96 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 97 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 98 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 99 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 100 out of 101
+GetDukeMaximoUnits_Details - Details - Processing - 101 out of 101
+GetDukeMaximoUnits - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+GetDukeCompatibleUnits - Processing - 1 out of 15
+GetDukeCompatibleUnits - Processing - 2 out of 15
+GetDukeCompatibleUnits - Processing - 3 out of 15
+GetDukeCompatibleUnits - Processing - 4 out of 15
+GetDukeCompatibleUnits - Processing - 5 out of 15
+GetDukeCompatibleUnits - Processing - 6 out of 15
+GetDukeCompatibleUnits - Processing - 7 out of 15
+GetDukeCompatibleUnits - Processing - 8 out of 15
+GetDukeCompatibleUnits - Processing - 9 out of 15
+GetDukeCompatibleUnits - Processing - 10 out of 15
+GetDukeCompatibleUnits - Processing - 11 out of 15
+GetDukeCompatibleUnits - Processing - 12 out of 15
+GetDukeCompatibleUnits - Processing - 13 out of 15
+GetDukeCompatibleUnits - Processing - 14 out of 15
+GetDukeCompatibleUnits - Processing - 15 out of 15
