@@ -38,6 +38,9 @@ namespace UnitTrackMaximo
         //Dynamics URL's
         static readonly string Dynamics_Url = System.Configuration.ConfigurationManager.AppSettings["Dynamics_Url"]!.ToString();
 
+        static string oracle_status_details = "";
+        static string oracle_message_details = "";
+
         #region Main
         static void Main(string[] args)
         {
@@ -74,7 +77,6 @@ namespace UnitTrackMaximo
                 //PushDataTo_Oracle(Writer);
 
                 //UpdateDataTo_Oracle(Writer);
-
 
                 //Upload Timesheets from Dynamics to Oracle
                 //Writer.WriteLine("DynamicsPikeService - UnitBilling CREATE Started :" + DateTime.Now.ToString("yyyyMMddHHmmss"));
@@ -128,7 +130,7 @@ namespace UnitTrackMaximo
                         catch (Exception exp)
                         {
                             Console.WriteLine(exp.Message.ToString());
-                            writer.WriteLine(exp.Message.ToString());
+                            writer.WriteLine(exp.Message.ToString());                            
                         }
                     }
 
@@ -138,8 +140,8 @@ namespace UnitTrackMaximo
             }
             catch (Exception exp)
             {
-                Console.WriteLine("GetWorkorders_DYN - Processing Completed");
-                writer.WriteLine("GetWorkorders_DYN - Processing Completed");
+                Console.WriteLine("GetWorkorders_DYN - Failure" + exp.Message.ToString());
+                writer.WriteLine("GetWorkorders_DYN - Failure" + exp.Message.ToString());
             }
 
         }
@@ -178,12 +180,13 @@ namespace UnitTrackMaximo
                     }
                 }
 
-                Console.WriteLine("GetWorkorders_DYN - Processing Completed");
-                writer.WriteLine("GetWorkorders_DYN - Processing Completed");
+                Console.WriteLine("GetDukeCompatibleUnits - Processing Completed");
+                writer.WriteLine("GetDukeCompatibleUnits - Processing Completed");
             }
             catch (Exception exp)
             {
-                Console.WriteLine(exp.Message.ToString());
+                Console.WriteLine("GetDukeCompatibleUnits - Failure" + exp.Message.ToString());
+                writer.WriteLine("GetDukeCompatibleUnits - Failure" + exp.Message.ToString());
             }
         }
         #endregion
@@ -433,7 +436,9 @@ namespace UnitTrackMaximo
 
                                 if (Count == RecordCount)
                                 {
-                                    clsDAL.SQL_ProjectTask_StatusUpdate(WorkOrder_Id);
+                                    oracle_status_details = "Success";
+                                    oracle_message_details = "Successfully Created";
+                                    clsDAL.SQL_ProjectTask_StatusUpdate(WorkOrder_Id, oracle_status_details, oracle_message_details);
                                 }
 
                                 Count++;
@@ -443,6 +448,7 @@ namespace UnitTrackMaximo
                             {
                                 writer.WriteLine("UnitTrack Maximo GetDukeCompatibleUnits Failure");
                                 writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                                clsDAL.SQL_ProjectTask_StatusUpdate(WorkOrder_Id , oracle_status_details, oracle_message_details);
                                 writer.WriteLine("=========================================================================");
                             }
 
@@ -469,7 +475,11 @@ namespace UnitTrackMaximo
             {
                 clsDAL.SQL_Update_ServiceItem();
             }
-            catch (Exception exp) { }
+            catch (Exception exp)
+            {
+                Console.WriteLine("Update Service ItemData - Failure" + exp.Message.ToString());
+                writer.WriteLine("Update Service ItemData - Failure" + exp.Message.ToString());
+            }
         }
         #endregion
 
@@ -482,6 +492,7 @@ namespace UnitTrackMaximo
                 Console.WriteLine("DynamicsPikeService - " + AppName + " - GetSubTaskNumber_Oracle - Started");
 
                 DataSet ds = clsDAL.SQL_ProjectTask_GetList(2);
+                string WorkOrder_Id = "";
 
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
@@ -490,7 +501,7 @@ namespace UnitTrackMaximo
                         Console.WriteLine("GetDukeCompatibleUnits - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
                         writer.WriteLine("GetDukeCompatibleUnits - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
 
-                        string WorkOrder_Id = ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString()!;
+                        WorkOrder_Id = ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString()!;
                         string ProjectNumber = ds.Tables[0].Rows[i]["Project_Number"].ToString()!;
                         string TaskNumber = ds.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
 
@@ -556,17 +567,19 @@ namespace UnitTrackMaximo
 
                         clsDAL.Update_SubTaskDetails(WorkOrder_Id, Sub_Task_Number, Sub_Task_Name, Sub_Task_Id, Sub_Task_Billable_Flag, Sub_Task_Crew_Leader, Sub_Task_Project_Flag);
                     }
-                    catch (Exception ex)
+                    catch (Exception exp)
                     {
-                        int j = 0;
+                        oracle_status_details = "Error";
+                        oracle_message_details = exp.Message.ToString();
+                        clsDAL.SQL_ProjectTask_StatusUpdate(Convert.ToInt32(WorkOrder_Id), oracle_status_details, oracle_message_details);
                     }
                 }
 
-
-                    
-                }
-                catch (Exception ex2) {
-                int k = 0;
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine("GetSubTaskNumber_Oracle - Failure" + exp.Message.ToString());
+                writer.WriteLine("GetSubTaskNumber_Oracle - Failure" + exp.Message.ToString());
             }
         }
         #endregion
@@ -581,7 +594,7 @@ namespace UnitTrackMaximo
 
 
                 DataSet ds = clsDAL.SQL_NLR_GetList();
-
+                string Compatible_Unit_Id = "";
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     try
@@ -589,7 +602,7 @@ namespace UnitTrackMaximo
                         Console.WriteLine("GetDukeProjectTaskData - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
                         writer.WriteLine("GetDukeProjectTaskData - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
 
-                        string Compatible_Unit_Id = ds.Tables[0].Rows[i]["Compatible_Unit_Id"].ToString()!;
+                        Compatible_Unit_Id = ds.Tables[0].Rows[i]["Compatible_Unit_Id"].ToString()!;
                         string @Project = ds.Tables[0].Rows[i]["Project_Number"].ToString()!;
                         string @PARENT_TASKNO = ds.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
                         string @SUBTASK = ds.Tables[0].Rows[i]["Sub_Task_Number"].ToString()!;
@@ -718,17 +731,28 @@ namespace UnitTrackMaximo
                         string BUSINESSUNIT = dynamicObject.BUSINESS_UNIT.ToString();
 
                         int res = clsDAL.Oracle_ProjectTask_NLR_Create(PARAM_PROJ_TO_BILL, PARAM_WONO_TO_BILL, PARAM_SUBTASK_TO_BILL, PARAM_UNIT_TO_BILL, PARAM_QUANTITY, PARAM_WE_DATE, ERROR_CODES, ORACLE_TASK_NO, ORACLE_SUBTASK, PARENT_BILLABLE_FLAG, SUBTASK_BILLABLE_CHARGEABLE_FLAG, RATE_SCHEDUL_ERROR, PROJ_TASK_DETAILS, PROJECT_NUMBER, PROJECT_NAME, SUBTASK_PROJECT, PARENT_WO_NUMBER, PARENT_WO_NAME, PARENT_BILLABLE, PARENT_CHARGEABLE, TOP_TASK_ID, SUBTASK_WO_NUMBER, SUBTASK_WO_NAME, SUBTASK_WO_BILLABLE, SUBTASK_WO_CHARGEABLE, CREW_LEADER, RATE_SCHEDULE_DETAILS, EXP_NAME, RATE_SCHEDULE_NAME, UNIT_NAME, RATE, UNIT_OF_MEASURE, RATE_START_DATE, RATE_END_DATE, FBDILOADER, EXPENDITUREDATE, PERSONNAME, PERSONNUMBER, HUMANRESOURCEASSIGNMENT, PROJECTNAME, PROJECTNUMBER, TASK_NAME, TASK_NUMBER, EXPENDITURETYPE, EXPENDITUREORGANIZATION, CONTRACTNUMBER, FUNDINGSOURCENUMBER, NONLABORRESOURCE, NONLABORRESOURCEORGANIZATION, QUANTITY, WORKTYPE, ADDITIONALINFO, PROJID, NLRID, TASKID, EXISTINGQTYINPPM, REGION, LEGALENTITY, BUSINESSUNIT, Compatible_Unit_Id);
+                        if(res > 0)
+                        {
+                            oracle_status_details = "Success";
+                            oracle_message_details = "Successfully Created NLR Data for CompatibleUnitId" + Compatible_Unit_Id;
+                            clsDAL.SQL_CU_Data_Update(Convert.ToInt32(Compatible_Unit_Id), oracle_status_details, oracle_message_details);
+                        }
                     }
-                    catch (Exception e)
+                    catch (Exception exp)
                     {
+                        oracle_status_details = "Error";
+                        oracle_message_details = exp.Message.ToString();
 
-                        int j = 0;
+                        Console.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
+                        writer.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
+                        clsDAL.SQL_CU_Data_Update(Convert.ToInt32(Compatible_Unit_Id), oracle_status_details , oracle_message_details);
                     }
                 }
             }
             catch(Exception exp)
             {
-                int k = 0;
+                Console.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
+                writer.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
             }
 
         }
@@ -740,11 +764,7 @@ namespace UnitTrackMaximo
             writer.WriteLine("DynamicsPikeService (Create) - " + AppName + " - Started");           
             Console.WriteLine("DynamicsPikeService - " + AppName + " - PushDataTo_Oracle - Started");
 
-
-            
-            string oracle_status_details = "";
-            string oracle_message_details = "";
-            string TransactionId = "";
+            string TransactionNumber = "";
             string UnprocessTransactionId = "";
 
             string DetailRecordId = "";
@@ -766,8 +786,9 @@ namespace UnitTrackMaximo
                         try
                         {
                             ExpenditureBatchName = dsDetails.Tables[0].Rows[j]["BatchName"].ToString()!;
-                            PPM_EXEC_ESSJOB(ExpenditureBatchName);
+                            //PPM_EXEC_ESSJOB(ExpenditureBatchName);
                             IntegrationBatchHeaderId = dsDetails.Tables[0].Rows[j]["IntegrationBatchHeaderId"].ToString()!;
+                            UnprocessTransactionId = dsDetails.Tables[0].Rows[j]["UnprocessTransactionId"].ToString()!;
 
                             Console.WriteLine("PushDataTo_Oracle - Processing - " + (j + 1).ToString() + " out of " + dsDetails.Tables[0].Rows.Count.ToString());
                             writer.WriteLine("PushDataTo_Oracle - Processing - " + (j + 1).ToString() + " out of " + dsDetails.Tables[0].Rows.Count.ToString());
@@ -804,7 +825,7 @@ namespace UnitTrackMaximo
                                 //Update the PPM Status
                                 string Result = PPMresponse.Content!.ToString();
                                 dynamic dyArray = JsonConvert.DeserializeObject<dynamic>(PPMresponse.Content!)!;
-                                string TransactionNumber = "";
+                             
                                 if (dyArray.count != 0)
                                     TransactionNumber = dyArray.items[0].TransactionNumber.ToString();
 
@@ -818,10 +839,9 @@ namespace UnitTrackMaximo
                                     writer.WriteLine("Updating the Details Record with the Transaction Number into Dynamics for Detail ID= " + DetailRecordId);
 
                                     oracle_status_details = "Success";
-                                    oracle_message_details = "Transaction Number Updated";
-                                    TransactionId  = TransactionNumber;
+                                    oracle_message_details = "Transaction Number Updated";                                 
 
-                                    clsDAL.SQL_Duke_NLR_DataUpdate(TransactionId, oracle_status_details , oracle_message_details , UnprocessTransactionId, DetailRecordId);
+                                    clsDAL.SQL_Duke_NLR_DataUpdate(TransactionNumber, oracle_status_details , oracle_message_details , UnprocessTransactionId, DetailRecordId);
                                 }
                             }
 
@@ -841,9 +861,9 @@ namespace UnitTrackMaximo
                                 string? DocumentEntry = dsDetails.Tables[0].Rows[j]["DocumentEntry"].ToString();
 
 
-                                string? NonlaborResourceID = "300000012971428";// dsDetails.Tables[0].Rows[j]["NonlaborResourceID"].ToString();
-                                string? NonlaborResource = "3|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR";// dsDetails.Tables[0].Rows[j]["NonlaborResource"].ToString();
-                                string? NonlaborResourceOrganization = "PIKE Project Unit Org"; //dsDetails.Tables[0].Rows[j]["NonlaborResourceOrganization"].ToString();
+                                string? NonlaborResourceID = dsDetails.Tables[0].Rows[j]["NonlaborResourceID"].ToString();
+                                string? NonlaborResource = dsDetails.Tables[0].Rows[j]["NonlaborResource"].ToString();
+                                string? NonlaborResourceOrganization = dsDetails.Tables[0].Rows[j]["NonlaborResourceOrganization"].ToString();
                                 string? TransactionCurrencyCode = dsDetails.Tables[0].Rows[j]["TransactionCurrencyCode"].ToString();
 
                                 string? Quantity = dsDetails.Tables[0].Rows[j]["Quantity"].ToString();
@@ -855,8 +875,8 @@ namespace UnitTrackMaximo
 
                                 string? ProjectId = dsDetails.Tables[0].Rows[j]["PROJECT_ID"].ToString();
                                 string? TaskId = dsDetails.Tables[0].Rows[j]["SUB_TASK_ID"].ToString();
-                                string? ExpenditureTypeId = "Unit Production";// dsDetails.Tables[0].Rows[j]["EXPENDITURE_TYPE_ID_Display"].ToString();
-                                string? OrganizationId = "Florida";// dsDetails.Tables[0].Rows[j]["ORGANIZATION_ID_Display"].ToString();
+                                string? ExpenditureTypeId = dsDetails.Tables[0].Rows[j]["EXPENDITURE_TYPE_ID_Display"].ToString();
+                                string? OrganizationId = dsDetails.Tables[0].Rows[j]["ORGANIZATION_ID_Display"].ToString();
 
 
                                 writer.WriteLine("Updating the Detail Record Status to In Progress for " + DetailRecordId);
@@ -914,7 +934,7 @@ namespace UnitTrackMaximo
                                     UnprocessTransactionId = dyArray.UnprocessedTransactionReferenceId.ToString();
 
                                   
-                                    clsDAL.SQL_Duke_NLR_DataUpdate(TransactionId, oracle_status_details, oracle_message_details,UnprocessTransactionId, DetailRecordId);
+                                    clsDAL.SQL_Duke_NLR_DataUpdate(TransactionNumber, oracle_status_details, oracle_message_details,UnprocessTransactionId, DetailRecordId);
                                 }
                                 else
                                 {
@@ -956,7 +976,7 @@ namespace UnitTrackMaximo
             }
 
           
-            PPM_EXEC_ESSJOB(ExpenditureBatchName);
+            //PPM_EXEC_ESSJOB(ExpenditureBatchName);
 
 
             writer.WriteLine("DynamicsPikeService (Create) - " + AppName + " - Completed");
@@ -970,17 +990,12 @@ namespace UnitTrackMaximo
             writer.WriteLine("DynamicsPikeService (Update) - " + AppName + " - Started");           
             Console.WriteLine("DynamicsPikeService - " + AppName + " - UpdateDataTo_Oracle - Started");
 
-
-
-            string oracle_status_details = "";
-            string oracle_message_details = "";
-            string TransactionId = "";
+            string TransactionNumber = "";
             string UnprocessTransactionId = "";
 
             string DetailRecordId = "";
             string IntegrationBatchHeaderId = "";
             string ExpenditureBatchName = "";
-
 
             int HeaderException_Flag = 0;
 
@@ -996,9 +1011,9 @@ namespace UnitTrackMaximo
                         try
                         {
                             ExpenditureBatchName = dsDetails.Tables[0].Rows[j]["BatchName"].ToString()!;
-                            PPM_EXEC_ESSJOB(ExpenditureBatchName);
+                            //PPM_EXEC_ESSJOB(ExpenditureBatchName);
                             IntegrationBatchHeaderId = dsDetails.Tables[0].Rows[j]["IntegrationBatchHeaderId"].ToString()!;
-
+                            UnprocessTransactionId = dsDetails.Tables[0].Rows[j]["UnprocessTransactionId"].ToString()!;
                             Console.WriteLine("PushDataTo_Oracle - Processing - " + (j + 1).ToString() + " out of " + dsDetails.Tables[0].Rows.Count.ToString());
                             writer.WriteLine("PushDataTo_Oracle - Processing - " + (j + 1).ToString() + " out of " + dsDetails.Tables[0].Rows.Count.ToString());
 
@@ -1032,7 +1047,7 @@ namespace UnitTrackMaximo
                                 //Update the PPM Status
                                 string Result = PPMresponse.Content!.ToString();
                                 dynamic dyArray = JsonConvert.DeserializeObject<dynamic>(PPMresponse.Content!)!;
-                                string TransactionNumber = "";
+                              
                                 if (dyArray.count != 0)
                                     TransactionNumber = dyArray.items[0].TransactionNumber.ToString();
 
@@ -1044,10 +1059,9 @@ namespace UnitTrackMaximo
                                     writer.WriteLine("Updating the Details Record with the Transaction Number into Dynamics for Detail ID= " + DetailRecordId);
 
                                     oracle_status_details = "Success";
-                                    oracle_message_details = "Transaction Number Updated";
-                                    TransactionId = TransactionNumber;
+                                    oracle_message_details = "Transaction Number Updated";                                   
 
-                                    clsDAL.SQL_Duke_NLR_DataUpdate(TransactionId, oracle_status_details, oracle_message_details, UnprocessTransactionId, DetailRecordId);
+                                    clsDAL.SQL_Duke_NLR_DataUpdate(TransactionNumber, oracle_status_details, oracle_message_details, UnprocessTransactionId, DetailRecordId);
                                 }
                             }
 
@@ -1078,6 +1092,100 @@ namespace UnitTrackMaximo
 
 
             writer.WriteLine("DynamicsPikeService (Update) - " + AppName + " - Completed");
+
+        }
+        #endregion
+
+        #region Test
+        public static void Test(StreamWriter writer)
+        {
+            try
+            {
+                writer.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
+                Console.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
+
+
+                DataSet ds = clsDAL.SQL_NLR_GetList();
+                string Compatible_Unit_Id = "";
+
+                try
+                {
+
+
+                    Compatible_Unit_Id = "1";
+
+
+                    string @Project = "23-01219-000";
+                    string @PARENT_TASKNO = "8684746";
+                    string @SUBTASK = "55456-8684746";
+                    string @SERVICE_ITEM = "OAA34 - SWITCHING DELAY RATE";
+                    string @Quantity = "15";
+                    string @EffectiveDate = "2023-07-17";
+
+
+
+                    var configuration = new ConfigurationBuilder()
+                       .AddJsonFile("DBQueries.json", optional: false, reloadOnChange: true)
+                       .AddEnvironmentVariables()
+                       .Build();
+                    string cmd = configuration.GetSection("qryProjectTaskData").Value!.Replace("@Project", "'" + @Project + "'").Replace("@PARENT_TASKNO", "'" + @PARENT_TASKNO + "'").Replace("@SUBTASK", "'" + @SUBTASK + "'").Replace("@SERVICE_ITEM", "'" + @SERVICE_ITEM + "'").Replace("@Quantity", "'" + @Quantity + "'").Replace("@EffectiveDate", "'" + @EffectiveDate + "'");
+
+
+                    string OracleWrapperUrl = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperUrl"]!.ToString();
+                    string OracleWrapperSubUrl = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperSubUrl"]!.ToString();
+                    string OracleWrapperEnvironment = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperEnvironment"]!.ToString();
+
+                    var options = new RestClientOptions(OracleWrapperUrl)
+                    {
+                        MaxTimeout = -1,
+                    };
+                    var client = new RestClient(options);
+                    var request = new RestRequest(OracleWrapperSubUrl, Method.Post);
+                    request.AddHeader("Content-Type", "application/json");
+                    var body = "{ "
+                                                  + "\"env\":\"" + OracleWrapperEnvironment + "\","
+                                                  + "\"format\":\"xml\","
+                                                  + "\"query\":\"" + cmd + "\"}";
+
+
+
+                    request.AddStringBody(body, DataFormat.Json);
+                    RestResponse response = client.Execute(request);
+
+                    string data = response.Content!.ToString();
+                    string replaceWith = "";
+
+                    //string xml = "\"\r\n<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n\r\n<!--Generated by Oracle Analytics Publisher -Dataengine, datamodel:_Custom_EDW_Synapse_Live_Sync_Live_Data_Model_FSCM_xdm -->\\n\r\n<ROWSET>\\n\r\n    <ROW>\\n\r\n        <PARAM_PROJ_TO_BILL>23-01219-000</PARAM_PROJ_TO_BILL>\\n\r\n        <PARAM_WONO_TO_BILL>10012889</PARAM_WONO_TO_BILL>\\n\r\n        <PARAM_SUBTASK_TO_BILL>44107-10012889</PARAM_SUBTASK_TO_BILL>\\n\r\n        <PARAM_UNIT_TO_BILL>OAA01-MAN HOUR RATE PER MAN OH</PARAM_UNIT_TO_BILL>\\n\r\n        <PARAM_QUANTITY>10</PARAM_QUANTITY>\\n\r\n        <PARAM_WE_DATE>2023-01-22</PARAM_WE_DATE>\\n\r\n        <ERROR_CODES>ERROR CODES-&gt;</ERROR_CODES>\\n\r\n        <ORACLE_TASK_NO></ORACLE_TASK_NO>\\n\r\n        <ORACLE_SUBTASK>Project Requires Billable Subtask Name</ORACLE_SUBTASK>\\n\r\n        <PARENT_BILLABLE_FLAG>Parent Task Must be Billable=Y</PARENT_BILLABLE_FLAG>\\n\r\n        <SUBTASK_BILLABLE_CHARGEABLE_FLAG>Subtask Not Found</SUBTASK_BILLABLE_CHARGEABLE_FLAG>\\n\r\n        <RATE_SCHEDUL_ERROR></RATE_SCHEDUL_ERROR>\\n\r\n        <PROJ_TASK_DETAILS>PROJ_TASK DETAILS-&gt;</PROJ_TASK_DETAILS>\\n\r\n        <PROJECT_NUMBER>23-01219-000</PROJECT_NUMBER>\\n\r\n        <PROJECT_NAME>23-01219-000 OHD FL BOCA RATON</PROJECT_NAME>\\n\r\n        <SUBTASK_PROJECT>Y</SUBTASK_PROJECT>\\n\r\n        <PARENT_WO_NUMBER>10012889</PARENT_WO_NUMBER>\\n\r\n        <PARENT_WO_NAME>10012889</PARENT_WO_NAME>\\n\r\n        <PARENT_BILLABLE>N</PARENT_BILLABLE>\\n\r\n        <PARENT_CHARGEABLE>N</PARENT_CHARGEABLE>\\n\r\n        <TOP_TASK_ID></TOP_TASK_ID>\\n\r\n        <SUBTASK_WO_NUMBER></SUBTASK_WO_NUMBER>\\n\r\n        <SUBTASK_WO_NAME></SUBTASK_WO_NAME>\\n\r\n        <SUBTASK_WO_BILLABLE></SUBTASK_WO_BILLABLE>\\n\r\n        <SUBTASK_WO_CHARGEABLE></SUBTASK_WO_CHARGEABLE>\\n\r\n        <CREW_LEADER></CREW_LEADER>\\n\r\n        <RATE_SCHEDULE_DETAILS>RATE SCHEDULE DETAIL-&gt;</RATE_SCHEDULE_DETAILS>\\n\r\n        <EXP_NAME>Unit Production</EXP_NAME>\\n\r\n        <RATE_SCHEDULE_NAME>2023-FPL</RATE_SCHEDULE_NAME>\\n\r\n        <UNIT_NAME>50|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR</UNIT_NAME>\\n\r\n        <RATE>135.02</RATE>\\n\r\n        <UNIT_OF_MEASURE>HOURS</UNIT_OF_MEASURE>\\n\r\n        <RATE_START_DATE>2023-01-02</RATE_START_DATE>\\n\r\n        <RATE_END_DATE></RATE_END_DATE>\\n\r\n        <FBDILOADER>FBDI</FBDILOADER>\\n\r\n        <EXPENDITUREDATE>2023-01-22</EXPENDITUREDATE>\\n\r\n        <PERSONNAME></PERSONNAME>\\n\r\n        <PERSONNUMBER></PERSONNUMBER>\\n\r\n        <HUMANRESOURCEASSIGNMENT></HUMANRESOURCEASSIGNMENT>\\n\r\n        <PROJECTNAME>23-01219-000 OHD FL BOCA RATON</PROJECTNAME>\\n\r\n        <PROJECTNUMBER>23-01219-000</PROJECTNUMBER>\\n\r\n        <TASK_NAME></TASK_NAME>\\n\r\n        <TASK_NUMBER></TASK_NUMBER>\\n\r\n        <EXPENDITURETYPE>Unit Production</EXPENDITURETYPE>\\n\r\n        <EXPENDITUREORGANIZATION>Florida</EXPENDITUREORGANIZATION>\\n\r\n        <CONTRACTNUMBER></CONTRACTNUMBER>\\n\r\n        <FUNDINGSOURCENUMBER></FUNDINGSOURCENUMBER>\\n\r\n        <NONLABORRESOURCE>50|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR</NONLABORRESOURCE>\\n\r\n        <NONLABORRESOURCEORGANIZATION>PIKE Project Unit Org</NONLABORRESOURCEORGANIZATION>\\n\r\n        <QUANTITY>10</QUANTITY>\\n\r\n        <WORKTYPE></WORKTYPE>\\n\r\n        <ADDITIONALINFO>Additional Info</ADDITIONALINFO>\\n\r\n        <PROJID>300002425947378</PROJID>\\n\r\n        <NLRID>300000013044500</NLRID>\\n\r\n        <TASKID>100007676556772</TASKID>\\n\r\n        <EXISTINGQTYINPPM></EXISTINGQTYINPPM>\\n\r\n        <REGION>Florida</REGION>\\n\r\n        <LEGALENTITY>Pike Electric, LLC</LEGALENTITY>\\n\r\n        <BUSINESSUNIT>Pike Business Unit</BUSINESSUNIT>\\n\r\n    </ROW>\\n\r\n</ROWSET>\\n\"";
+
+                    data = Regex.Replace(data, "^\"|\"$", "");
+                    data = data.Replace(System.Environment.NewLine, replaceWith);
+                    data = data.Replace("\r\n", replaceWith).Replace("\\n", replaceWith).Replace("\r", replaceWith).Replace("version=\\\"1.0\\\"", "version=\"1.0\"").Replace("encoding=\\\"UTF-8\\\"", "encoding=\"UTF-8\"");
+
+
+
+
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(data);
+
+                    var json = JsonConvert.SerializeXmlNode(doc, (Newtonsoft.Json.Formatting)System.Xml.Formatting.None, true);
+                    json = json.Replace("\"?xml\":{\"@version\":\"1.0\",\"@encoding\":\"UTF-8\"}{\"ROW\":", "");
+                    json = json.Trim().TrimEnd('}');
+                    json = json + "}";
+                    dynamic dyArray = JObject.Parse(json);
+                    var dynamicObject = JsonConvert.DeserializeObject<dynamic>(json)!;
+
+
+                }
+                catch (Exception exp)
+                {
+                   
+                }
+                
+            }
+            catch (Exception exp)
+            {
+              
+            }
 
         }
         #endregion

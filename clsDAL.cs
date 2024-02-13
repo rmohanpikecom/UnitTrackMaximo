@@ -172,15 +172,19 @@ namespace UnitTrackMaximo
 
 
         #region SQL_ProjectTask_StatusUpdate
-        public static int SQL_ProjectTask_StatusUpdate(int WorkOrder_Id)
+        public static int SQL_ProjectTask_StatusUpdate(int WorkOrder_Id , string status_details, string status_message)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
             string cmd = "SP_DUKE_SQL_PROJECT_TASK_UPDATE";
             SqlParameter[] commandParameters =
             {
                 new SqlParameter("@WorkOrder_Id",SqlDbType.Int),
+                new SqlParameter("@Status_Details",SqlDbType.NVarChar,50),
+                new SqlParameter("@Status_Message",SqlDbType.NVarChar,500)
             };
             commandParameters[0].Value = WorkOrder_Id;
+            commandParameters[1].Value = status_details;
+            commandParameters[2].Value = status_message;
 
             return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
         }
@@ -336,6 +340,27 @@ namespace UnitTrackMaximo
 
 
             return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+        }
+        #endregion
+
+        #region SQL_CU_Data_Update
+        public static int SQL_CU_Data_Update(int CompatibleUnitId , string StatusDetails, string MessageDetails)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_SQL_CU_DATA_UPDATE";           
+            SqlParameter[] commandParameters =
+            {
+                new SqlParameter("@CompatibleUnitId",SqlDbType.Int),
+                new SqlParameter("@Status_Details",SqlDbType.NVarChar,100),
+                new SqlParameter("@Message_Details",SqlDbType.NVarChar,500)
+
+            };
+            commandParameters[0].Value = CompatibleUnitId;
+            commandParameters[1].Value = StatusDetails;
+            commandParameters[2].Value = MessageDetails;
+
+            int res = SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd , commandParameters);            
+            return res;
         }
         #endregion
 
