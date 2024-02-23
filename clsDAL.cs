@@ -35,7 +35,7 @@ namespace UnitTrackMaximo
         #endregion
 
         #region Dynamics_WorkOrder_Create
-        public static int Dynamics_WorkOrder_Create(string Parent_Task_Number, string Parent_Task_Id, string Project_Number, string Project_Id, string BusinessUnitName, string ProcessDate)
+        public static int Dynamics_WorkOrder_Create(string Parent_Task_Number, string Parent_Task_Id, string Project_Number, string Project_Id, string BusinessUnitName, string ProcessDate, int Project_SubTask_Flag)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
             string cmd = "SP_DUKE_DYN_WORKORDERS_CREATE";
@@ -47,7 +47,9 @@ namespace UnitTrackMaximo
                 new SqlParameter("@Project_Number",SqlDbType.NVarChar,100),
                 new SqlParameter("@Project_Id",SqlDbType.NVarChar,100),
                 new SqlParameter("@BusinessUnitName",SqlDbType.NVarChar,100),
-                new SqlParameter("@ProcessDate",SqlDbType.Date)
+                new SqlParameter("@ProcessDate",SqlDbType.Date),
+                new SqlParameter("@Project_SubTask_Flag",SqlDbType.Int),
+                
             };
             commandParameters[0].Value = Parent_Task_Number;
             commandParameters[1].Value = Parent_Task_Id;
@@ -55,6 +57,7 @@ namespace UnitTrackMaximo
             commandParameters[3].Value = Project_Id;
             commandParameters[4].Value = BusinessUnitName;
             commandParameters[5].Value = ProcessDate;
+            commandParameters[6].Value = Project_SubTask_Flag;
 
 
             return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
@@ -382,6 +385,136 @@ namespace UnitTrackMaximo
             commandParameters[2].Value = OracleMessage;
             commandParameters[3].Value = UnprocessTransactionId;
             commandParameters[4].Value = CompatibleUnitId;
+
+            return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+        }
+        #endregion
+
+        #region CPR_Data_Create
+        public static int CPR_Data_Create(string Approval_Date, string Invoice_Num, string Invoice_Status, string Invoice_CheckNum, string Invoice_De_Psvoucheramt, string De_Rejectcode, string Rejection_Date, string CPR, string Invoice_Due_Date, string Invoice_Paid_Date, string Status, string HDescription, string Vendor_Invoice_Num, string Week_Ending, string Vendor_Project_ID, string Site, string CPR_Type, string Reactive_Time_Report_ID, string Payment_Type, string Foreman, string Derived_Contract, string First_Approver, string Second_Approver, string Line_of_Business, string Rejection_Remarks, string Requested_By_Name, string Requested_By_Email, string Requested_By_Phone_Num, string CPR_Submit_Date, string CPR_Created_Date, string Total_Cost, string Line, string WO_Task_Num, string Service_Item, string PrLine_Description, string PRLineQuantity, string Order_Unit, string Unit_Cost, string Line_Cost, string GL_Debit_Account, string WO_Num, string Description, string Point_Span, string CU_ID, string CU_Name, string CU_Description, string CU_Service_Item, string Service_Item_Description, string Estimated_Qty, string Asbuilt_Qty, string Work_Function, string Contract, string ShStatus, string ShChangeDate, string ShChangedBy, string ShRejectionCode)
+
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_CPR_DATA_CREATE";
+
+            SqlParameter[] commandParameters =
+            {
+        new SqlParameter("@Approval_Date",SqlDbType.NVarChar,100),
+        new SqlParameter("@Invoice_Num ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Invoice_Status ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Invoice_CheckNum ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Invoice_De_Psvoucheramt ",SqlDbType.NVarChar,100),
+        new SqlParameter("@De_Rejectcode ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Rejection_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CPR ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Invoice_Due_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Invoice_Paid_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Status ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Description ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Vendor_Invoice_Num ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Week_Ending ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Vendor_Project_ID ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Site ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CPR_Type ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Reactive_Time_Report_ID ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Payment_Type ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Foreman ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Derived_Contract ",SqlDbType.NVarChar,100),
+        new SqlParameter("@_1st_Approver ",SqlDbType.NVarChar,100),
+        new SqlParameter("@_2nd_Approver ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Line_of_Business ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Rejection_Remarks ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Requested_By_Name ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Requested_By_Email ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Requested_By_Phone_Num ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CPR_Submit_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CPR_Created_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Total_Cost ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Line ",SqlDbType.NVarChar,100),
+        new SqlParameter("@WO_Task_Num ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Service_Item ",SqlDbType.NVarChar,100),
+        new SqlParameter("@PrLine_Description ",SqlDbType.NVarChar,100),
+        new SqlParameter("@PRLineQuantity ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Order_Unit ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Unit_Cost ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Line_Cost ",SqlDbType.NVarChar,100),
+        new SqlParameter("@GL_Debit_Account ",SqlDbType.NVarChar,100),
+        new SqlParameter("@WO_Num ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Description2 ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Point_Span ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CU_ID ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CU_Name ",SqlDbType.NVarChar,100),
+        new SqlParameter("@CU_Description ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Service_Item3 ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Service_Item_Description ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Estimated_Qty ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Asbuilt_Qty ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Work_Function ",SqlDbType.NVarChar,100),                
+        //new SqlParameter("@Work_Start_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Contract ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Status_History ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Status4 ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Change_Date ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Changed_By ",SqlDbType.NVarChar,100),
+        new SqlParameter("@Rejection_Code ",SqlDbType.NVarChar,100)
+    };
+            commandParameters[0].Value = Approval_Date;
+            commandParameters[1].Value = Invoice_Num;
+            commandParameters[2].Value = Invoice_Status;
+            commandParameters[3].Value = Invoice_CheckNum;
+            commandParameters[4].Value = Invoice_De_Psvoucheramt;
+            commandParameters[5].Value = De_Rejectcode;
+            commandParameters[6].Value = Rejection_Date;
+            commandParameters[7].Value = CPR;
+            commandParameters[8].Value = Invoice_Due_Date;
+            commandParameters[9].Value = Invoice_Paid_Date;
+            commandParameters[10].Value = Status;
+            commandParameters[11].Value = HDescription;
+            commandParameters[12].Value = Vendor_Invoice_Num;
+            commandParameters[13].Value = Week_Ending;
+            commandParameters[14].Value = Vendor_Project_ID;
+            commandParameters[15].Value = Site;
+            commandParameters[16].Value = CPR_Type;
+            commandParameters[17].Value = Reactive_Time_Report_ID;
+            commandParameters[18].Value = Payment_Type;
+            commandParameters[19].Value = Foreman;
+            commandParameters[20].Value = Derived_Contract;
+            commandParameters[21].Value = First_Approver;
+            commandParameters[22].Value = Second_Approver;
+            commandParameters[23].Value = Line_of_Business;
+            commandParameters[24].Value = Rejection_Remarks;
+            commandParameters[25].Value = Requested_By_Name;
+            commandParameters[26].Value = Requested_By_Email;
+            commandParameters[27].Value = Requested_By_Phone_Num;
+            commandParameters[28].Value = CPR_Submit_Date;
+            commandParameters[29].Value = CPR_Created_Date;
+            commandParameters[30].Value = Total_Cost;
+            commandParameters[31].Value = Line;
+            commandParameters[32].Value = WO_Task_Num;
+            commandParameters[33].Value = Service_Item;
+            commandParameters[34].Value = PrLine_Description;
+            commandParameters[35].Value = PRLineQuantity;
+            commandParameters[36].Value = Order_Unit;
+            commandParameters[37].Value = Unit_Cost;
+            commandParameters[38].Value = Line_Cost;
+            commandParameters[39].Value = GL_Debit_Account;
+            commandParameters[40].Value = WO_Num;
+            commandParameters[41].Value = Description;
+            commandParameters[42].Value = Point_Span;
+            commandParameters[43].Value = CU_ID;
+            commandParameters[44].Value = CU_Name;
+            commandParameters[45].Value = CU_Description;
+            commandParameters[46].Value = CU_Service_Item;
+            commandParameters[47].Value = Service_Item_Description;
+            commandParameters[48].Value = Estimated_Qty;
+            commandParameters[49].Value = Asbuilt_Qty;
+            commandParameters[50].Value = Work_Function;
+            commandParameters[51].Value = Contract;
+            commandParameters[52].Value = ShStatus;
+            commandParameters[53].Value = ShChangeDate;
+            commandParameters[54].Value = ShChangedBy;
+            commandParameters[55].Value = ShRejectionCode;
+
 
             return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
         }

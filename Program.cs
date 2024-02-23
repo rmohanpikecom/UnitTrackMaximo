@@ -56,13 +56,13 @@ namespace UnitTrackMaximo
 
                 //GetWorkorders_DYN(Writer);
 
-                //GetDukeMaximoUnits(Writer);
+                GetDukeMaximoUnits(Writer);
 
                 //UpdateServiceItemData(Writer);
 
                 //GetSubTaskNumber_Oracle(Writer);
 
-                GetNLRData_Oracle(Writer);
+                //GetNLRData_Oracle(Writer);
 
                 //PushDataTo_Oracle(Writer);
 
@@ -107,6 +107,7 @@ namespace UnitTrackMaximo
                             string Project_Id = "";
                             string BusinessUnitName = "";
                             string ProcessDate = "";
+                            int Project_SubTask_Flag = 0;
 
                             Parent_Task_Number = dsProjectTask.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
                             Parent_Task_Id = dsProjectTask.Tables[0].Rows[i]["Parent_Task_Id"].ToString()!;
@@ -114,8 +115,9 @@ namespace UnitTrackMaximo
                             Project_Id = dsProjectTask.Tables[0].Rows[i]["Project_Id"].ToString()!;
                             BusinessUnitName = dsProjectTask.Tables[0].Rows[i]["BusinessUnitName"].ToString()!;
                             ProcessDate = DateTime.Now.ToString("yyyy-MM-dd");
+                            Project_SubTask_Flag = Convert.ToInt32(dsProjectTask.Tables[0].Rows[i]["Project_SubTask_Flag"].ToString()!);
 
-                            int res = clsDAL.Dynamics_WorkOrder_Create(Parent_Task_Number, Parent_Task_Id, Project_Number, Project_Id, BusinessUnitName, ProcessDate);
+                            int res = clsDAL.Dynamics_WorkOrder_Create(Parent_Task_Number, Parent_Task_Id, Project_Number, Project_Id, BusinessUnitName, ProcessDate, Project_SubTask_Flag);
                         }
                         catch (Exception exp)
                         {
@@ -160,8 +162,9 @@ namespace UnitTrackMaximo
                         WorkOrder_Id= Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString());
                         WorkOrder_Number = ds.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
 
-                        GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
-                      
+                        // GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
+                        GetCPR_Details(WorkOrder_Id, WorkOrder_Number, writer);
+
                     }
                     catch (Exception exp)
                     {
@@ -604,6 +607,549 @@ namespace UnitTrackMaximo
                 writer.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
             }
 
+        }
+        #endregion
+
+        #region GetCPR_Details
+        public static string GetCPR_Details(int WorkOrder_Id, string WorkOrder_Number, StreamWriter writer)
+        {
+            string token = GetToken();
+            string result = "";
+            dynamic dyArray = "";
+
+
+            string ServiceUrl = System.Configuration.ConfigurationManager.AppSettings["OauthUrl"]!.ToString();
+
+
+            try
+            {
+                if (token != null)
+                {
+                    var options = new RestClientOptions(ServiceUrl)
+                    {
+                        MaxTimeout = -1,
+                    };
+                    var client = new RestClient(options);
+                    var request = new RestRequest("/wmes-external/workorders/tasks/" + WorkOrder_Number + "/cprs", Method.Get);
+                    request.AddHeader("Authorization", "Bearer " + token);
+                    RestResponse response = client.Execute(request);
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        dyArray = JsonConvert.DeserializeObject<dynamic>(response.Content!.ToString())!;
+                    else
+                        return result;
+
+                    result = dyArray.ToString();
+
+                    string Approval_Date = "";
+                    string Invoice_Num = "";
+                    string Invoice_Status = "";
+                    string Invoice_CheckNum = "";
+                    string Invoice_De_Psvoucheramt = "";
+                    string De_Rejectcode = "";
+                    string Rejection_Date = "";
+                    string CPR = "";
+                    string Invoice_Due_Date = "";
+                    string Invoice_Paid_Date = "";
+                    string Status = "";
+                    string HDescription = "";
+                    string Vendor_Invoice_Num = "";
+                    string Week_Ending = "";
+                    string Vendor_Project_ID = "";
+                    string Site = "";
+                    string CPR_Type = "";
+                    string Reactive_Time_Report_ID = "";
+                    string Payment_Type = "";
+                    string Foreman = "";
+                    string Derived_Contract = "";
+                    string First_Approver = "";
+                    string Second_Approver = "";
+                    string Line_of_Business = "";
+                    string Rejection_Remarks = "";
+                    string Requested_By_Name = "";
+                    string Requested_By_Email = "";
+                    string Requested_By_Phone_Num = "";
+                    string CPR_Submit_Date = "";
+                    string CPR_Created_Date = "";
+                    string Total_Cost = "";
+
+                    //CPR Lines
+                    string Line = "";
+                    string WO_Task_Num = "";
+                    string Service_Item = "";
+                    string PrLine_Description = "";
+                    string PRLineQuantity = "";
+                    string Order_Unit = "";
+                    string Unit_Cost = "";
+                    string Line_Cost = "";
+                    string GL_Debit_Account = "";
+
+                    //CU Details
+                    string WO_Num = "";
+                    string Description = "";
+                    string Point_Span = "";
+                    string CU_ID = "";
+                    string CU_Name = "";
+                    string CU_Description = "";
+                    string CU_Service_Item = "";
+                    string Service_Item_Description = "";
+                    string Estimated_Qty = "";
+                    string Asbuilt_Qty = "";
+                    string Work_Function = "";
+
+                    string Contract = "";
+
+                    //Status History
+                    string SH_Status = "";
+                    string SH_change_Date = "";
+                    string SH_Changed_By = "";
+                    string SH_Rejection_Code = "";
+
+
+                    int Count = 1;
+                    int RecordCount = dyArray.Count;
+
+                    if (dyArray.Count != null)
+                    {
+                        for (int i = 0; i < dyArray[0].CPR_Lines.Count; i++)
+                        {
+                            try
+                            {
+                                Console.WriteLine("GetCPR_Details - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CPR_Lines.Count.ToString());
+                                writer.WriteLine("GetCPR_Details - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CPR_Lines.Count.ToString());
+
+                                if (dyArray[0].Approval_Date != null)
+                                    Approval_Date = dyArray[0].Approval_Date.ToString();
+
+                                if (dyArray[0].Invoice_Num != null)
+                                    Invoice_Num = dyArray[0].Invoice_Num.ToString();
+
+                                if (dyArray[0].Invoice_Status != null)
+                                    Invoice_Status = dyArray[0].Invoice_Status.ToString();
+
+                                if (dyArray[0].Invoice_CheckNum != null)
+                                    Invoice_CheckNum = dyArray[0].Invoice_CheckNum.ToString();
+
+                                if (dyArray[0].Invoice_De_Psvoucheramt != null)
+                                    Invoice_De_Psvoucheramt = dyArray[0].Invoice_De_Psvoucheramt.ToString();
+
+                                if (dyArray[0].De_Rejectcode != null)
+                                    De_Rejectcode = dyArray[0].De_Rejectcode.ToString();
+
+                                if (dyArray[0].Rejection_Date != null)
+                                    Rejection_Date = dyArray[0].Rejection_Date.ToString();
+
+                                if (dyArray[0].CPR != null)
+                                    CPR = dyArray[0].CPR.ToString();
+
+                                if (dyArray[0].Invoice_Due_Date != null)
+                                    Invoice_Due_Date = dyArray[0].Invoice_Due_Date.ToString();
+
+                                if (dyArray[0].Invoice_Paid_Date != null)
+                                    Invoice_Paid_Date = dyArray[0].Invoice_Paid_Date.ToString();
+
+                                if (dyArray[0].Status != null)
+                                    Status = dyArray[0].Status.ToString();
+
+                                if (dyArray[0].Description != null)
+                                    HDescription = dyArray[0].Description.ToString();
+
+                                if (dyArray[0].Vendor_Invoice_Num != null)
+                                    Vendor_Invoice_Num = dyArray[0].Vendor_Invoice_Num.ToString();
+
+                                if (dyArray[0].Week_Ending != null)
+                                    Week_Ending = dyArray[0].Week_Ending.ToString();
+
+                                if (dyArray[0].Vendor_Project_ID != null)
+                                    Vendor_Project_ID = dyArray[0].Vendor_Project_ID.ToString();
+
+                                if (dyArray[0].Site != null)
+                                    Site = dyArray[0].Site.ToString();
+
+                                if (dyArray[0].CPR_Type != null)
+                                    CPR_Type = dyArray[0].CPR_Type.ToString();
+
+                                if (dyArray[0].Reactive_Time_Report_ID != null)
+                                    Reactive_Time_Report_ID = dyArray[0].Reactive_Time_Report_ID.ToString();
+
+                                if (dyArray[0].Payment_Type != null)
+                                    Payment_Type = dyArray[0].Payment_Type.ToString();
+
+                                if (dyArray[0].Foreman != null)
+                                    Foreman = dyArray[0].Foreman.ToString();
+
+                                if (dyArray[0].Derived_Contract != null)
+                                    Derived_Contract = dyArray[0].Derived_Contract.ToString();
+
+                                if (dyArray[0]["1st_Approver"] != null)
+                                    First_Approver = dyArray[0]["1st_Approver"].ToString();
+
+                                if (dyArray[0]["2nd_Approver"] != null)
+                                    Second_Approver = dyArray[0]["2nd_Approver"].ToString();
+
+                                if (dyArray[0].Line_of_Business != null)
+                                    Line_of_Business = dyArray[0].Line_of_Business.ToString();
+
+                                if (dyArray[0].Rejection_Remarks != null)
+                                    Rejection_Remarks = dyArray[0].Rejection_Remarks.ToString();
+
+                                if (dyArray[0].Requested_By_Name != null)
+                                    Requested_By_Name = dyArray[0].Requested_By_Name.ToString();
+
+                                if (dyArray[0].Requested_By_Email != null)
+                                    Requested_By_Email = dyArray[0].Requested_By_Email.ToString();
+
+                                if (dyArray[0].Requested_By_Phone_Num != null)
+                                    Requested_By_Phone_Num = dyArray[0].Requested_By_Phone_Num.ToString();
+
+                                if (dyArray[0].CPR_Submit_Date != null)
+                                    CPR_Submit_Date = dyArray[0].CPR_Submit_Date.ToString();
+
+                                if (dyArray[0].CPR_Created_Date != null)
+                                    CPR_Created_Date = dyArray[0].CPR_Created_Date.ToString();
+
+                                if (dyArray[0].Total_Cost != null)
+                                    Total_Cost = dyArray[0].Total_Cost.ToString();
+
+                                if (dyArray[0].Contract != null)
+                                    Contract = dyArray[0].Contract.ToString();
+
+                                //CPR Lines
+
+                                if (dyArray[0].CPR_Lines[i].Line != null)
+                                    Line = dyArray[0].CPR_Lines[i].Line.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].WO_Task_Num != null)
+                                    WO_Task_Num = dyArray[0].CPR_Lines[i].WO_Task_Num.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].Service_Item != null)
+                                    Service_Item = dyArray[0].CPR_Lines[i].Service_Item.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].PrLine_Description != null)
+                                    PrLine_Description = dyArray[0].CPR_Lines[i].PrLine_Description.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].PRLineQuantity != null)
+                                    PRLineQuantity = dyArray[0].CPR_Lines[i].PRLineQuantity.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].Order_Unit != null)
+                                    Order_Unit = dyArray[0].CPR_Lines[i].Order_Unit.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].Unit_Cost != null)
+                                    Unit_Cost = dyArray[0].CPR_Lines[i].Unit_Cost.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].Line_Cost != null)
+                                    Line_Cost = dyArray[0].CPR_Lines[i].Line_Cost.ToString();
+
+                                if (dyArray[0].CPR_Lines[i].GL_Debit_Account != null)
+                                    GL_Debit_Account = dyArray[0].CPR_Lines[i].GL_Debit_Account.ToString();
+
+
+                                //CU Details
+
+                                int res = clsDAL.CPR_Data_Create(Approval_Date, Invoice_Num, Invoice_Status, Invoice_CheckNum, Invoice_De_Psvoucheramt, De_Rejectcode, Rejection_Date, CPR, Invoice_Due_Date, Invoice_Paid_Date, Status, HDescription, Vendor_Invoice_Num, Week_Ending, Vendor_Project_ID, Site, CPR_Type, Reactive_Time_Report_ID, Payment_Type, Foreman, Derived_Contract, First_Approver, Second_Approver, Line_of_Business, Rejection_Remarks, Requested_By_Name, Requested_By_Email, Requested_By_Phone_Num, CPR_Submit_Date, CPR_Created_Date, Total_Cost, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WO_Num, Description, Point_Span, CU_ID, CU_Name, CU_Description, CU_Service_Item, Service_Item_Description, Estimated_Qty, Asbuilt_Qty, Work_Function, Contract, SH_Status, SH_change_Date, SH_Changed_By, SH_Rejection_Code);
+
+
+
+                                Count++;
+
+                            }
+                            catch (Exception exp)
+                            {
+                                writer.WriteLine("UnitTrack Maximo GetCPR_Details Failure");
+                                writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                                Console.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                                writer.WriteLine("=========================================================================");
+                            }
+
+                        }
+
+                    //    for (int i = 0; i < dyArray[0].CU_Details.Count; i++)
+                    //    {
+                    //        try
+                    //        {
+                    //            Console.WriteLine("GetCPR_CU_Details - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CU_Details.Count.ToString());
+                    //            writer.WriteLine("GetCPR_CU_Details - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CU_Details.Count.ToString());
+
+                    //            if (dyArray[0].Approval_Date != null)
+                    //                Approval_Date = dyArray[0].Approval_Date.ToString();
+
+                    //            if (dyArray[0].Invoice_Num != null)
+                    //                Invoice_Num = dyArray[0].Invoice_Num.ToString();
+
+                    //            if (dyArray[0].Invoice_Status != null)
+                    //                Invoice_Status = dyArray[0].Invoice_Status.ToString();
+
+                    //            if (dyArray[0].Invoice_CheckNum != null)
+                    //                Invoice_CheckNum = dyArray[0].Invoice_CheckNum.ToString();
+
+                    //            if (dyArray[0].Invoice_De_Psvoucheramt != null)
+                    //                Invoice_De_Psvoucheramt = dyArray[0].Invoice_De_Psvoucheramt.ToString();
+
+                    //            if (dyArray[0].De_Rejectcode != null)
+                    //                De_Rejectcode = dyArray[0].De_Rejectcode.ToString();
+
+                    //            if (dyArray[0].Rejection_Date != null)
+                    //                Rejection_Date = dyArray[0].Rejection_Date.ToString();
+
+                    //            if (dyArray[0].CPR != null)
+                    //                CPR = dyArray[0].CPR.ToString();
+
+                    //            if (dyArray[0].Invoice_Due_Date != null)
+                    //                Invoice_Due_Date = dyArray[0].Invoice_Due_Date.ToString();
+
+                    //            if (dyArray[0].Invoice_Paid_Date != null)
+                    //                Invoice_Paid_Date = dyArray[0].Invoice_Paid_Date.ToString();
+
+                    //            if (dyArray[0].Status != null)
+                    //                Status = dyArray[0].Status.ToString();
+
+                    //            if (dyArray[0].Description != null)
+                    //                HDescription = dyArray[0].Description.ToString();
+
+                    //            if (dyArray[0].Vendor_Invoice_Num != null)
+                    //                Vendor_Invoice_Num = dyArray[0].Vendor_Invoice_Num.ToString();
+
+                    //            if (dyArray[0].Week_Ending != null)
+                    //                Week_Ending = dyArray[0].Week_Ending.ToString();
+
+                    //            if (dyArray[0].Vendor_Project_ID != null)
+                    //                Vendor_Project_ID = dyArray[0].Vendor_Project_ID.ToString();
+
+                    //            if (dyArray[0].Site != null)
+                    //                Site = dyArray[0].Site.ToString();
+
+                    //            if (dyArray[0].CPR_Type != null)
+                    //                CPR_Type = dyArray[0].CPR_Type.ToString();
+
+                    //            if (dyArray[0].Reactive_Time_Report_ID != null)
+                    //                Reactive_Time_Report_ID = dyArray[0].Reactive_Time_Report_ID.ToString();
+
+                    //            if (dyArray[0].Payment_Type != null)
+                    //                Payment_Type = dyArray[0].Payment_Type.ToString();
+
+                    //            if (dyArray[0].Foreman != null)
+                    //                Foreman = dyArray[0].Foreman.ToString();
+
+                    //            if (dyArray[0].Derived_Contract != null)
+                    //                Derived_Contract = dyArray[0].Derived_Contract.ToString();
+
+                    //            if (dyArray[0]["1st_Approver"] != null)
+                    //                First_Approver = dyArray[0]["1st_Approver"].ToString();
+
+                    //            if (dyArray[0]["2nd_Approver"] != null)
+                    //                Second_Approver = dyArray[0]["2nd_Approver"].ToString();
+
+                    //            if (dyArray[0].Line_of_Business != null)
+                    //                Line_of_Business = dyArray[0].Line_of_Business.ToString();
+
+                    //            if (dyArray[0].Rejection_Remarks != null)
+                    //                Rejection_Remarks = dyArray[0].Rejection_Remarks.ToString();
+
+                    //            if (dyArray[0].Requested_By_Name != null)
+                    //                Requested_By_Name = dyArray[0].Requested_By_Name.ToString();
+
+                    //            if (dyArray[0].Requested_By_Email != null)
+                    //                Requested_By_Email = dyArray[0].Requested_By_Email.ToString();
+
+                    //            if (dyArray[0].Requested_By_Phone_Num != null)
+                    //                Requested_By_Phone_Num = dyArray[0].Requested_By_Phone_Num.ToString();
+
+                    //            if (dyArray[0].CPR_Submit_Date != null)
+                    //                CPR_Submit_Date = dyArray[0].CPR_Submit_Date.ToString();
+
+                    //            if (dyArray[0].CPR_Created_Date != null)
+                    //                CPR_Created_Date = dyArray[0].CPR_Created_Date.ToString();
+
+                    //            if (dyArray[0].Total_Cost != null)
+                    //                Total_Cost = dyArray[0].Total_Cost.ToString();
+
+                    //            //CU Details
+                    //            if (dyArray[0].CU_Details[i].WO_Num != null)
+                    //                WO_Num = dyArray[0].CU_Details[i].WO_Num.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].Description != null)
+                    //                Description = dyArray[0].CU_Details[i].Description.ToString();
+
+                    //            if (dyArray[0].CU_Details[i]["Point / Span"] != null)
+                    //                Point_Span = dyArray[0].CU_Details[i]["Point / Span"].ToString();
+
+                    //            if (dyArray[0].CU_Details[i].CU_ID != null)
+                    //                CU_ID = dyArray[0].CU_Details[i].CU_ID.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].WO_CU_NameNum != null)
+                    //                CU_Name = dyArray[0].CU_Details[i].CU_Name.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].CU_Description != null)
+                    //                CU_Description = dyArray[0].CU_Details[i].CU_Description.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].Service_Item != null)
+                    //                CU_Service_Item = dyArray[0].CU_Details[i].Service_Item.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].Service_Item_Description != null)
+                    //                Service_Item_Description = dyArray[0].CU_Details[i].Service_Item_Description.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].Estimated_Qty != null)
+                    //                Estimated_Qty = dyArray[0].CU_Details[i].Estimated_Qty.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].Asbuilt_Qty != null)
+                    //                Asbuilt_Qty = dyArray[0].CU_Details[i].Asbuilt_Qty.ToString();
+
+                    //            if (dyArray[0].CU_Details[i].Work_Function != null)
+                    //                Work_Function = dyArray[0].CU_Details[i].Work_Function.ToString();
+
+
+                    //            int res = clsDAL.CPR_Data_Create(Approval_Date, Invoice_Num, Invoice_Status, Invoice_CheckNum, Invoice_De_Psvoucheramt, De_Rejectcode, Rejection_Date, CPR, Invoice_Due_Date, Invoice_Paid_Date, Status, HDescription, Vendor_Invoice_Num, Week_Ending, Vendor_Project_ID, Site, CPR_Type, Reactive_Time_Report_ID, Payment_Type, Foreman, Derived_Contract, First_Approver, Second_Approver, Line_of_Business, Rejection_Remarks, Requested_By_Name, Requested_By_Email, Requested_By_Phone_Num, CPR_Submit_Date, CPR_Created_Date, Total_Cost, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WO_Num, Description, Point_Span, CU_ID, CU_Name, CU_Description, CU_Service_Item, Service_Item_Description, Estimated_Qty, Asbuilt_Qty, Work_Function, Contract, SH_Status, SH_change_Date, SH_Changed_By, SH_Rejection_Code);
+
+
+
+                    //        }
+                    //        catch (Exception exp)
+                    //        {
+                    //            writer.WriteLine("UnitTrack Maximo GetCPR_CU_Details Failure");
+                    //            writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                    //            Console.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                    //            writer.WriteLine("=========================================================================");
+                    //        }
+
+                    //    }
+
+
+                    //    for (int i = 0; i < dyArray[0].Status_History.Count; i++)
+                    //    {
+                    //        try
+                    //        {
+                    //            Console.WriteLine("GetCPR_Staus - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CU_Details.Count.ToString());
+                    //            writer.WriteLine("GetCPR_Staus - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CU_Details.Count.ToString());
+
+                    //            if (dyArray[0].Approval_Date != null)
+                    //                Approval_Date = dyArray[0].Approval_Date.ToString();
+
+                    //            if (dyArray[0].Invoice_Num != null)
+                    //                Invoice_Num = dyArray[0].Invoice_Num.ToString();
+
+                    //            if (dyArray[0].Invoice_Status != null)
+                    //                Invoice_Status = dyArray[0].Invoice_Status.ToString();
+
+                    //            if (dyArray[0].Invoice_CheckNum != null)
+                    //                Invoice_CheckNum = dyArray[0].Invoice_CheckNum.ToString();
+
+                    //            if (dyArray[0].Invoice_De_Psvoucheramt != null)
+                    //                Invoice_De_Psvoucheramt = dyArray[0].Invoice_De_Psvoucheramt.ToString();
+
+                    //            if (dyArray[0].De_Rejectcode != null)
+                    //                De_Rejectcode = dyArray[0].De_Rejectcode.ToString();
+
+                    //            if (dyArray[0].Rejection_Date != null)
+                    //                Rejection_Date = dyArray[0].Rejection_Date.ToString();
+
+                    //            if (dyArray[0].CPR != null)
+                    //                CPR = dyArray[0].CPR.ToString();
+
+                    //            if (dyArray[0].Invoice_Due_Date != null)
+                    //                Invoice_Due_Date = dyArray[0].Invoice_Due_Date.ToString();
+
+                    //            if (dyArray[0].Invoice_Paid_Date != null)
+                    //                Invoice_Paid_Date = dyArray[0].Invoice_Paid_Date.ToString();
+
+                    //            if (dyArray[0].Status != null)
+                    //                Status = dyArray[0].Status.ToString();
+
+                    //            if (dyArray[0].Description != null)
+                    //                HDescription = dyArray[0].Description.ToString();
+
+                    //            if (dyArray[0].Vendor_Invoice_Num != null)
+                    //                Vendor_Invoice_Num = dyArray[0].Vendor_Invoice_Num.ToString();
+
+                    //            if (dyArray[0].Week_Ending != null)
+                    //                Week_Ending = dyArray[0].Week_Ending.ToString();
+
+                    //            if (dyArray[0].Vendor_Project_ID != null)
+                    //                Vendor_Project_ID = dyArray[0].Vendor_Project_ID.ToString();
+
+                    //            if (dyArray[0].Site != null)
+                    //                Site = dyArray[0].Site.ToString();
+
+                    //            if (dyArray[0].CPR_Type != null)
+                    //                CPR_Type = dyArray[0].CPR_Type.ToString();
+
+                    //            if (dyArray[0].Reactive_Time_Report_ID != null)
+                    //                Reactive_Time_Report_ID = dyArray[0].Reactive_Time_Report_ID.ToString();
+
+                    //            if (dyArray[0].Payment_Type != null)
+                    //                Payment_Type = dyArray[0].Payment_Type.ToString();
+
+                    //            if (dyArray[0].Foreman != null)
+                    //                Foreman = dyArray[0].Foreman.ToString();
+
+                    //            if (dyArray[0].Derived_Contract != null)
+                    //                Derived_Contract = dyArray[0].Derived_Contract.ToString();
+
+                    //            if (dyArray[0]["1st_Approver"] != null)
+                    //                First_Approver = dyArray[0]["1st_Approver"].ToString();
+
+                    //            if (dyArray[0]["2nd_Approver"] != null)
+                    //                Second_Approver = dyArray[0]["2nd_Approver"].ToString();
+
+                    //            if (dyArray[0].Line_of_Business != null)
+                    //                Line_of_Business = dyArray[0].Line_of_Business.ToString();
+
+                    //            if (dyArray[0].Rejection_Remarks != null)
+                    //                Rejection_Remarks = dyArray[0].Rejection_Remarks.ToString();
+
+                    //            if (dyArray[0].Requested_By_Name != null)
+                    //                Requested_By_Name = dyArray[0].Requested_By_Name.ToString();
+
+                    //            if (dyArray[0].Requested_By_Email != null)
+                    //                Requested_By_Email = dyArray[0].Requested_By_Email.ToString();
+
+                    //            if (dyArray[0].Requested_By_Phone_Num != null)
+                    //                Requested_By_Phone_Num = dyArray[0].Requested_By_Phone_Num.ToString();
+
+                    //            if (dyArray[0].CPR_Submit_Date != null)
+                    //                CPR_Submit_Date = dyArray[0].CPR_Submit_Date.ToString();
+
+                    //            if (dyArray[0].CPR_Created_Date != null)
+                    //                CPR_Created_Date = dyArray[0].CPR_Created_Date.ToString();
+
+                    //            if (dyArray[0].Total_Cost != null)
+                    //                Total_Cost = dyArray[0].Total_Cost.ToString();
+
+                    //            //Status History
+                    //            if (dyArray[0].Status_History[i].Status != null)
+                    //                SH_Status = dyArray[0].Status_History[i].Status.ToString();
+
+                    //            if (dyArray[0].Status_History[i].Change_Date != null)
+                    //                SH_change_Date = dyArray[0].Status_History[i].Change_Date.ToString();
+
+                    //            if (dyArray[0].Status_History[i].Changed_By != null)
+                    //                SH_Changed_By = dyArray[0].Status_History[i].Changed_By.ToString();
+
+                    //            if (dyArray[0].Status_History[i].Rejection_Code != null)
+                    //                SH_Rejection_Code = dyArray[0].Status_History[i].Rejection_Code.ToString();
+
+                    //            int res = clsDAL.CPR_Data_Create(Approval_Date, Invoice_Num, Invoice_Status, Invoice_CheckNum, Invoice_De_Psvoucheramt, De_Rejectcode, Rejection_Date, CPR, Invoice_Due_Date, Invoice_Paid_Date, Status, HDescription, Vendor_Invoice_Num, Week_Ending, Vendor_Project_ID, Site, CPR_Type, Reactive_Time_Report_ID, Payment_Type, Foreman, Derived_Contract, First_Approver, Second_Approver, Line_of_Business, Rejection_Remarks, Requested_By_Name, Requested_By_Email, Requested_By_Phone_Num, CPR_Submit_Date, CPR_Created_Date, Total_Cost, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WO_Num, Description, Point_Span, CU_ID, CU_Name, CU_Description, CU_Service_Item, Service_Item_Description, Estimated_Qty, Asbuilt_Qty, Work_Function, Contract, SH_Status, SH_change_Date, SH_Changed_By, SH_Rejection_Code);
+                    //        }
+                    //        catch (Exception exp)
+                    //        {
+                    //            writer.WriteLine("UnitTrack Maximo GetCPR_Staus_Details Failure");
+                    //            writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                    //            Console.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                    //            writer.WriteLine("=========================================================================");
+                    //        }
+
+                    //    }
+                    }
+                }
+
+            }
+            catch (Exception exp)
+            {
+
+                writer.WriteLine("UnitTrack Maximo GetCPR_Details Failure");
+                writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                Console.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                writer.WriteLine("=========================================================================");
+            }
+            return result;
         }
         #endregion
 

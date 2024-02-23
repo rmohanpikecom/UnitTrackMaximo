@@ -1,0 +1,29 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 76
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 2 out of 76
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 3 out of 76
+GetCPR_Details - Details - Processing - 1 out of 9
+GetCPR_Details - Details - Processing - 2 out of 9
+GetCPR_Details - Details - Processing - 3 out of 9
+GetCPR_Details - Details - Processing - 4 out of 9
+GetCPR_Details - Details - Processing - 5 out of 9
+GetCPR_Details - Details - Processing - 6 out of 9
+GetCPR_Details - Details - Processing - 7 out of 9
+GetCPR_Details - Details - Processing - 8 out of 9
+GetCPR_Details - Details - Processing - 9 out of 9
+GetDukeMaximoUnits - Processing - 4 out of 76
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 5 out of 76
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 6 out of 76
