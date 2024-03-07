@@ -1,0 +1,7 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 103
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_SQL_CPR_DELETE'.
+=========================================================================
+GetDukeMaximoUnits - Processing - 2 out of 103

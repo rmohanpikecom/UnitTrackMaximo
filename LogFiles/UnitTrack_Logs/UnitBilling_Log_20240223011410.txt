@@ -1,0 +1,15 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 940
+GetDukeMaximoUnits - Processing - 2 out of 940
+GetDukeMaximoUnits - Processing - 3 out of 940
+GetDukeMaximoUnits - Processing - 4 out of 940
+GetDukeMaximoUnits - Processing - 5 out of 940
+GetDukeMaximoUnits - Processing - 6 out of 940
+GetDukeMaximoUnits - Processing - 7 out of 940
+GetDukeMaximoUnits - Processing - 8 out of 940
+GetDukeMaximoUnits - Processing - 9 out of 940
+GetDukeMaximoUnits - Processing - 10 out of 940
+GetDukeMaximoUnits - Processing - 11 out of 940
+GetDukeMaximoUnits - Processing - 12 out of 940
+GetDukeMaximoUnits - Processing - 13 out of 940

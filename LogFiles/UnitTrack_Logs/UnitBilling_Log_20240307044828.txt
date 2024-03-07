@@ -1,0 +1,36 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 103
+GetCPR_Details - Details - Processing - 1 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 2 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 3 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 4 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 5 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 6 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 7 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetCPR_Details - Details - Processing - 8 out of 8
+UnitTrack Maximo GetCPR_Details Failure
+UnitTrack Maximo Message :  Could not find stored procedure 'SP_DUKE_CPR_DATA_CREATE'.
+=========================================================================
+GetDukeMaximoUnits - Processing - 2 out of 103

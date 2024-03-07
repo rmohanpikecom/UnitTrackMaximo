@@ -1,0 +1,6 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+GetDukeProjectTaskData - Processing - 1 out of 51
+GetDukeProjectTaskData - Processing - 2 out of 51
+GetDukeProjectTaskData - Processing - 3 out of 51

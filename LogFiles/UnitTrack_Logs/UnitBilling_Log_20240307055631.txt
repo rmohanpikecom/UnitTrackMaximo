@@ -1,0 +1,23 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+GetDukeProjectTaskData - Processing - 1 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 2 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 3 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 4 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 5 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 6 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 7 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 8 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 9 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+GetDukeProjectTaskData - Processing - 10 out of 10
+GetDukeProjectTaskData - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.

@@ -1,0 +1,5 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+UnitTrack Maximo GetSubTaskNumber_Oracle Failure
+GetSubTaskNumber_Oracle - FailureProcedure or function SP_DUKE_WORKORDER_GETLIST has too many arguments specified.
+=========================================================================
