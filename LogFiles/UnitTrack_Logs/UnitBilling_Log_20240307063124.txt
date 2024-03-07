@@ -1,0 +1,852 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+PushDataTo_Oracle - Processing - 1 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18269
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18269;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 0 - out of 16
+Updating the Detail Record Status to In Progress for 18269
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:25AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462552","NonlaborResource":"1615100|Remove, Through bolt/Wire Rack/Running Spool/Anti-split out bolt|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18269","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917517 ]
+Updating the Detail Record Status in Dynamics along with other values for 18269
+PushDataTo_Oracle - Processing - 2 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18270
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18270;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 1 - out of 16
+Updating the Detail Record Status to In Progress for 18270
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:25AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462511","NonlaborResource":"1615045|Install, Through bolt/Wire Rack/Running Spool/Anti-split out bolt|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18270","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917518 ]
+Updating the Detail Record Status in Dynamics along with other values for 18270
+PushDataTo_Oracle - Processing - 3 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18271
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18271;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 2 - out of 16
+Updating the Detail Record Status to In Progress for 18271
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:25AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462154","NonlaborResource":"1496440|Limited Access Adder (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18271","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917519 ]
+Updating the Detail Record Status in Dynamics along with other values for 18271
+PushDataTo_Oracle - Processing - 4 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18272
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18272;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 3 - out of 16
+Updating the Detail Record Status to In Progress for 18272
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:25AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461957","NonlaborResource":"1496109|Remove, Post or pin insulator up to 55KV Incl clamps (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18272","Quantity":"7","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917520 ]
+Updating the Detail Record Status in Dynamics along with other values for 18272
+PushDataTo_Oracle - Processing - 5 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18273
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18273;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 4 - out of 16
+Updating the Detail Record Status to In Progress for 18273
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:25AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461956","NonlaborResource":"1496108|Install, Post or pin insulator up to 55KV Incl clamps (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18273","Quantity":"6","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917521 ]
+Updating the Detail Record Status in Dynamics along with other values for 18273
+PushDataTo_Oracle - Processing - 6 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18274
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18274;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 5 - out of 16
+Updating the Detail Record Status to In Progress for 18274
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461973","NonlaborResource":"1496146|Install, Insulator Brackets (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18274","Quantity":"2","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917522 ]
+Updating the Detail Record Status in Dynamics along with other values for 18274
+PushDataTo_Oracle - Processing - 7 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18275
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18275;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 6 - out of 16
+Updating the Detail Record Status to In Progress for 18275
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461936","NonlaborResource":"1496080|Remove, Double Arm, wood, up to 10' (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18275","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917523 ]
+Updating the Detail Record Status in Dynamics along with other values for 18275
+PushDataTo_Oracle - Processing - 8 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18276
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18276;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 7 - out of 16
+Updating the Detail Record Status to In Progress for 18276
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461935","NonlaborResource":"1496079|Install, Double Arm, wood, up to 10' (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18276","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917524 ]
+Updating the Detail Record Status in Dynamics along with other values for 18276
+PushDataTo_Oracle - Processing - 9 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18277
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18277;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 8 - out of 16
+Updating the Detail Record Status to In Progress for 18277
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461903","NonlaborResource":"1496042|Adder, Cut off existing pole in place w/o cap (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18277","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917525 ]
+Updating the Detail Record Status in Dynamics along with other values for 18277
+PushDataTo_Oracle - Processing - 10 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18278
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18278;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 9 - out of 16
+Updating the Detail Record Status to In Progress for 18278
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461868","NonlaborResource":"1495988|Install, Wood Pole in earth, All Classes, 40' - 50' (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18278","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828917526 ]
+Updating the Detail Record Status in Dynamics along with other values for 18278
+PushDataTo_Oracle - Processing - 11 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18279
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18279;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 10 - out of 16
+Updating the Detail Record Status to In Progress for 18279
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462479","NonlaborResource":"1615003|Install, Fiberglass strain insulator|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18279","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945527 ]
+Updating the Detail Record Status in Dynamics along with other values for 18279
+PushDataTo_Oracle - Processing - 12 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18280
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18280;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 11 - out of 16
+Updating the Detail Record Status to In Progress for 18280
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462300","NonlaborResource":"1501533|Remove, Fiberglass strain insulator (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18280","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945528 ]
+Updating the Detail Record Status in Dynamics along with other values for 18280
+PushDataTo_Oracle - Processing - 13 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18281
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18281;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 12 - out of 16
+Updating the Detail Record Status to In Progress for 18281
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462004","NonlaborResource":"1496189|Remove, Span guy attachment (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18281","Quantity":"4","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945529 ]
+Updating the Detail Record Status in Dynamics along with other values for 18281
+PushDataTo_Oracle - Processing - 14 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18282
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18282;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 13 - out of 16
+Updating the Detail Record Status to In Progress for 18282
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462003","NonlaborResource":"1496188|Install, Span guy attachment (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18282","Quantity":"4","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945530 ]
+Updating the Detail Record Status in Dynamics along with other values for 18282
+PushDataTo_Oracle - Processing - 15 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18283
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18283;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 14 - out of 16
+Updating the Detail Record Status to In Progress for 18283
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461990","NonlaborResource":"1496172|Remove, Single overhead span guy, up to 0.5'(LF)|I|REMOVE|LFT","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18283","Quantity":"100","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945531 ]
+Updating the Detail Record Status in Dynamics along with other values for 18283
+PushDataTo_Oracle - Processing - 16 out of 16
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18284
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18284;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 15 - out of 16
+Updating the Detail Record Status to In Progress for 18284
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597514198_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462014","NonlaborResource":"1496199|Transfer, Conductor straight-line, up to 2/0 (EA)|T|TRANSFER|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18284","Quantity":"4","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597514198","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945532 ]
+Updating the Detail Record Status in Dynamics along with other values for 18284
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+PushDataTo_Oracle - Processing - 1 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18285
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18285;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 0 - out of 17
+Updating the Detail Record Status to In Progress for 18285
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462511","NonlaborResource":"1615045|Install, Through bolt/Wire Rack/Running Spool/Anti-split out bolt|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18285","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945533 ]
+Updating the Detail Record Status in Dynamics along with other values for 18285
+PushDataTo_Oracle - Processing - 2 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18286
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18286;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 1 - out of 17
+Updating the Detail Record Status to In Progress for 18286
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462154","NonlaborResource":"1496440|Limited Access Adder (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18286","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945534 ]
+Updating the Detail Record Status in Dynamics along with other values for 18286
+PushDataTo_Oracle - Processing - 3 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18287
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18287;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 2 - out of 17
+Updating the Detail Record Status to In Progress for 18287
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461956","NonlaborResource":"1496108|Install, Post or pin insulator up to 55KV Incl clamps (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18287","Quantity":"3","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945535 ]
+Updating the Detail Record Status in Dynamics along with other values for 18287
+PushDataTo_Oracle - Processing - 4 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18288
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18288;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 3 - out of 17
+Updating the Detail Record Status to In Progress for 18288
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461957","NonlaborResource":"1496109|Remove, Post or pin insulator up to 55KV Incl clamps (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18288","Quantity":"3","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945536 ]
+Updating the Detail Record Status in Dynamics along with other values for 18288
+PushDataTo_Oracle - Processing - 5 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18289
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18289;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 4 - out of 17
+Updating the Detail Record Status to In Progress for 18289
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461974","NonlaborResource":"1496147|Remove, Insulator Brackets (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18289","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945537 ]
+Updating the Detail Record Status in Dynamics along with other values for 18289
+PushDataTo_Oracle - Processing - 6 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18290
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18290;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 5 - out of 17
+Updating the Detail Record Status to In Progress for 18290
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461973","NonlaborResource":"1496146|Install, Insulator Brackets (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18290","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945538 ]
+Updating the Detail Record Status in Dynamics along with other values for 18290
+PushDataTo_Oracle - Processing - 7 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18291
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18291;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 6 - out of 17
+Updating the Detail Record Status to In Progress for 18291
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:26AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461932","NonlaborResource":"1496076|Install, Single Arm, wood, up to 10' (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18291","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945539 ]
+Updating the Detail Record Status in Dynamics along with other values for 18291
+PushDataTo_Oracle - Processing - 8 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18292
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18292;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 7 - out of 17
+Updating the Detail Record Status to In Progress for 18292
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461933","NonlaborResource":"1496077|Remove, Single Arm, wood, up to 10' (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18292","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945540 ]
+Updating the Detail Record Status in Dynamics along with other values for 18292
+PushDataTo_Oracle - Processing - 9 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18293
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18293;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 8 - out of 17
+Updating the Detail Record Status to In Progress for 18293
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462552","NonlaborResource":"1615100|Remove, Through bolt/Wire Rack/Running Spool/Anti-split out bolt|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18293","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945541 ]
+Updating the Detail Record Status in Dynamics along with other values for 18293
+PushDataTo_Oracle - Processing - 10 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18294
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18294;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 9 - out of 17
+Updating the Detail Record Status to In Progress for 18294
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461903","NonlaborResource":"1496042|Adder, Cut off existing pole in place w/o cap (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18294","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945542 ]
+Updating the Detail Record Status in Dynamics along with other values for 18294
+PushDataTo_Oracle - Processing - 11 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18295
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18295;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 10 - out of 17
+Updating the Detail Record Status to In Progress for 18295
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461868","NonlaborResource":"1495988|Install, Wood Pole in earth, All Classes, 40' - 50' (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18295","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945543 ]
+Updating the Detail Record Status in Dynamics along with other values for 18295
+PushDataTo_Oracle - Processing - 12 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18296
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18296;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 11 - out of 17
+Updating the Detail Record Status to In Progress for 18296
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462479","NonlaborResource":"1615003|Install, Fiberglass strain insulator|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18296","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945544 ]
+Updating the Detail Record Status in Dynamics along with other values for 18296
+PushDataTo_Oracle - Processing - 13 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18297
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18297;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 12 - out of 17
+Updating the Detail Record Status to In Progress for 18297
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462300","NonlaborResource":"1501533|Remove, Fiberglass strain insulator (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18297","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945545 ]
+Updating the Detail Record Status in Dynamics along with other values for 18297
+PushDataTo_Oracle - Processing - 14 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18298
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18298;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 13 - out of 17
+Updating the Detail Record Status to In Progress for 18298
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462003","NonlaborResource":"1496188|Install, Span guy attachment (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18298","Quantity":"4","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945546 ]
+Updating the Detail Record Status in Dynamics along with other values for 18298
+PushDataTo_Oracle - Processing - 15 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18299
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18299;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 14 - out of 17
+Updating the Detail Record Status to In Progress for 18299
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462004","NonlaborResource":"1496189|Remove, Span guy attachment (EA)|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18299","Quantity":"4","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945547 ]
+Updating the Detail Record Status in Dynamics along with other values for 18299
+PushDataTo_Oracle - Processing - 16 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18300
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18300;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 15 - out of 17
+Updating the Detail Record Status to In Progress for 18300
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843461990","NonlaborResource":"1496172|Remove, Single overhead span guy, up to 0.5'(LF)|I|REMOVE|LFT","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18300","Quantity":"100","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945548 ]
+Updating the Detail Record Status in Dynamics along with other values for 18300
+PushDataTo_Oracle - Processing - 17 out of 17
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18301
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18301;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 16 - out of 17
+Updating the Detail Record Status to In Progress for 18301
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018597517129_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462014","NonlaborResource":"1496199|Transfer, Conductor straight-line, up to 2/0 (EA)|T|TRANSFER|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18301","Quantity":"4","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018597517129","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945549 ]
+Updating the Detail Record Status in Dynamics along with other values for 18301
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+PushDataTo_Oracle - Processing - 1 out of 18
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18302
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18302;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 0 - out of 18
+Updating the Detail Record Status to In Progress for 18302
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018596771335_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462552","NonlaborResource":"1615100|Remove, Through bolt/Wire Rack/Running Spool/Anti-split out bolt|I|REMOVE|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18302","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018596771335","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945550 ]
+Updating the Detail Record Status in Dynamics along with other values for 18302
+PushDataTo_Oracle - Processing - 2 out of 18
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18303
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18303;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 1 - out of 18
+Updating the Detail Record Status to In Progress for 18303
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018596771335_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462511","NonlaborResource":"1615045|Install, Through bolt/Wire Rack/Running Spool/Anti-split out bolt|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18303","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018596771335","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945551 ]
+Updating the Detail Record Status in Dynamics along with other values for 18303
+PushDataTo_Oracle - Processing - 3 out of 18
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18304
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18304;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields
+PPM Response to get TransactionNumber : {
+  "items" : [ ],
+  "count" : 0,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://edyo-test.fa.us2.oraclecloud.com:443/fscmRestApi/resources/11.13.18.05/projectCosts",
+    "name" : "projectCosts",
+    "kind" : "collection"
+  } ]
+}
+TransactionNumber : 
+Processing Unit Billing Detail Events Records - 2 - out of 18
+Updating the Detail Record Status to In Progress for 18304
+Payload for Detail Transaction Record :  {"ExpenditureBatch":"100018596771335_Mar  7 2024  5:27AM","BusinessUnit":"Pike Business Unit","TransactionSource":"Units and Equip","Document":"Units and Equip","DocumentEntry":"Units and Equip","NonlaborResourceId":"300002843462154","NonlaborResource":"1496440|Limited Access Adder (EA)|N|INSTALL|EACH","NonlaborResourceOrganization":"PIKE Project Unit Org","TransactionCurrencyCode":"USD","OriginalTransactionReference":"Replicon_18304","Quantity":"1","UnitOfMeasure":"Hours","ProjectStandardCostCollectionFlexfields": [{"_EXPENDITURE_ITEM_DATE":"2024-03-03","_PROJECT_ID":"300002835892113","_TASK_ID":"100018596771335","_EXPENDITURE_TYPE_ID_Display":"Unit Production","_ORGANIZATION_ID_Display":"Eastern"}]}
+Oracle Response for Detail Transaction Record :  Applying List binding LOV_NonlaborResource with given set of values leads to no matching row for a row of type :UnprocessedProjectCosts, key oracle.jbo.Key[300002828945552 ]
+Updating the Detail Record Status in Dynamics along with other values for 18304
+PushDataTo_Oracle - Processing - 4 out of 18
+Checking if the Transaction is already pushed to PPM for Detail Record Id 18305
+Payload for Getting the Transaction Number ?q=OriginalTransactionReference=Replicon_18305;NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields

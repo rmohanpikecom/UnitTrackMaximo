@@ -326,18 +326,16 @@ namespace UnitTrackMaximo
         #endregion
 
         #region WorkOrder_GetList_Oracle
-        public static DataSet WorkOrder_GetList_Oracle(int Status, DateTime ProcessDate)
+        public static DataSet WorkOrder_GetList_Oracle(DateTime ProcessDate)
         {
             string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
-            string cmd = "SP_DUKE_WORKORDER_GETLIST";
+            string cmd = "SP_DUKE_WORKORDER_GETLIST_ORACLE";
 
             SqlParameter[] commandParameters =
            {
-                new SqlParameter("@Status_Id ",SqlDbType.Int),
                 new SqlParameter("@ProcessDate",SqlDbType.Date)
             };
-            commandParameters[0].Value = Status;
-            commandParameters[1].Value = ProcessDate;
+            commandParameters[0].Value = ProcessDate;
 
             DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd, commandParameters);
             DataTable dt = ds.Tables[0];

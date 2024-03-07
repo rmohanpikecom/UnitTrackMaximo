@@ -66,9 +66,9 @@ namespace UnitTrackMaximo
 
                 //GetSubTaskNumber_Oracle(Writer, dt);
 
-                GetNLRData_Oracle(Writer, dt);
+                //GetNLRData_Oracle(Writer, dt);
 
-                //GetOracle_WorkORderList(Writer, dt);
+                GetOracle_WorkORderList(Writer, dt);
 
                 //Writer.WriteLine("DynamicsPikeService - UnitBilling CREATE Started :" + DateTime.Now.ToString("yyyyMMddHHmmss"));
                 Writer.Close();
@@ -680,7 +680,7 @@ namespace UnitTrackMaximo
             writer.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
             Console.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
 
-            DataSet ds = clsDAL.WorkOrder_GetList_Oracle(4, dt);
+            DataSet ds = clsDAL.WorkOrder_GetList_Oracle(dt);
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
