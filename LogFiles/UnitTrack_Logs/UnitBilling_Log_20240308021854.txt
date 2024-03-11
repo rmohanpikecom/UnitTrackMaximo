@@ -1,0 +1,10 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 2
+GetDukeMaximoUnits - Processing - 2 out of 2
+GetDukeMaximoUnits - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+GetWorkorder SubTaskNumber - Processing - 1 out of 1
+UnitTrack Maximo GetSubTaskNumber_Oracle Failure
+GetSubTaskNumber_Oracle - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+=========================================================================

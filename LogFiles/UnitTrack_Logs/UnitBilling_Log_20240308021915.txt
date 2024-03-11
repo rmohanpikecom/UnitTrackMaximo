@@ -1,0 +1,7 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 2
+GetDukeMaximoUnits - Processing - 2 out of 2
+GetDukeMaximoUnits - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+GetWorkorder SubTaskNumber - Processing - 1 out of 1

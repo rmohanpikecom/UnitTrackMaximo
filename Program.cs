@@ -58,7 +58,7 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/06/2024");
+                dt = Convert.ToDateTime("03/07/2024");
 
                 //GetWorkorders_DYN(Writer, dt);
 
@@ -66,11 +66,12 @@ namespace UnitTrackMaximo
 
                 //GetSubTaskNumber_Oracle(Writer, dt);
 
-                //GetNLRData_Oracle(Writer, dt);
+                GetNLRData_Oracle(Writer, dt);
 
-                GetOracle_WorkORderList(Writer, dt);
+                //GetOracle_WorkORderList(Writer, dt);
 
                 //Writer.WriteLine("DynamicsPikeService - UnitBilling CREATE Started :" + DateTime.Now.ToString("yyyyMMddHHmmss"));
+
                 Writer.Close();
 
                 Console.WriteLine("DynamicsPikeService - " + AppName + " - Completed");
@@ -158,13 +159,13 @@ namespace UnitTrackMaximo
                         writer.WriteLine("GetDukeMaximoUnits - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
 
                         int WorkOrder_Id = 0;
-                        string WorkOrder_Number = "";
+                        string WorkOrder_Number = ""; 
 
-                        WorkOrder_Id= Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString());
+                        WorkOrder_Id = Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString());
                         WorkOrder_Number = ds.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
 
-                         //GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
-                        GetCPR_Details(WorkOrder_Id, WorkOrder_Number, writer);
+                        //GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
+                        GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
 
                     }
                     catch (Exception exp)
@@ -185,8 +186,8 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-        #region GetCPR_Details
-        public static string GetCPR_Details(int WorkOrder_Id, string WorkOrder_Number, StreamWriter writer)
+        #region GetDukeMaximoUnits_Details
+        public static string GetDukeMaximoUnits_Details(int WorkOrder_Id, string WorkOrder_Number, StreamWriter writer)
         {
             string token = GetToken();
             string result = "";
@@ -260,99 +261,100 @@ namespace UnitTrackMaximo
                     if (dyArray.Count != null)
                     {
                         clsDAL.DeleteCPR_Data(WorkOrder_Id);
-
-                        for (int i = 0; i < dyArray[0].CPR_Lines.Count; i++)
+                        for (int i = 0; i < dyArray.Count; i++)
                         {
-                            try
+                            for (int j = 0; j < dyArray[i].CPR_Lines.Count; j++)
                             {
-                                Console.WriteLine("GetCPR_Details - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CPR_Lines.Count.ToString());
-                                writer.WriteLine("GetCPR_Details - Details - Processing - " + (i + 1).ToString() + " out of " + dyArray[0].CPR_Lines.Count.ToString());
-
-                                if (dyArray[0].Site != null)
-                                    Site = dyArray[0].Site.ToString();
-
-                                if (dyArray[0].CPR != null)
-                                    CPR = dyArray[0].CPR.ToString();
-
-                                if (dyArray[0].Payment_Type != null)
-                                    Payment_Type = dyArray[0].Payment_Type.ToString();
-
-                                if (dyArray[0].Contract != null)
-                                    WorkStartDate = dyArray[0].Work_Start_Date.ToString();
-
-                                if (dyArray[0].Status != null)
-                                    Status = dyArray[0].Status.ToString();
-
-                                if (dyArray[0].Total_Cost != null)
-                                    Total_Cost = dyArray[0].Total_Cost.ToString();
-
-                                if (dyArray[0].Vendor_Invoice_Num != null)
-                                    Vendor_Invoice_Num = dyArray[0].Vendor_Invoice_Num.ToString();
-
-                                if (dyArray[0].CPR_Created_Date != null)
-                                    CPR_Created_Date = dyArray[0].CPR_Created_Date.ToString();
-
-                                if (dyArray[0].CPR_Submit_Date != null)
-                                    CPR_Submit_Date = dyArray[0].CPR_Submit_Date.ToString();
-
-                                if (dyArray[0].CPR_Type != null)
-                                    CPR_Type = dyArray[0].CPR_Type.ToString();
-
-                                if (dyArray[0].Derived_Contract != null)
-                                    Derived_Contract = dyArray[0].Derived_Contract.ToString();
-
-                                if (dyArray[0].Work_Start_Date != null)
-                                    WorkStartDate = dyArray[0].Work_Start_Date.ToString();
-
-
-                                //CPR Lines
-                                if (dyArray[0].CPR_Lines[i].Line != null)
-                                    Line = dyArray[0].CPR_Lines[i].Line.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].WO_Task_Num != null)
-                                    WO_Task_Num = dyArray[0].CPR_Lines[i].WO_Task_Num.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].Service_Item != null)
-                                    Service_Item = dyArray[0].CPR_Lines[i].Service_Item.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].PrLine_Description != null)
-                                    PrLine_Description = dyArray[0].CPR_Lines[i].PrLine_Description.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].PRLineQuantity != null)
-                                    PRLineQuantity = dyArray[0].CPR_Lines[i].PRLineQuantity.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].Order_Unit != null)
-                                    Order_Unit = dyArray[0].CPR_Lines[i].Order_Unit.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].Unit_Cost != null)
-                                    Unit_Cost = dyArray[0].CPR_Lines[i].Unit_Cost.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].Line_Cost != null)
-                                    Line_Cost = dyArray[0].CPR_Lines[i].Line_Cost.ToString();
-
-                                if (dyArray[0].CPR_Lines[i].GL_Debit_Account != null)
-                                    GL_Debit_Account = dyArray[0].CPR_Lines[i].GL_Debit_Account.ToString();
-
-
-                                //CPR Details
-
-                                int res = clsDAL.CPR_Data_Create(ReportDate, Site, Vendor, Vendor_Name, CPR, Payment_Type, Contract, Status, CurrentCprStatusDate, Total_Cost, Vendor_Invoice_Num, CPR_Created_Date, CPR_Submit_Date, CPR_Type, Derived_Contract, WorkStartDate, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WorkOrder_Id);
-
-                                if (Count == dyArray[0].CPR_Lines.Count)
+                                try
                                 {
-                                    clsDAL.WorkOrder_StatusUpdate(WorkOrder_Id, 2);
+                                    Console.WriteLine("GetCPR_Details - Details - Processing - " + (j + 1).ToString() + " out of " + dyArray[i].CPR_Lines.Count.ToString());
+                                    writer.WriteLine("GetCPR_Details - Details - Processing - " + (j + 1).ToString() + " out of " + dyArray[i].CPR_Lines.Count.ToString());
+
+                                    if (dyArray[i].Site != null)
+                                        Site = dyArray[i].Site.ToString();
+
+                                    if (dyArray[i].CPR != null)
+                                        CPR = dyArray[i].CPR.ToString();
+
+                                    if (dyArray[i].Payment_Type != null)
+                                        Payment_Type = dyArray[i].Payment_Type.ToString();
+
+                                    if (dyArray[i].Contract != null)
+                                        WorkStartDate = dyArray[i].Work_Start_Date.ToString();
+
+                                    if (dyArray[i].Status != null)
+                                        Status = dyArray[i].Status.ToString();
+
+                                    if (dyArray[i].Total_Cost != null)
+                                        Total_Cost = dyArray[i].Total_Cost.ToString();
+
+                                    if (dyArray[i].Vendor_Invoice_Num != null)
+                                        Vendor_Invoice_Num = dyArray[i].Vendor_Invoice_Num.ToString();
+
+                                    if (dyArray[i].CPR_Created_Date != null)
+                                        CPR_Created_Date = dyArray[i].CPR_Created_Date.ToString();
+
+                                    if (dyArray[i].CPR_Submit_Date != null)
+                                        CPR_Submit_Date = dyArray[i].CPR_Submit_Date.ToString();
+
+                                    if (dyArray[i].CPR_Type != null)
+                                        CPR_Type = dyArray[i].CPR_Type.ToString();
+
+                                    if (dyArray[i].Derived_Contract != null)
+                                        Derived_Contract = dyArray[i].Derived_Contract.ToString();
+
+                                    if (dyArray[i].Work_Start_Date != null)
+                                        WorkStartDate = dyArray[i].Work_Start_Date.ToString();
+
+
+                                    //CPR Lines
+                                    if (dyArray[i].CPR_Lines[j].Line != null)
+                                        Line = dyArray[i].CPR_Lines[j].Line.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].WO_Task_Num != null)
+                                        WO_Task_Num = dyArray[i].CPR_Lines[j].WO_Task_Num.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].Service_Item != null)
+                                        Service_Item = dyArray[i].CPR_Lines[j].Service_Item.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].PrLine_Description != null)
+                                        PrLine_Description = dyArray[i].CPR_Lines[j].PrLine_Description.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].PRLineQuantity != null)
+                                        PRLineQuantity = dyArray[i].CPR_Lines[j].PRLineQuantity.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].Order_Unit != null)
+                                        Order_Unit = dyArray[i].CPR_Lines[j].Order_Unit.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].Unit_Cost != null)
+                                        Unit_Cost = dyArray[i].CPR_Lines[j].Unit_Cost.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].Line_Cost != null)
+                                        Line_Cost = dyArray[i].CPR_Lines[j].Line_Cost.ToString();
+
+                                    if (dyArray[i].CPR_Lines[j].GL_Debit_Account != null)
+                                        GL_Debit_Account = dyArray[i].CPR_Lines[i].GL_Debit_Account.ToString();
+
+                                    //CPR Details
+
+                                    int res = clsDAL.CPR_Data_Create(ReportDate, Site, Vendor, Vendor_Name, CPR, Payment_Type, Contract, Status, CurrentCprStatusDate, Total_Cost, Vendor_Invoice_Num, CPR_Created_Date, CPR_Submit_Date, CPR_Type, Derived_Contract, WorkStartDate, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WorkOrder_Id);
+
+                                    if (Count == dyArray[i].CPR_Lines.Count)
+                                    {
+                                        clsDAL.WorkOrder_StatusUpdate(WorkOrder_Id, 2);
+                                    }
+
+                                    Count++;
+                                }
+                                catch (Exception exp)
+                                {
+                                    writer.WriteLine("UnitTrack Maximo GetCPR_Details Failure");
+                                    writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                                    Console.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
+                                    writer.WriteLine("=========================================================================");
                                 }
 
-                                Count++;
                             }
-                            catch (Exception exp)
-                            {
-                                writer.WriteLine("UnitTrack Maximo GetCPR_Details Failure");
-                                writer.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
-                                Console.WriteLine("UnitTrack Maximo Message :  " + exp.Message.ToString());
-                                writer.WriteLine("=========================================================================");
-                            }
-
                         }
                     }
 
@@ -387,8 +389,8 @@ namespace UnitTrackMaximo
                 {
                     try
                     {
-                        Console.WriteLine("GetDukeCompatibleUnits - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
-                        writer.WriteLine("GetDukeCompatibleUnits - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                        Console.WriteLine("GetWorkorder SubTaskNumber - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                        writer.WriteLine("GetWorkorder SubTaskNumber - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
 
                         WorkOrder_Id = Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString())!;
                         string ProjectNumber = ds.Tables[0].Rows[i]["Project_Number"].ToString()!;
@@ -489,13 +491,15 @@ namespace UnitTrackMaximo
         #region GetNLRData_Oracle
         public static void GetNLRData_Oracle(StreamWriter writer, DateTime dt)
         {
-            writer.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
-            Console.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
+            writer.WriteLine("DynamicsPikeService - " + AppName + " - GetNLRDatatoOracle - Started");
+            Console.WriteLine("DynamicsPikeService - " + AppName + " - GetNLRDatatoOracle - Started");
 
             DataSet ds = clsDAL.WorkOrder_GetList(3, dt);
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
+                Console.WriteLine("Get NLR Work Orders - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                writer.WriteLine("Get NLR Work Orders - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
                 string WorkOrder_Id = ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString()!;
 
                 GetNLRData_Oracle_Details(writer, WorkOrder_Id);
@@ -504,13 +508,13 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-        #region GetNLRData_Oracle
+        #region GetNLRData_Oracle_Details
         public static void GetNLRData_Oracle_Details(StreamWriter writer, string WorkOrder_Id)
         {
             try
             {
-                writer.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
-                Console.WriteLine("DynamicsPikeService - " + AppName + " - GetDukeProjectTaskData - Started");
+                writer.WriteLine("DynamicsPikeService - " + AppName + " - GetNLRData_Oracle_Details - Started");
+                Console.WriteLine("DynamicsPikeService - " + AppName + " - GetNLRData_Oracle_Details - Started");
 
 
                 DataSet ds = clsDAL.NLR_GetList(WorkOrder_Id);
@@ -522,8 +526,8 @@ namespace UnitTrackMaximo
                     string oracle_message_details = "";
                     try
                     {
-                        Console.WriteLine("GetDukeProjectTaskData - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
-                        writer.WriteLine("GetDukeProjectTaskData - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                        Console.WriteLine("GetNLRData_Oracle_Details - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                        writer.WriteLine("GetNLRData_Oracle_Details - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
 
                         Compatible_Unit_Id = ds.Tables[0].Rows[i]["Compatible_Unit_Id"].ToString()!;
                         string @Project = ds.Tables[0].Rows[i]["Project_Number"].ToString()!;
@@ -684,6 +688,9 @@ namespace UnitTrackMaximo
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
+                Console.WriteLine("GetOracle_WorkORderList - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                writer.WriteLine("GetOracle_WorkORderList - Processing - " + (i + 1).ToString() + " out of " + ds.Tables[0].Rows.Count.ToString());
+                
                 int WorkOrder_Id = Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString())!;
 
                 PPM_Push_Oracle(writer, WorkOrder_Id);
@@ -784,8 +791,8 @@ namespace UnitTrackMaximo
                             if (RecordFlag == 1)
                             {
 
-                                Console.WriteLine("Processing Unit Billing Detail Events Records - " + j.ToString() + " - out of " + dsDetails.Tables[0].Rows.Count.ToString());
-                                writer.WriteLine("Processing Unit Billing Detail Events Records - " + j.ToString() + " - out of " + dsDetails.Tables[0].Rows.Count.ToString());
+                                Console.WriteLine("Processing Unit Billing Detail Events Records - " + (j + 1).ToString() + " - out of " + dsDetails.Tables[0].Rows.Count.ToString());
+                                writer.WriteLine("Processing Unit Billing Detail Events Records - " + (j + 1).ToString() + " - out of " + dsDetails.Tables[0].Rows.Count.ToString());
 
 
                                 string? BusinessUnit = dsDetails.Tables[0].Rows[j]["BusinessUnit"].ToString();

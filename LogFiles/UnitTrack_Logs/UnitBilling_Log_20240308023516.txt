@@ -1,0 +1,714 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeMaximoUnits - Started
+GetDukeMaximoUnits - Processing - 1 out of 92
+GetCPR_Details - Details - Processing - 1 out of 29
+GetCPR_Details - Details - Processing - 2 out of 29
+GetCPR_Details - Details - Processing - 3 out of 29
+GetCPR_Details - Details - Processing - 4 out of 29
+GetCPR_Details - Details - Processing - 5 out of 29
+GetCPR_Details - Details - Processing - 6 out of 29
+GetCPR_Details - Details - Processing - 7 out of 29
+GetCPR_Details - Details - Processing - 8 out of 29
+GetCPR_Details - Details - Processing - 9 out of 29
+GetCPR_Details - Details - Processing - 10 out of 29
+GetCPR_Details - Details - Processing - 11 out of 29
+GetCPR_Details - Details - Processing - 12 out of 29
+GetCPR_Details - Details - Processing - 13 out of 29
+GetCPR_Details - Details - Processing - 14 out of 29
+GetCPR_Details - Details - Processing - 15 out of 29
+GetCPR_Details - Details - Processing - 16 out of 29
+GetCPR_Details - Details - Processing - 17 out of 29
+GetCPR_Details - Details - Processing - 18 out of 29
+GetCPR_Details - Details - Processing - 19 out of 29
+GetCPR_Details - Details - Processing - 20 out of 29
+GetCPR_Details - Details - Processing - 21 out of 29
+GetCPR_Details - Details - Processing - 22 out of 29
+GetCPR_Details - Details - Processing - 23 out of 29
+GetCPR_Details - Details - Processing - 24 out of 29
+GetCPR_Details - Details - Processing - 25 out of 29
+GetCPR_Details - Details - Processing - 26 out of 29
+GetCPR_Details - Details - Processing - 27 out of 29
+GetCPR_Details - Details - Processing - 28 out of 29
+GetCPR_Details - Details - Processing - 29 out of 29
+GetDukeMaximoUnits - Processing - 2 out of 92
+GetDukeMaximoUnits - Processing - 3 out of 92
+GetCPR_Details - Details - Processing - 1 out of 9
+GetCPR_Details - Details - Processing - 2 out of 9
+GetCPR_Details - Details - Processing - 3 out of 9
+GetCPR_Details - Details - Processing - 4 out of 9
+GetCPR_Details - Details - Processing - 5 out of 9
+GetCPR_Details - Details - Processing - 6 out of 9
+GetCPR_Details - Details - Processing - 7 out of 9
+GetCPR_Details - Details - Processing - 8 out of 9
+GetCPR_Details - Details - Processing - 9 out of 9
+GetDukeMaximoUnits - Processing - 4 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetCPR_Details - Details - Processing - 1 out of 25
+GetCPR_Details - Details - Processing - 2 out of 25
+GetCPR_Details - Details - Processing - 3 out of 25
+GetCPR_Details - Details - Processing - 4 out of 25
+GetCPR_Details - Details - Processing - 5 out of 25
+GetCPR_Details - Details - Processing - 6 out of 25
+GetCPR_Details - Details - Processing - 7 out of 25
+GetCPR_Details - Details - Processing - 8 out of 25
+GetCPR_Details - Details - Processing - 9 out of 25
+GetCPR_Details - Details - Processing - 10 out of 25
+GetCPR_Details - Details - Processing - 11 out of 25
+GetCPR_Details - Details - Processing - 12 out of 25
+GetCPR_Details - Details - Processing - 13 out of 25
+GetCPR_Details - Details - Processing - 14 out of 25
+GetCPR_Details - Details - Processing - 15 out of 25
+GetCPR_Details - Details - Processing - 16 out of 25
+GetCPR_Details - Details - Processing - 17 out of 25
+GetCPR_Details - Details - Processing - 18 out of 25
+GetCPR_Details - Details - Processing - 19 out of 25
+GetCPR_Details - Details - Processing - 20 out of 25
+GetCPR_Details - Details - Processing - 21 out of 25
+GetCPR_Details - Details - Processing - 22 out of 25
+GetCPR_Details - Details - Processing - 23 out of 25
+GetCPR_Details - Details - Processing - 24 out of 25
+GetCPR_Details - Details - Processing - 25 out of 25
+GetDukeMaximoUnits - Processing - 5 out of 92
+GetDukeMaximoUnits - Processing - 6 out of 92
+GetCPR_Details - Details - Processing - 1 out of 7
+GetCPR_Details - Details - Processing - 2 out of 7
+GetCPR_Details - Details - Processing - 3 out of 7
+GetCPR_Details - Details - Processing - 4 out of 7
+GetCPR_Details - Details - Processing - 5 out of 7
+GetCPR_Details - Details - Processing - 6 out of 7
+GetCPR_Details - Details - Processing - 7 out of 7
+GetDukeMaximoUnits - Processing - 7 out of 92
+GetCPR_Details - Details - Processing - 1 out of 18
+GetCPR_Details - Details - Processing - 2 out of 18
+GetCPR_Details - Details - Processing - 3 out of 18
+GetCPR_Details - Details - Processing - 4 out of 18
+GetCPR_Details - Details - Processing - 5 out of 18
+GetCPR_Details - Details - Processing - 6 out of 18
+GetCPR_Details - Details - Processing - 7 out of 18
+GetCPR_Details - Details - Processing - 8 out of 18
+GetCPR_Details - Details - Processing - 9 out of 18
+GetCPR_Details - Details - Processing - 10 out of 18
+GetCPR_Details - Details - Processing - 11 out of 18
+GetCPR_Details - Details - Processing - 12 out of 18
+GetCPR_Details - Details - Processing - 13 out of 18
+GetCPR_Details - Details - Processing - 14 out of 18
+GetCPR_Details - Details - Processing - 15 out of 18
+GetCPR_Details - Details - Processing - 16 out of 18
+GetCPR_Details - Details - Processing - 17 out of 18
+GetCPR_Details - Details - Processing - 18 out of 18
+GetDukeMaximoUnits - Processing - 8 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetCPR_Details - Details - Processing - 1 out of 16
+GetCPR_Details - Details - Processing - 2 out of 16
+GetCPR_Details - Details - Processing - 3 out of 16
+GetCPR_Details - Details - Processing - 4 out of 16
+GetCPR_Details - Details - Processing - 5 out of 16
+GetCPR_Details - Details - Processing - 6 out of 16
+GetCPR_Details - Details - Processing - 7 out of 16
+GetCPR_Details - Details - Processing - 8 out of 16
+GetCPR_Details - Details - Processing - 9 out of 16
+GetCPR_Details - Details - Processing - 10 out of 16
+GetCPR_Details - Details - Processing - 11 out of 16
+GetCPR_Details - Details - Processing - 12 out of 16
+GetCPR_Details - Details - Processing - 13 out of 16
+GetCPR_Details - Details - Processing - 14 out of 16
+GetCPR_Details - Details - Processing - 15 out of 16
+GetCPR_Details - Details - Processing - 16 out of 16
+GetDukeMaximoUnits - Processing - 9 out of 92
+GetCPR_Details - Details - Processing - 1 out of 36
+GetCPR_Details - Details - Processing - 2 out of 36
+GetCPR_Details - Details - Processing - 3 out of 36
+GetCPR_Details - Details - Processing - 4 out of 36
+GetCPR_Details - Details - Processing - 5 out of 36
+GetCPR_Details - Details - Processing - 6 out of 36
+GetCPR_Details - Details - Processing - 7 out of 36
+GetCPR_Details - Details - Processing - 8 out of 36
+GetCPR_Details - Details - Processing - 9 out of 36
+GetCPR_Details - Details - Processing - 10 out of 36
+GetCPR_Details - Details - Processing - 11 out of 36
+GetCPR_Details - Details - Processing - 12 out of 36
+GetCPR_Details - Details - Processing - 13 out of 36
+GetCPR_Details - Details - Processing - 14 out of 36
+GetCPR_Details - Details - Processing - 15 out of 36
+GetCPR_Details - Details - Processing - 16 out of 36
+GetCPR_Details - Details - Processing - 17 out of 36
+GetCPR_Details - Details - Processing - 18 out of 36
+GetCPR_Details - Details - Processing - 19 out of 36
+GetCPR_Details - Details - Processing - 20 out of 36
+GetCPR_Details - Details - Processing - 21 out of 36
+GetCPR_Details - Details - Processing - 22 out of 36
+GetCPR_Details - Details - Processing - 23 out of 36
+GetCPR_Details - Details - Processing - 24 out of 36
+GetCPR_Details - Details - Processing - 25 out of 36
+GetCPR_Details - Details - Processing - 26 out of 36
+GetCPR_Details - Details - Processing - 27 out of 36
+GetCPR_Details - Details - Processing - 28 out of 36
+GetCPR_Details - Details - Processing - 29 out of 36
+GetCPR_Details - Details - Processing - 30 out of 36
+GetCPR_Details - Details - Processing - 31 out of 36
+GetCPR_Details - Details - Processing - 32 out of 36
+GetCPR_Details - Details - Processing - 33 out of 36
+GetCPR_Details - Details - Processing - 34 out of 36
+GetCPR_Details - Details - Processing - 35 out of 36
+GetCPR_Details - Details - Processing - 36 out of 36
+GetDukeMaximoUnits - Processing - 10 out of 92
+GetCPR_Details - Details - Processing - 1 out of 17
+GetCPR_Details - Details - Processing - 2 out of 17
+GetCPR_Details - Details - Processing - 3 out of 17
+GetCPR_Details - Details - Processing - 4 out of 17
+GetCPR_Details - Details - Processing - 5 out of 17
+GetCPR_Details - Details - Processing - 6 out of 17
+GetCPR_Details - Details - Processing - 7 out of 17
+GetCPR_Details - Details - Processing - 8 out of 17
+GetCPR_Details - Details - Processing - 9 out of 17
+GetCPR_Details - Details - Processing - 10 out of 17
+GetCPR_Details - Details - Processing - 11 out of 17
+GetCPR_Details - Details - Processing - 12 out of 17
+GetCPR_Details - Details - Processing - 13 out of 17
+GetCPR_Details - Details - Processing - 14 out of 17
+GetCPR_Details - Details - Processing - 15 out of 17
+GetCPR_Details - Details - Processing - 16 out of 17
+GetCPR_Details - Details - Processing - 17 out of 17
+GetDukeMaximoUnits - Processing - 11 out of 92
+GetCPR_Details - Details - Processing - 1 out of 10
+GetCPR_Details - Details - Processing - 2 out of 10
+GetCPR_Details - Details - Processing - 3 out of 10
+GetCPR_Details - Details - Processing - 4 out of 10
+GetCPR_Details - Details - Processing - 5 out of 10
+GetCPR_Details - Details - Processing - 6 out of 10
+GetCPR_Details - Details - Processing - 7 out of 10
+GetCPR_Details - Details - Processing - 8 out of 10
+GetCPR_Details - Details - Processing - 9 out of 10
+GetCPR_Details - Details - Processing - 10 out of 10
+GetDukeMaximoUnits - Processing - 12 out of 92
+GetCPR_Details - Details - Processing - 1 out of 21
+GetCPR_Details - Details - Processing - 2 out of 21
+GetCPR_Details - Details - Processing - 3 out of 21
+GetCPR_Details - Details - Processing - 4 out of 21
+GetCPR_Details - Details - Processing - 5 out of 21
+GetCPR_Details - Details - Processing - 6 out of 21
+GetCPR_Details - Details - Processing - 7 out of 21
+GetCPR_Details - Details - Processing - 8 out of 21
+GetCPR_Details - Details - Processing - 9 out of 21
+GetCPR_Details - Details - Processing - 10 out of 21
+GetCPR_Details - Details - Processing - 11 out of 21
+GetCPR_Details - Details - Processing - 12 out of 21
+GetCPR_Details - Details - Processing - 13 out of 21
+GetCPR_Details - Details - Processing - 14 out of 21
+GetCPR_Details - Details - Processing - 15 out of 21
+GetCPR_Details - Details - Processing - 16 out of 21
+GetCPR_Details - Details - Processing - 17 out of 21
+GetCPR_Details - Details - Processing - 18 out of 21
+GetCPR_Details - Details - Processing - 19 out of 21
+GetCPR_Details - Details - Processing - 20 out of 21
+GetCPR_Details - Details - Processing - 21 out of 21
+GetDukeMaximoUnits - Processing - 13 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetCPR_Details - Details - Processing - 1 out of 21
+GetCPR_Details - Details - Processing - 2 out of 21
+GetCPR_Details - Details - Processing - 3 out of 21
+GetCPR_Details - Details - Processing - 4 out of 21
+GetCPR_Details - Details - Processing - 5 out of 21
+GetCPR_Details - Details - Processing - 6 out of 21
+GetCPR_Details - Details - Processing - 7 out of 21
+GetCPR_Details - Details - Processing - 8 out of 21
+GetCPR_Details - Details - Processing - 9 out of 21
+GetCPR_Details - Details - Processing - 10 out of 21
+GetCPR_Details - Details - Processing - 11 out of 21
+GetCPR_Details - Details - Processing - 12 out of 21
+GetCPR_Details - Details - Processing - 13 out of 21
+GetCPR_Details - Details - Processing - 14 out of 21
+GetCPR_Details - Details - Processing - 15 out of 21
+GetCPR_Details - Details - Processing - 16 out of 21
+GetCPR_Details - Details - Processing - 17 out of 21
+GetCPR_Details - Details - Processing - 18 out of 21
+GetCPR_Details - Details - Processing - 19 out of 21
+GetCPR_Details - Details - Processing - 20 out of 21
+GetCPR_Details - Details - Processing - 21 out of 21
+GetDukeMaximoUnits - Processing - 14 out of 92
+GetCPR_Details - Details - Processing - 1 out of 15
+GetCPR_Details - Details - Processing - 2 out of 15
+GetCPR_Details - Details - Processing - 3 out of 15
+GetCPR_Details - Details - Processing - 4 out of 15
+GetCPR_Details - Details - Processing - 5 out of 15
+GetCPR_Details - Details - Processing - 6 out of 15
+GetCPR_Details - Details - Processing - 7 out of 15
+GetCPR_Details - Details - Processing - 8 out of 15
+GetCPR_Details - Details - Processing - 9 out of 15
+GetCPR_Details - Details - Processing - 10 out of 15
+GetCPR_Details - Details - Processing - 11 out of 15
+GetCPR_Details - Details - Processing - 12 out of 15
+GetCPR_Details - Details - Processing - 13 out of 15
+GetCPR_Details - Details - Processing - 14 out of 15
+GetCPR_Details - Details - Processing - 15 out of 15
+GetDukeMaximoUnits - Processing - 15 out of 92
+GetCPR_Details - Details - Processing - 1 out of 20
+GetCPR_Details - Details - Processing - 2 out of 20
+GetCPR_Details - Details - Processing - 3 out of 20
+GetCPR_Details - Details - Processing - 4 out of 20
+GetCPR_Details - Details - Processing - 5 out of 20
+GetCPR_Details - Details - Processing - 6 out of 20
+GetCPR_Details - Details - Processing - 7 out of 20
+GetCPR_Details - Details - Processing - 8 out of 20
+GetCPR_Details - Details - Processing - 9 out of 20
+GetCPR_Details - Details - Processing - 10 out of 20
+GetCPR_Details - Details - Processing - 11 out of 20
+GetCPR_Details - Details - Processing - 12 out of 20
+GetCPR_Details - Details - Processing - 13 out of 20
+GetCPR_Details - Details - Processing - 14 out of 20
+GetCPR_Details - Details - Processing - 15 out of 20
+GetCPR_Details - Details - Processing - 16 out of 20
+GetCPR_Details - Details - Processing - 17 out of 20
+GetCPR_Details - Details - Processing - 18 out of 20
+GetCPR_Details - Details - Processing - 19 out of 20
+GetCPR_Details - Details - Processing - 20 out of 20
+GetDukeMaximoUnits - Processing - 16 out of 92
+GetCPR_Details - Details - Processing - 1 out of 7
+GetCPR_Details - Details - Processing - 2 out of 7
+GetCPR_Details - Details - Processing - 3 out of 7
+GetCPR_Details - Details - Processing - 4 out of 7
+GetCPR_Details - Details - Processing - 5 out of 7
+GetCPR_Details - Details - Processing - 6 out of 7
+GetCPR_Details - Details - Processing - 7 out of 7
+GetDukeMaximoUnits - Processing - 17 out of 92
+GetCPR_Details - Details - Processing - 1 out of 9
+GetCPR_Details - Details - Processing - 2 out of 9
+GetCPR_Details - Details - Processing - 3 out of 9
+GetCPR_Details - Details - Processing - 4 out of 9
+GetCPR_Details - Details - Processing - 5 out of 9
+GetCPR_Details - Details - Processing - 6 out of 9
+GetCPR_Details - Details - Processing - 7 out of 9
+GetCPR_Details - Details - Processing - 8 out of 9
+GetCPR_Details - Details - Processing - 9 out of 9
+GetDukeMaximoUnits - Processing - 18 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 19 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 20 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 21 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 22 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 23 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 24 out of 92
+GetCPR_Details - Details - Processing - 1 out of 2
+GetCPR_Details - Details - Processing - 2 out of 2
+GetDukeMaximoUnits - Processing - 25 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 26 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 27 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 28 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 29 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 30 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 31 out of 92
+GetCPR_Details - Details - Processing - 1 out of 6
+GetCPR_Details - Details - Processing - 2 out of 6
+GetCPR_Details - Details - Processing - 3 out of 6
+GetCPR_Details - Details - Processing - 4 out of 6
+GetCPR_Details - Details - Processing - 5 out of 6
+GetCPR_Details - Details - Processing - 6 out of 6
+GetDukeMaximoUnits - Processing - 32 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 33 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 34 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 35 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 36 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 37 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 38 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetDukeMaximoUnits - Processing - 39 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 40 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 41 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 42 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 43 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 44 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 45 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 46 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 47 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 48 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 49 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 50 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 51 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 52 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 53 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 54 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 55 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 56 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 57 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 58 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 59 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 60 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 61 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 62 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 63 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetDukeMaximoUnits - Processing - 64 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 65 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 66 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 67 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetDukeMaximoUnits - Processing - 68 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 69 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetDukeMaximoUnits - Processing - 70 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 71 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 72 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 73 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 74 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 75 out of 92
+GetCPR_Details - Details - Processing - 1 out of 16
+GetCPR_Details - Details - Processing - 2 out of 16
+GetCPR_Details - Details - Processing - 3 out of 16
+GetCPR_Details - Details - Processing - 4 out of 16
+GetCPR_Details - Details - Processing - 5 out of 16
+GetCPR_Details - Details - Processing - 6 out of 16
+GetCPR_Details - Details - Processing - 7 out of 16
+GetCPR_Details - Details - Processing - 8 out of 16
+GetCPR_Details - Details - Processing - 9 out of 16
+GetCPR_Details - Details - Processing - 10 out of 16
+GetCPR_Details - Details - Processing - 11 out of 16
+GetCPR_Details - Details - Processing - 12 out of 16
+GetCPR_Details - Details - Processing - 13 out of 16
+GetCPR_Details - Details - Processing - 14 out of 16
+GetCPR_Details - Details - Processing - 15 out of 16
+GetCPR_Details - Details - Processing - 16 out of 16
+GetDukeMaximoUnits - Processing - 76 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetDukeMaximoUnits - Processing - 77 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 78 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 79 out of 92
+GetCPR_Details - Details - Processing - 1 out of 4
+GetCPR_Details - Details - Processing - 2 out of 4
+GetCPR_Details - Details - Processing - 3 out of 4
+GetCPR_Details - Details - Processing - 4 out of 4
+GetDukeMaximoUnits - Processing - 80 out of 92
+GetCPR_Details - Details - Processing - 1 out of 12
+GetCPR_Details - Details - Processing - 2 out of 12
+GetCPR_Details - Details - Processing - 3 out of 12
+GetCPR_Details - Details - Processing - 4 out of 12
+GetCPR_Details - Details - Processing - 5 out of 12
+GetCPR_Details - Details - Processing - 6 out of 12
+GetCPR_Details - Details - Processing - 7 out of 12
+GetCPR_Details - Details - Processing - 8 out of 12
+GetCPR_Details - Details - Processing - 9 out of 12
+GetCPR_Details - Details - Processing - 10 out of 12
+GetCPR_Details - Details - Processing - 11 out of 12
+GetCPR_Details - Details - Processing - 12 out of 12
+GetDukeMaximoUnits - Processing - 81 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 82 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 83 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 84 out of 92
+GetCPR_Details - Details - Processing - 1 out of 5
+GetCPR_Details - Details - Processing - 2 out of 5
+GetCPR_Details - Details - Processing - 3 out of 5
+GetCPR_Details - Details - Processing - 4 out of 5
+GetCPR_Details - Details - Processing - 5 out of 5
+GetDukeMaximoUnits - Processing - 85 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 86 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 87 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 88 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 89 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 90 out of 92
+GetCPR_Details - Details - Processing - 1 out of 3
+GetCPR_Details - Details - Processing - 2 out of 3
+GetCPR_Details - Details - Processing - 3 out of 3
+GetDukeMaximoUnits - Processing - 91 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing - 92 out of 92
+GetCPR_Details - Details - Processing - 1 out of 1
+GetDukeMaximoUnits - Processing Completed
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+GetWorkorder SubTaskNumber - Processing - 1 out of 90
+UnitTrack Maximo GetSubTaskNumber_Oracle Failure
+GetSubTaskNumber_Oracle - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+=========================================================================
+GetWorkorder SubTaskNumber - Processing - 2 out of 90
+GetWorkorder SubTaskNumber - Processing - 3 out of 90
+GetWorkorder SubTaskNumber - Processing - 4 out of 90
+GetWorkorder SubTaskNumber - Processing - 5 out of 90
+GetWorkorder SubTaskNumber - Processing - 6 out of 90
+GetWorkorder SubTaskNumber - Processing - 7 out of 90
+GetWorkorder SubTaskNumber - Processing - 8 out of 90
+GetWorkorder SubTaskNumber - Processing - 9 out of 90
+GetWorkorder SubTaskNumber - Processing - 10 out of 90
+GetWorkorder SubTaskNumber - Processing - 11 out of 90
+GetWorkorder SubTaskNumber - Processing - 12 out of 90
+GetWorkorder SubTaskNumber - Processing - 13 out of 90
+GetWorkorder SubTaskNumber - Processing - 14 out of 90
+GetWorkorder SubTaskNumber - Processing - 15 out of 90
+GetWorkorder SubTaskNumber - Processing - 16 out of 90
+GetWorkorder SubTaskNumber - Processing - 17 out of 90
+GetWorkorder SubTaskNumber - Processing - 18 out of 90
+GetWorkorder SubTaskNumber - Processing - 19 out of 90
+GetWorkorder SubTaskNumber - Processing - 20 out of 90
+GetWorkorder SubTaskNumber - Processing - 21 out of 90
+GetWorkorder SubTaskNumber - Processing - 22 out of 90
+GetWorkorder SubTaskNumber - Processing - 23 out of 90
+GetWorkorder SubTaskNumber - Processing - 24 out of 90
+GetWorkorder SubTaskNumber - Processing - 25 out of 90
+GetWorkorder SubTaskNumber - Processing - 26 out of 90
+GetWorkorder SubTaskNumber - Processing - 27 out of 90
+GetWorkorder SubTaskNumber - Processing - 28 out of 90
+GetWorkorder SubTaskNumber - Processing - 29 out of 90
+GetWorkorder SubTaskNumber - Processing - 30 out of 90
+GetWorkorder SubTaskNumber - Processing - 31 out of 90
+GetWorkorder SubTaskNumber - Processing - 32 out of 90
+GetWorkorder SubTaskNumber - Processing - 33 out of 90
+GetWorkorder SubTaskNumber - Processing - 34 out of 90
+GetWorkorder SubTaskNumber - Processing - 35 out of 90
+GetWorkorder SubTaskNumber - Processing - 36 out of 90
+GetWorkorder SubTaskNumber - Processing - 37 out of 90
+GetWorkorder SubTaskNumber - Processing - 38 out of 90
+GetWorkorder SubTaskNumber - Processing - 39 out of 90
+GetWorkorder SubTaskNumber - Processing - 40 out of 90
+GetWorkorder SubTaskNumber - Processing - 41 out of 90
+GetWorkorder SubTaskNumber - Processing - 42 out of 90
+GetWorkorder SubTaskNumber - Processing - 43 out of 90
+GetWorkorder SubTaskNumber - Processing - 44 out of 90
+GetWorkorder SubTaskNumber - Processing - 45 out of 90
+GetWorkorder SubTaskNumber - Processing - 46 out of 90
+GetWorkorder SubTaskNumber - Processing - 47 out of 90
+GetWorkorder SubTaskNumber - Processing - 48 out of 90
+GetWorkorder SubTaskNumber - Processing - 49 out of 90
+GetWorkorder SubTaskNumber - Processing - 50 out of 90
+GetWorkorder SubTaskNumber - Processing - 51 out of 90
+GetWorkorder SubTaskNumber - Processing - 52 out of 90
+GetWorkorder SubTaskNumber - Processing - 53 out of 90
+GetWorkorder SubTaskNumber - Processing - 54 out of 90
+GetWorkorder SubTaskNumber - Processing - 55 out of 90
+GetWorkorder SubTaskNumber - Processing - 56 out of 90
+GetWorkorder SubTaskNumber - Processing - 57 out of 90
+GetWorkorder SubTaskNumber - Processing - 58 out of 90
+GetWorkorder SubTaskNumber - Processing - 59 out of 90
+GetWorkorder SubTaskNumber - Processing - 60 out of 90
+GetWorkorder SubTaskNumber - Processing - 61 out of 90
+GetWorkorder SubTaskNumber - Processing - 62 out of 90
+GetWorkorder SubTaskNumber - Processing - 63 out of 90
+GetWorkorder SubTaskNumber - Processing - 64 out of 90
+GetWorkorder SubTaskNumber - Processing - 65 out of 90
+GetWorkorder SubTaskNumber - Processing - 66 out of 90
+GetWorkorder SubTaskNumber - Processing - 67 out of 90
+GetWorkorder SubTaskNumber - Processing - 68 out of 90
+GetWorkorder SubTaskNumber - Processing - 69 out of 90
+GetWorkorder SubTaskNumber - Processing - 70 out of 90
+GetWorkorder SubTaskNumber - Processing - 71 out of 90
+GetWorkorder SubTaskNumber - Processing - 72 out of 90
+GetWorkorder SubTaskNumber - Processing - 73 out of 90
+GetWorkorder SubTaskNumber - Processing - 74 out of 90
+GetWorkorder SubTaskNumber - Processing - 75 out of 90
+GetWorkorder SubTaskNumber - Processing - 76 out of 90
+GetWorkorder SubTaskNumber - Processing - 77 out of 90
+GetWorkorder SubTaskNumber - Processing - 78 out of 90
+GetWorkorder SubTaskNumber - Processing - 79 out of 90
+GetWorkorder SubTaskNumber - Processing - 80 out of 90
+GetWorkorder SubTaskNumber - Processing - 81 out of 90
+GetWorkorder SubTaskNumber - Processing - 82 out of 90
+GetWorkorder SubTaskNumber - Processing - 83 out of 90
+GetWorkorder SubTaskNumber - Processing - 84 out of 90
+GetWorkorder SubTaskNumber - Processing - 85 out of 90
+GetWorkorder SubTaskNumber - Processing - 86 out of 90
+GetWorkorder SubTaskNumber - Processing - 87 out of 90
+GetWorkorder SubTaskNumber - Processing - 88 out of 90
+GetWorkorder SubTaskNumber - Processing - 89 out of 90
+GetWorkorder SubTaskNumber - Processing - 90 out of 90
