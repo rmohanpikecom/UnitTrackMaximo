@@ -58,20 +58,19 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/07/2024");
+                //dt = Convert.ToDateTime("03/06/2024");
 
                 //GetWorkorders_DYN(Writer, dt);
 
-                //GetDukeMaximoUnits(Writer, dt);
+                GetDukeMaximoUnits_List(Writer, dt);
 
                 //GetSubTaskNumber_Oracle(Writer, dt);
 
-                GetNLRData_Oracle(Writer, dt);
+                //GetNLRData_Oracle(Writer, dt);
 
                 //GetOracle_WorkORderList(Writer, dt);
 
                 //Writer.WriteLine("DynamicsPikeService - UnitBilling CREATE Started :" + DateTime.Now.ToString("yyyyMMddHHmmss"));
-
                 Writer.Close();
 
                 Console.WriteLine("DynamicsPikeService - " + AppName + " - Completed");
@@ -141,8 +140,8 @@ namespace UnitTrackMaximo
         }
         #endregion
 
-        #region GetDukeMaximoUnits
-        public static void GetDukeMaximoUnits(StreamWriter writer, DateTime dt)
+        #region GetDukeMaximoUnits_List
+        public static void GetDukeMaximoUnits_List(StreamWriter writer, DateTime dt)
         {
             try
             {
@@ -164,7 +163,6 @@ namespace UnitTrackMaximo
                         WorkOrder_Id = Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString());
                         WorkOrder_Number = ds.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
 
-                        //GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
                         GetDukeMaximoUnits_Details(WorkOrder_Id, WorkOrder_Number, writer);
 
                     }
@@ -260,7 +258,7 @@ namespace UnitTrackMaximo
 
                     if (dyArray.Count != null)
                     {
-                        clsDAL.DeleteCPR_Data(WorkOrder_Id);
+                        clsDAL.DukeMaximoUnits_Delete(WorkOrder_Id);
                         for (int i = 0; i < dyArray.Count; i++)
                         {
                             for (int j = 0; j < dyArray[i].CPR_Lines.Count; j++)
@@ -335,9 +333,9 @@ namespace UnitTrackMaximo
                                     if (dyArray[i].CPR_Lines[j].GL_Debit_Account != null)
                                         GL_Debit_Account = dyArray[i].CPR_Lines[i].GL_Debit_Account.ToString();
 
-                                    //CPR Details
+                                        //CPR Details
 
-                                    int res = clsDAL.CPR_Data_Create(ReportDate, Site, Vendor, Vendor_Name, CPR, Payment_Type, Contract, Status, CurrentCprStatusDate, Total_Cost, Vendor_Invoice_Num, CPR_Created_Date, CPR_Submit_Date, CPR_Type, Derived_Contract, WorkStartDate, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WorkOrder_Id);
+                                    int res = clsDAL.DukeMaximoUnits_Create(ReportDate, Site, Vendor, Vendor_Name, CPR, Payment_Type, Contract, Status, CurrentCprStatusDate, Total_Cost, Vendor_Invoice_Num, CPR_Created_Date, CPR_Submit_Date, CPR_Type, Derived_Contract, WorkStartDate, Line, WO_Task_Num, Service_Item, PrLine_Description, PRLineQuantity, Order_Unit, Unit_Cost, Line_Cost, GL_Debit_Account, WorkOrder_Id);
 
                                     if (Count == dyArray[i].CPR_Lines.Count)
                                     {
@@ -470,6 +468,7 @@ namespace UnitTrackMaximo
                     }
                     catch (Exception exp)
                     {
+                        clsDAL.WorkOrder_StatusUpdate_Error(WorkOrder_Id,"SubTask Failure",exp.Message.ToString());
                         writer.WriteLine("UnitTrack Maximo GetSubTaskNumber_Oracle Failure");
                         Console.WriteLine("GetSubTaskNumber_Oracle - Failure" + exp.Message.ToString());
                         writer.WriteLine("GetSubTaskNumber_Oracle - Failure" + exp.Message.ToString());
@@ -648,6 +647,9 @@ namespace UnitTrackMaximo
                         string LEGALENTITY = dynamicObject.LEGAL_ENTITY.ToString();
                         string BUSINESSUNIT = dynamicObject.BUSINESS_UNIT.ToString();
 
+                        //Delete NLR Data if already Exist
+                        clsDAL.NLR_Data_Delete(Compatible_Unit_Id);
+
                         int res = clsDAL.NLR_Create(PARAM_PROJ_TO_BILL, PARAM_WONO_TO_BILL, PARAM_SUBTASK_TO_BILL, PARAM_UNIT_TO_BILL, PARAM_QUANTITY, PARAM_WE_DATE, ERROR_CODES, ORACLE_TASK_NO, ORACLE_SUBTASK, PARENT_BILLABLE_FLAG, SUBTASK_BILLABLE_CHARGEABLE_FLAG, RATE_SCHEDUL_ERROR, PROJ_TASK_DETAILS, PROJECT_NUMBER, PROJECT_NAME, SUBTASK_PROJECT, PARENT_WO_NUMBER, PARENT_WO_NAME, PARENT_BILLABLE, PARENT_CHARGEABLE, TOP_TASK_ID, SUBTASK_WO_NUMBER, SUBTASK_WO_NAME, SUBTASK_WO_BILLABLE, SUBTASK_WO_CHARGEABLE, CREW_LEADER, RATE_SCHEDULE_DETAILS, EXP_NAME, RATE_SCHEDULE_NAME, UNIT_NAME, RATE, UNIT_OF_MEASURE, RATE_START_DATE, RATE_END_DATE, FBDILOADER, EXPENDITUREDATE, PERSONNAME, PERSONNUMBER, HUMANRESOURCEASSIGNMENT, PROJECTNAME, PROJECTNUMBER, TASK_NAME, TASK_NUMBER, EXPENDITURETYPE, EXPENDITUREORGANIZATION, CONTRACTNUMBER, FUNDINGSOURCENUMBER, NONLABORRESOURCE, NONLABORRESOURCEORGANIZATION, QUANTITY, WORKTYPE, ADDITIONALINFO, PROJID, NLRID, TASKID, EXISTINGQTYINPPM, REGION, LEGALENTITY, BUSINESSUNIT, Compatible_Unit_Id);
 
                         if (ds.Tables[0].Rows.Count == Count)
@@ -761,33 +763,8 @@ namespace UnitTrackMaximo
                             RestResponse PPMresponse = PPMclient.Execute(PPMrequest);
                             writer.WriteLine("PPM Response to get TransactionNumber : " + PPMresponse.Content);
 
-                            if (PPMresponse.StatusCode == System.Net.HttpStatusCode.OK)
-                            {
-                                //Update the PPM Status
-                                string Result = PPMresponse.Content!.ToString();
-                                dynamic dyArray = JsonConvert.DeserializeObject<dynamic>(PPMresponse.Content!)!;
-
-                                if (dyArray.count != 0)
-                                    TransactionNumber = dyArray.items[0].TransactionNumber.ToString();
-
-                                writer.WriteLine("TransactionNumber : " + TransactionNumber);
-                                Console.WriteLine("TransactionNumber : " + TransactionNumber);
-
-                                if (TransactionNumber != null && TransactionNumber != "" && TransactionNumber != "0")
-                                {
-                                    RecordFlag = 0;
-
-                                    writer.WriteLine("Updating the Details Record with the Transaction Number into Dynamics for Detail ID= " + DetailRecordId);
-
-                                    oracle_status_details = "Success";
-                                    oracle_message_details = "Transaction Number Updated";
-
-                                    clsDAL.NLR_DataUpdate(TransactionNumber, oracle_status_details, oracle_message_details, UnprocessTransactionId, DetailRecordId);
-                                }
-                            }
 
                             #endregion
-
                             if (RecordFlag == 1)
                             {
 
