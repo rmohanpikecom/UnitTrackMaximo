@@ -58,15 +58,15 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                //dt = Convert.ToDateTime("03/06/2024");
+                dt = Convert.ToDateTime("03/14/2024");
 
                 //GetWorkorders_DYN(Writer, dt);
 
-                GetDukeMaximoUnits_List(Writer, dt);
+                //GetDukeMaximoUnits_List(Writer, dt);
 
                 //GetSubTaskNumber_Oracle(Writer, dt);
 
-                //GetNLRData_Oracle(Writer, dt);
+                GetNLRData_Oracle(Writer, dt);
 
                 //GetOracle_WorkORderList(Writer, dt);
 
@@ -119,6 +119,8 @@ namespace UnitTrackMaximo
                             Project_SubTask_Flag = Convert.ToInt32(dsProjectTask.Tables[0].Rows[i]["Project_SubTask_Flag"].ToString()!);
 
                             int res = clsDAL.Dynamics_WorkOrder_Create(Parent_Task_Number, Parent_Task_Id, Project_Number, Project_Id, BusinessUnitName, ProcessDate, Project_SubTask_Flag);
+
+
                         }
                         catch (Exception exp)
                         {
@@ -721,7 +723,7 @@ namespace UnitTrackMaximo
             {
                 if (dsDetails.Tables[0].Rows.Count > 0)
                 {
-                    int RecordCount = 0;
+                    int RecordCount = 1;
                     for (int j = 0; j < dsDetails.Tables[0].Rows.Count; j++)
                     {
                         string oracle_status_details = "";

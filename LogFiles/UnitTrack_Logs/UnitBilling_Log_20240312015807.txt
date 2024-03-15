@@ -1,0 +1,8 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetDukeProjectTaskData - Started
+GetOracle_WorkORderList - Processing - 1 out of 2
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
+GetOracle_WorkORderList - Processing - 2 out of 2
+DynamicsPikeService (Create) - UnitTrackMaximo - Started
+DynamicsPikeService (Create) - UnitTrackMaximo - Completed
