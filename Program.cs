@@ -58,15 +58,15 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/14/2024");
+                dt = Convert.ToDateTime("03/15/2024");
 
-                //GetWorkorders_DYN(Writer, dt);
+                GetWorkorders_DYN(Writer, dt);
 
                 //GetDukeMaximoUnits_List(Writer, dt);
 
                 //GetSubTaskNumber_Oracle(Writer, dt);
 
-                GetNLRData_Oracle(Writer, dt);
+                //GetNLRData_Oracle(Writer, dt);
 
                 //GetOracle_WorkORderList(Writer, dt);
 
@@ -119,8 +119,12 @@ namespace UnitTrackMaximo
                             Project_SubTask_Flag = Convert.ToInt32(dsProjectTask.Tables[0].Rows[i]["Project_SubTask_Flag"].ToString()!);
 
                             int res = clsDAL.Dynamics_WorkOrder_Create(Parent_Task_Number, Parent_Task_Id, Project_Number, Project_Id, BusinessUnitName, ProcessDate, Project_SubTask_Flag);
-
-
+                            //int res = 0;
+                            if (res > 0)
+                            {
+                                //update workorder status in dynamics
+                                UpdateWorkorderStatus(Parent_Task_Number);
+                            }
                         }
                         catch (Exception exp)
                         {
@@ -974,6 +978,77 @@ namespace UnitTrackMaximo
             return strEss_Job_Result!;
         }
         #endregion       
+
+        #region UpdateWorkorderStatus
+        public static string UpdateWorkorderStatus(string WorkorderNumber)
+        {
+            try
+            {
+                string Token = Dyn_GetToken();
+                string msdyn_workorderid = "";
+                string WorkorderName = "";
+                string WorkorderStatus = "No";
+
+                string SuccessFalg = "Failure";
+
+                //Get the WorkorderList
+
+                var options = new RestClientOptions(Dynamics_Url)
+                {
+                    MaxTimeout = -1,
+                };
+                var client = new RestClient(options);                
+                var request = new RestRequest("/api/data/v9.2/msdyn_workorders?$select=hsl_readyforbillingoraclestatus,msdyn_workorderid,hsl_workorderid&$filter=hsl_workorderid eq " + "'"+ WorkorderNumber + "'", Method.Get);
+                request.AddHeader("OData-MaxVersion", "4.0");
+                request.AddHeader("OData-Version", "4.0");
+                request.AddHeader("Content-Type", "application/json; charset=utf-8");
+                request.AddHeader("Accept", "application/json");
+                request.AddHeader("Prefer", "odata.include-annotations=*");
+                request.AddHeader("Authorization", "Bearer " + Token);               
+                RestResponse response = client.Execute(request);
+                if (response.Content != "" && response.StatusCode.ToString() == "OK")
+                {
+                    dynamic HArray = JObject.Parse(response.Content!);
+                    msdyn_workorderid = HArray.value[0].msdyn_workorderid.ToString();
+                    WorkorderName = HArray.value[0].hsl_workorderid.ToString();
+                }
+
+
+                //Update the Workorder status
+                if (msdyn_workorderid != "")
+                {
+                    var msdyn_options = new RestClientOptions(Dynamics_Url)
+                    {
+                        MaxTimeout = -1,
+                    };
+                    var msdyn_client = new RestClient(msdyn_options);
+                    var msdyn_request = new RestRequest("/api/data/v9.2/msdyn_workorders("+ msdyn_workorderid +")", Method.Patch);
+                    msdyn_request.AddHeader("OData-MaxVersion", "4.0");
+                    msdyn_request.AddHeader("OData-Version", "4.0");
+                    msdyn_request.AddHeader("Content-Type", "application/json; charset=utf-8");
+                    msdyn_request.AddHeader("Accept", "application/json");
+                    msdyn_request.AddHeader("Prefer", "odata.include-annotations=*");
+                    msdyn_request.AddHeader("Authorization", "Bearer " + Token);
+
+                    var body = "{"
+                      + "\"hsl_readyforbillingoraclestatus\":\"" + WorkorderStatus + "\"}";
+                    msdyn_request.AddStringBody(body, DataFormat.Json);
+                    RestResponse msdyn_response = msdyn_client.Execute(msdyn_request);
+                    if (msdyn_response.Content != "" && msdyn_response.StatusCode.ToString() == "Created" || msdyn_response.StatusCode.ToString() == "NoContent")
+                    {
+                        SuccessFalg = "Success";
+                    }
+
+                }
+                return SuccessFalg;
+            }
+            catch (Exception exp)
+            {
+
+                throw new Exception(exp.Message);
+            }
+        }
+        #endregion
 
         #region GetToken
         public static string GetToken()

@@ -1,0 +1,8 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetWorkorders_DYN - Started
+GetWorkorders_DYN - Processing - 1 out of 767
+GetWorkorders_DYN - Processing - 2 out of 767
+GetWorkorders_DYN - Processing - 3 out of 767
+GetWorkorders_DYN - Processing - 4 out of 767
+GetWorkorders_DYN - Processing - 5 out of 767
+GetWorkorders_DYN - Processing - 6 out of 767
