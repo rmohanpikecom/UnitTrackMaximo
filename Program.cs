@@ -58,11 +58,11 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/15/2024");
+                dt = Convert.ToDateTime("03/18/2024");
 
                 GetWorkorders_DYN(Writer, dt);
 
-                //GetDukeMaximoUnits_List(Writer, dt);
+                GetDukeMaximoUnits_List(Writer, dt);
 
                 //GetSubTaskNumber_Oracle(Writer, dt);
 
@@ -119,7 +119,7 @@ namespace UnitTrackMaximo
                             Project_SubTask_Flag = Convert.ToInt32(dsProjectTask.Tables[0].Rows[i]["Project_SubTask_Flag"].ToString()!);
 
                             int res = clsDAL.Dynamics_WorkOrder_Create(Parent_Task_Number, Parent_Task_Id, Project_Number, Project_Id, BusinessUnitName, ProcessDate, Project_SubTask_Flag);
-                            //int res = 0;
+                            
                             if (res > 0)
                             {
                                 //update workorder status in dynamics
@@ -386,7 +386,7 @@ namespace UnitTrackMaximo
                 writer.WriteLine("DynamicsPikeService - " + AppName + " - GetSubTaskNumber_Oracle - Started");
                 Console.WriteLine("DynamicsPikeService - " + AppName + " - GetSubTaskNumber_Oracle - Started");
 
-                DataSet ds = clsDAL.WorkOrder_GetList(2, dt);
+                DataSet ds = clsDAL.WorkOrder_GetList_SubTask(dt);
                 int WorkOrder_Id = 0;
 
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -399,78 +399,71 @@ namespace UnitTrackMaximo
                         WorkOrder_Id = Convert.ToInt32(ds.Tables[0].Rows[i]["WorkOrder_Id"].ToString())!;
                         string ProjectNumber = ds.Tables[0].Rows[i]["Project_Number"].ToString()!;
                         string TaskNumber = ds.Tables[0].Rows[i]["Parent_Task_Number"].ToString()!;
-                        string Project_SubTask_Flag = ds.Tables[0].Rows[i]["Project_SubTask_Flag"].ToString()!;
+                        int Project_SubTask_Flag = Convert.ToInt32(ds.Tables[0].Rows[i]["Project_SubTask_Flag"].ToString()!)+1;
 
-                        if (Project_SubTask_Flag == "1")
+                        string OracleWrapperUrl = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperUrl"]!.ToString();
+                        string OracleWrapperSubUrl = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperSubUrl"]!.ToString();
+                        string OracleWrapperEnvironment = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperEnvironment"]!.ToString();
+
+                        var configuration = new ConfigurationBuilder()
+                            .AddJsonFile("DBQueries.json", optional: false, reloadOnChange: true)
+                            .AddEnvironmentVariables()
+                            .Build();
+                        string cmd = configuration.GetSection("qryOracleSubTaskData").Value!.Replace("@ProjectNumber", "'" + ProjectNumber + "'").Replace("@TaskNumber", "'" + TaskNumber + "'").Replace("@Project_SubTask_Flag", "'" + Project_SubTask_Flag + "'");
+
+                        var options = new RestClientOptions(OracleWrapperUrl)
                         {
-                            string OracleWrapperUrl = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperUrl"]!.ToString();
-                            string OracleWrapperSubUrl = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperSubUrl"]!.ToString();
-                            string OracleWrapperEnvironment = System.Configuration.ConfigurationManager.AppSettings["OracleWrapperEnvironment"]!.ToString();
-
-                            var configuration = new ConfigurationBuilder()
-                               .AddJsonFile("DBQueries.json", optional: false, reloadOnChange: true)
-                               .AddEnvironmentVariables()
-                               .Build();
-                            string cmd = configuration.GetSection("qryOracleSubTaskData").Value!.Replace("@ProjectNumber", "'" + ProjectNumber + "'").Replace("@TaskNumber", "'" + TaskNumber + "'");
-
-                            var options = new RestClientOptions(OracleWrapperUrl)
-                            {
-                                MaxTimeout = -1,
-                            };
-                            var client = new RestClient(options);
-                            var request = new RestRequest(OracleWrapperSubUrl, Method.Post);
-                            request.AddHeader("Content-Type", "application/json");
-                            var body = "{ "
-                                                          + "\"env\":\"" + OracleWrapperEnvironment + "\","
-                                                          + "\"format\":\"xml\","
-                                                          + "\"query\":\"" + cmd + "\"}";
+                            MaxTimeout = -1,
+                        };
+                        var client = new RestClient(options);
+                        var request = new RestRequest(OracleWrapperSubUrl, Method.Post);
+                        request.AddHeader("Content-Type", "application/json");
+                        var body = "{ "
+                                                        + "\"env\":\"" + OracleWrapperEnvironment + "\","
+                                                        + "\"format\":\"xml\","
+                                                        + "\"query\":\"" + cmd + "\"}";
 
 
 
-                            request.AddStringBody(body, DataFormat.Json);
-                            RestResponse response = client.Execute(request);
+                        request.AddStringBody(body, DataFormat.Json);
+                        RestResponse response = client.Execute(request);
 
-                            string data = response.Content!.ToString();
-                            string replaceWith = "";
+                        string data = response.Content!.ToString();
+                        string replaceWith = "";
 
-                            //string xml = "\"\r\n<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n\r\n<!--Generated by Oracle Analytics Publisher -Dataengine, datamodel:_Custom_EDW_Synapse_Live_Sync_Live_Data_Model_FSCM_xdm -->\\n\r\n<ROWSET>\\n\r\n    <ROW>\\n\r\n        <PARAM_PROJ_TO_BILL>23-01219-000</PARAM_PROJ_TO_BILL>\\n\r\n        <PARAM_WONO_TO_BILL>10012889</PARAM_WONO_TO_BILL>\\n\r\n        <PARAM_SUBTASK_TO_BILL>44107-10012889</PARAM_SUBTASK_TO_BILL>\\n\r\n        <PARAM_UNIT_TO_BILL>OAA01-MAN HOUR RATE PER MAN OH</PARAM_UNIT_TO_BILL>\\n\r\n        <PARAM_QUANTITY>10</PARAM_QUANTITY>\\n\r\n        <PARAM_WE_DATE>2023-01-22</PARAM_WE_DATE>\\n\r\n        <ERROR_CODES>ERROR CODES-&gt;</ERROR_CODES>\\n\r\n        <ORACLE_TASK_NO></ORACLE_TASK_NO>\\n\r\n        <ORACLE_SUBTASK>Project Requires Billable Subtask Name</ORACLE_SUBTASK>\\n\r\n        <PARENT_BILLABLE_FLAG>Parent Task Must be Billable=Y</PARENT_BILLABLE_FLAG>\\n\r\n        <SUBTASK_BILLABLE_CHARGEABLE_FLAG>Subtask Not Found</SUBTASK_BILLABLE_CHARGEABLE_FLAG>\\n\r\n        <RATE_SCHEDUL_ERROR></RATE_SCHEDUL_ERROR>\\n\r\n        <PROJ_TASK_DETAILS>PROJ_TASK DETAILS-&gt;</PROJ_TASK_DETAILS>\\n\r\n        <PROJECT_NUMBER>23-01219-000</PROJECT_NUMBER>\\n\r\n        <PROJECT_NAME>23-01219-000 OHD FL BOCA RATON</PROJECT_NAME>\\n\r\n        <SUBTASK_PROJECT>Y</SUBTASK_PROJECT>\\n\r\n        <PARENT_WO_NUMBER>10012889</PARENT_WO_NUMBER>\\n\r\n        <PARENT_WO_NAME>10012889</PARENT_WO_NAME>\\n\r\n        <PARENT_BILLABLE>N</PARENT_BILLABLE>\\n\r\n        <PARENT_CHARGEABLE>N</PARENT_CHARGEABLE>\\n\r\n        <TOP_TASK_ID></TOP_TASK_ID>\\n\r\n        <SUBTASK_WO_NUMBER></SUBTASK_WO_NUMBER>\\n\r\n        <SUBTASK_WO_NAME></SUBTASK_WO_NAME>\\n\r\n        <SUBTASK_WO_BILLABLE></SUBTASK_WO_BILLABLE>\\n\r\n        <SUBTASK_WO_CHARGEABLE></SUBTASK_WO_CHARGEABLE>\\n\r\n        <CREW_LEADER></CREW_LEADER>\\n\r\n        <RATE_SCHEDULE_DETAILS>RATE SCHEDULE DETAIL-&gt;</RATE_SCHEDULE_DETAILS>\\n\r\n        <EXP_NAME>Unit Production</EXP_NAME>\\n\r\n        <RATE_SCHEDULE_NAME>2023-FPL</RATE_SCHEDULE_NAME>\\n\r\n        <UNIT_NAME>50|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR</UNIT_NAME>\\n\r\n        <RATE>135.02</RATE>\\n\r\n        <UNIT_OF_MEASURE>HOURS</UNIT_OF_MEASURE>\\n\r\n        <RATE_START_DATE>2023-01-02</RATE_START_DATE>\\n\r\n        <RATE_END_DATE></RATE_END_DATE>\\n\r\n        <FBDILOADER>FBDI</FBDILOADER>\\n\r\n        <EXPENDITUREDATE>2023-01-22</EXPENDITUREDATE>\\n\r\n        <PERSONNAME></PERSONNAME>\\n\r\n        <PERSONNUMBER></PERSONNUMBER>\\n\r\n        <HUMANRESOURCEASSIGNMENT></HUMANRESOURCEASSIGNMENT>\\n\r\n        <PROJECTNAME>23-01219-000 OHD FL BOCA RATON</PROJECTNAME>\\n\r\n        <PROJECTNUMBER>23-01219-000</PROJECTNUMBER>\\n\r\n        <TASK_NAME></TASK_NAME>\\n\r\n        <TASK_NUMBER></TASK_NUMBER>\\n\r\n        <EXPENDITURETYPE>Unit Production</EXPENDITURETYPE>\\n\r\n        <EXPENDITUREORGANIZATION>Florida</EXPENDITUREORGANIZATION>\\n\r\n        <CONTRACTNUMBER></CONTRACTNUMBER>\\n\r\n        <FUNDINGSOURCENUMBER></FUNDINGSOURCENUMBER>\\n\r\n        <NONLABORRESOURCE>50|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR</NONLABORRESOURCE>\\n\r\n        <NONLABORRESOURCEORGANIZATION>PIKE Project Unit Org</NONLABORRESOURCEORGANIZATION>\\n\r\n        <QUANTITY>10</QUANTITY>\\n\r\n        <WORKTYPE></WORKTYPE>\\n\r\n        <ADDITIONALINFO>Additional Info</ADDITIONALINFO>\\n\r\n        <PROJID>300002425947378</PROJID>\\n\r\n        <NLRID>300000013044500</NLRID>\\n\r\n        <TASKID>100007676556772</TASKID>\\n\r\n        <EXISTINGQTYINPPM></EXISTINGQTYINPPM>\\n\r\n        <REGION>Florida</REGION>\\n\r\n        <LEGALENTITY>Pike Electric, LLC</LEGALENTITY>\\n\r\n        <BUSINESSUNIT>Pike Business Unit</BUSINESSUNIT>\\n\r\n    </ROW>\\n\r\n</ROWSET>\\n\"";
+                        //string xml = "\"\r\n<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n\r\n<!--Generated by Oracle Analytics Publisher -Dataengine, datamodel:_Custom_EDW_Synapse_Live_Sync_Live_Data_Model_FSCM_xdm -->\\n\r\n<ROWSET>\\n\r\n    <ROW>\\n\r\n        <PARAM_PROJ_TO_BILL>23-01219-000</PARAM_PROJ_TO_BILL>\\n\r\n        <PARAM_WONO_TO_BILL>10012889</PARAM_WONO_TO_BILL>\\n\r\n        <PARAM_SUBTASK_TO_BILL>44107-10012889</PARAM_SUBTASK_TO_BILL>\\n\r\n        <PARAM_UNIT_TO_BILL>OAA01-MAN HOUR RATE PER MAN OH</PARAM_UNIT_TO_BILL>\\n\r\n        <PARAM_QUANTITY>10</PARAM_QUANTITY>\\n\r\n        <PARAM_WE_DATE>2023-01-22</PARAM_WE_DATE>\\n\r\n        <ERROR_CODES>ERROR CODES-&gt;</ERROR_CODES>\\n\r\n        <ORACLE_TASK_NO></ORACLE_TASK_NO>\\n\r\n        <ORACLE_SUBTASK>Project Requires Billable Subtask Name</ORACLE_SUBTASK>\\n\r\n        <PARENT_BILLABLE_FLAG>Parent Task Must be Billable=Y</PARENT_BILLABLE_FLAG>\\n\r\n        <SUBTASK_BILLABLE_CHARGEABLE_FLAG>Subtask Not Found</SUBTASK_BILLABLE_CHARGEABLE_FLAG>\\n\r\n        <RATE_SCHEDUL_ERROR></RATE_SCHEDUL_ERROR>\\n\r\n        <PROJ_TASK_DETAILS>PROJ_TASK DETAILS-&gt;</PROJ_TASK_DETAILS>\\n\r\n        <PROJECT_NUMBER>23-01219-000</PROJECT_NUMBER>\\n\r\n        <PROJECT_NAME>23-01219-000 OHD FL BOCA RATON</PROJECT_NAME>\\n\r\n        <SUBTASK_PROJECT>Y</SUBTASK_PROJECT>\\n\r\n        <PARENT_WO_NUMBER>10012889</PARENT_WO_NUMBER>\\n\r\n        <PARENT_WO_NAME>10012889</PARENT_WO_NAME>\\n\r\n        <PARENT_BILLABLE>N</PARENT_BILLABLE>\\n\r\n        <PARENT_CHARGEABLE>N</PARENT_CHARGEABLE>\\n\r\n        <TOP_TASK_ID></TOP_TASK_ID>\\n\r\n        <SUBTASK_WO_NUMBER></SUBTASK_WO_NUMBER>\\n\r\n        <SUBTASK_WO_NAME></SUBTASK_WO_NAME>\\n\r\n        <SUBTASK_WO_BILLABLE></SUBTASK_WO_BILLABLE>\\n\r\n        <SUBTASK_WO_CHARGEABLE></SUBTASK_WO_CHARGEABLE>\\n\r\n        <CREW_LEADER></CREW_LEADER>\\n\r\n        <RATE_SCHEDULE_DETAILS>RATE SCHEDULE DETAIL-&gt;</RATE_SCHEDULE_DETAILS>\\n\r\n        <EXP_NAME>Unit Production</EXP_NAME>\\n\r\n        <RATE_SCHEDULE_NAME>2023-FPL</RATE_SCHEDULE_NAME>\\n\r\n        <UNIT_NAME>50|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR</UNIT_NAME>\\n\r\n        <RATE>135.02</RATE>\\n\r\n        <UNIT_OF_MEASURE>HOURS</UNIT_OF_MEASURE>\\n\r\n        <RATE_START_DATE>2023-01-02</RATE_START_DATE>\\n\r\n        <RATE_END_DATE></RATE_END_DATE>\\n\r\n        <FBDILOADER>FBDI</FBDILOADER>\\n\r\n        <EXPENDITUREDATE>2023-01-22</EXPENDITUREDATE>\\n\r\n        <PERSONNAME></PERSONNAME>\\n\r\n        <PERSONNUMBER></PERSONNUMBER>\\n\r\n        <HUMANRESOURCEASSIGNMENT></HUMANRESOURCEASSIGNMENT>\\n\r\n        <PROJECTNAME>23-01219-000 OHD FL BOCA RATON</PROJECTNAME>\\n\r\n        <PROJECTNUMBER>23-01219-000</PROJECTNUMBER>\\n\r\n        <TASK_NAME></TASK_NAME>\\n\r\n        <TASK_NUMBER></TASK_NUMBER>\\n\r\n        <EXPENDITURETYPE>Unit Production</EXPENDITURETYPE>\\n\r\n        <EXPENDITUREORGANIZATION>Florida</EXPENDITUREORGANIZATION>\\n\r\n        <CONTRACTNUMBER></CONTRACTNUMBER>\\n\r\n        <FUNDINGSOURCENUMBER></FUNDINGSOURCENUMBER>\\n\r\n        <NONLABORRESOURCE>50|OAA01-MAN HOUR RATE PER MAN OH|N|INSTALL|108|HOUR</NONLABORRESOURCE>\\n\r\n        <NONLABORRESOURCEORGANIZATION>PIKE Project Unit Org</NONLABORRESOURCEORGANIZATION>\\n\r\n        <QUANTITY>10</QUANTITY>\\n\r\n        <WORKTYPE></WORKTYPE>\\n\r\n        <ADDITIONALINFO>Additional Info</ADDITIONALINFO>\\n\r\n        <PROJID>300002425947378</PROJID>\\n\r\n        <NLRID>300000013044500</NLRID>\\n\r\n        <TASKID>100007676556772</TASKID>\\n\r\n        <EXISTINGQTYINPPM></EXISTINGQTYINPPM>\\n\r\n        <REGION>Florida</REGION>\\n\r\n        <LEGALENTITY>Pike Electric, LLC</LEGALENTITY>\\n\r\n        <BUSINESSUNIT>Pike Business Unit</BUSINESSUNIT>\\n\r\n    </ROW>\\n\r\n</ROWSET>\\n\"";
 
-                            data = Regex.Replace(data, "^\"|\"$", "");
-                            data = data.Replace(System.Environment.NewLine, replaceWith);
-                            data = data.Replace("\r\n", replaceWith).Replace("\\n", replaceWith).Replace("\r", replaceWith).Replace("version=\\\"1.0\\\"", "version=\"1.0\"").Replace("encoding=\\\"UTF-8\\\"", "encoding=\"UTF-8\"");
+                        data = Regex.Replace(data, "^\"|\"$", "");
+                        data = data.Replace(System.Environment.NewLine, replaceWith);
+                        data = data.Replace("\r\n", replaceWith).Replace("\\n", replaceWith).Replace("\r", replaceWith).Replace("version=\\\"1.0\\\"", "version=\"1.0\"").Replace("encoding=\\\"UTF-8\\\"", "encoding=\"UTF-8\"");
 
 
 
 
-                            XmlDocument doc = new XmlDocument();
-                            doc.LoadXml(data);
+                        XmlDocument doc = new XmlDocument();
+                        doc.LoadXml(data);
 
-                            var json = JsonConvert.SerializeXmlNode(doc, (Newtonsoft.Json.Formatting)System.Xml.Formatting.None, true);
-                            json = json.Replace("\"?xml\":{\"@version\":\"1.0\",\"@encoding\":\"UTF-8\"}{\"ROW\":", "");
-                            json = json.Trim().TrimEnd('}');
-                            json = json + "}";
-                            dynamic dyArray = JObject.Parse(json);
-                            var dynamicObject = JsonConvert.DeserializeObject<dynamic>(json)!;
+                        var json = JsonConvert.SerializeXmlNode(doc, (Newtonsoft.Json.Formatting)System.Xml.Formatting.None, true);
+                        json = json.Replace("\"?xml\":{\"@version\":\"1.0\",\"@encoding\":\"UTF-8\"}{\"ROW\":", "");
+                        json = json.Trim().TrimEnd('}');
+                        json = json + "}";
+                        dynamic dyArray = JObject.Parse(json);
+                        var dynamicObject = JsonConvert.DeserializeObject<dynamic>(json)!;
 
 
-                            string Project_Number = dynamicObject.PROJECT_NUMBER.ToString();
-                            string Sub_Task_Project_Flag = dynamicObject.SUBTASK_PROJECT_FLAG.ToString();
-                            string Task_WBS_Level = dynamicObject.WBS_LEVEL.ToString();
-                            string Parent_Task_Number = dynamicObject.PARENT_TASK_NO.ToString();
-                            string Sub_Task_Number = dynamicObject.TASK_NUMBER.ToString();
-                            string Sub_Task_Name = dynamicObject.TASK_NAME.ToString();
-                            string Sub_Task_Id = dynamicObject.TASK_ID.ToString();
-                            string Sub_Task_Billable_Flag = dynamicObject.CHARGEABLE_FLAG.ToString();
-                            string Sub_Task_Crew_Leader = dynamicObject.CREW_LEADER.ToString();
+                        string Project_Number = dynamicObject.PROJECT_NUMBER.ToString();
+                        string Sub_Task_Project_Flag = dynamicObject.SUBTASK_PROJECT_FLAG.ToString();
+                        string Task_WBS_Level = dynamicObject.WBS_LEVEL.ToString();
+                        string Parent_Task_Number = dynamicObject.PARENT_TASK_NO.ToString();
+                        string Sub_Task_Number = dynamicObject.TASK_NUMBER.ToString();
+                        string Sub_Task_Name = dynamicObject.TASK_NAME.ToString();
+                        string Sub_Task_Id = dynamicObject.TASK_ID.ToString();
+                        string Sub_Task_Billable_Flag = dynamicObject.CHARGEABLE_FLAG.ToString();
+                        string Sub_Task_Crew_Leader = dynamicObject.CREW_LEADER.ToString();
 
-                            clsDAL.WorkOrder_Update_SubTaskDetails(WorkOrder_Id, Sub_Task_Number, Sub_Task_Name, Sub_Task_Id, Sub_Task_Billable_Flag, Sub_Task_Crew_Leader, Sub_Task_Project_Flag);
-                            clsDAL.WorkOrder_StatusUpdate(WorkOrder_Id, 3);
-                        }
-                        else if(Project_SubTask_Flag == "0")
-                        {
-                            clsDAL.WorkOrder_Update_SubTaskDetails(WorkOrder_Id, "", "", "", "", "", "N");
-                            clsDAL.WorkOrder_StatusUpdate(WorkOrder_Id, 3);
-                        }
+                        clsDAL.WorkOrder_Update_SubTaskDetails(WorkOrder_Id, Sub_Task_Number, Sub_Task_Name, Sub_Task_Id, Sub_Task_Billable_Flag, Sub_Task_Crew_Leader, Sub_Task_Project_Flag);
+                        clsDAL.WorkOrder_StatusUpdate(WorkOrder_Id, 3);
+
                     }
                     catch (Exception exp)
                     {
@@ -987,7 +980,8 @@ namespace UnitTrackMaximo
                 string Token = Dyn_GetToken();
                 string msdyn_workorderid = "";
                 string WorkorderName = "";
-                string WorkorderStatus = "No";
+                string WorkorderStatus = "Completed";
+                string WorkorderStatusFlag = "false";
 
                 string SuccessFalg = "Failure";
 
@@ -1031,7 +1025,8 @@ namespace UnitTrackMaximo
                     msdyn_request.AddHeader("Authorization", "Bearer " + Token);
 
                     var body = "{"
-                      + "\"hsl_readyforbillingoraclestatus\":\"" + WorkorderStatus + "\"}";
+                    + "\"hsl_readyforbillingoraclestatus\":\"" + WorkorderStatus + "\" ,"
+                    + "\"hsl_readyforbilling\":\"" + WorkorderStatusFlag + "\" }";
                     msdyn_request.AddStringBody(body, DataFormat.Json);
                     RestResponse msdyn_response = msdyn_client.Execute(msdyn_request);
                     if (msdyn_response.Content != "" && msdyn_response.StatusCode.ToString() == "Created" || msdyn_response.StatusCode.ToString() == "NoContent")

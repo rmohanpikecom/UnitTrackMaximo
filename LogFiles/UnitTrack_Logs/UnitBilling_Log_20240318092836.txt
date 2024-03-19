@@ -1,0 +1,233 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetNLRDatatoOracle - Started
+Get NLR Work Orders - Processing - 1 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 16
+GetNLRData_Oracle_Details - Processing - 2 out of 16
+GetNLRData_Oracle_Details - Processing - 3 out of 16
+GetNLRData_Oracle_Details - Processing - 4 out of 16
+GetNLRData_Oracle_Details - Processing - 5 out of 16
+GetNLRData_Oracle_Details - Processing - 6 out of 16
+GetNLRData_Oracle_Details - Processing - 7 out of 16
+GetNLRData_Oracle_Details - Processing - 8 out of 16
+GetNLRData_Oracle_Details - Processing - 9 out of 16
+GetNLRData_Oracle_Details - Processing - 10 out of 16
+GetNLRData_Oracle_Details - Processing - 11 out of 16
+GetNLRData_Oracle_Details - Processing - 12 out of 16
+GetNLRData_Oracle_Details - Processing - 13 out of 16
+GetNLRData_Oracle_Details - Processing - 14 out of 16
+GetNLRData_Oracle_Details - Processing - 15 out of 16
+GetNLRData_Oracle_Details - Processing - 16 out of 16
+Get NLR Work Orders - Processing - 2 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 8
+GetNLRData_Oracle_Details - Processing - 2 out of 8
+GetNLRData_Oracle_Details - Processing - 3 out of 8
+GetNLRData_Oracle_Details - Processing - 4 out of 8
+GetNLRData_Oracle_Details - Processing - 5 out of 8
+GetNLRData_Oracle_Details - Processing - 6 out of 8
+GetNLRData_Oracle_Details - Processing - 7 out of 8
+GetNLRData_Oracle_Details - Processing - 8 out of 8
+Get NLR Work Orders - Processing - 3 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 24
+GetNLRData_Oracle_Details - Processing - 2 out of 24
+GetNLRData_Oracle_Details - Processing - 3 out of 24
+GetNLRData_Oracle_Details - Processing - 4 out of 24
+GetNLRData_Oracle_Details - Processing - 5 out of 24
+GetNLRData_Oracle_Details - Processing - 6 out of 24
+GetNLRData_Oracle_Details - Processing - 7 out of 24
+GetNLRData_Oracle_Details - Processing - 8 out of 24
+GetNLRData_Oracle_Details - Processing - 9 out of 24
+GetNLRData_Oracle_Details - Processing - 10 out of 24
+GetNLRData_Oracle_Details - Processing - 11 out of 24
+GetNLRData_Oracle_Details - Processing - 12 out of 24
+GetNLRData_Oracle_Details - Processing - 13 out of 24
+GetNLRData_Oracle_Details - Processing - 14 out of 24
+GetNLRData_Oracle_Details - Processing - 15 out of 24
+GetNLRData_Oracle_Details - Processing - 16 out of 24
+GetNLRData_Oracle_Details - Processing - 17 out of 24
+GetNLRData_Oracle_Details - Processing - 18 out of 24
+GetNLRData_Oracle_Details - Processing - 19 out of 24
+GetNLRData_Oracle_Details - Processing - 20 out of 24
+GetNLRData_Oracle_Details - Processing - 21 out of 24
+GetNLRData_Oracle_Details - Processing - 22 out of 24
+GetNLRData_Oracle_Details - Processing - 23 out of 24
+GetNLRData_Oracle_Details - Processing - 24 out of 24
+Get NLR Work Orders - Processing - 4 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 19
+GetNLRData_Oracle_Details - Processing - 2 out of 19
+GetNLRData_Oracle_Details - Processing - 3 out of 19
+GetNLRData_Oracle_Details - Processing - 4 out of 19
+GetNLRData_Oracle_Details - Processing - 5 out of 19
+GetNLRData_Oracle_Details - Processing - 6 out of 19
+GetNLRData_Oracle_Details - Processing - 7 out of 19
+GetNLRData_Oracle_Details - Processing - 8 out of 19
+GetNLRData_Oracle_Details - Processing - 9 out of 19
+GetNLRData_Oracle_Details - Processing - 10 out of 19
+GetNLRData_Oracle_Details - Processing - 11 out of 19
+GetNLRData_Oracle_Details - Processing - 12 out of 19
+GetNLRData_Oracle_Details - Processing - 13 out of 19
+GetNLRData_Oracle_Details - Processing - 14 out of 19
+GetNLRData_Oracle_Details - Processing - 15 out of 19
+GetNLRData_Oracle_Details - Processing - 16 out of 19
+GetNLRData_Oracle_Details - Processing - 17 out of 19
+GetNLRData_Oracle_Details - Processing - 18 out of 19
+GetNLRData_Oracle_Details - Processing - 19 out of 19
+Get NLR Work Orders - Processing - 5 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 19
+GetNLRData_Oracle_Details - Processing - 2 out of 19
+GetNLRData_Oracle_Details - Processing - 3 out of 19
+GetNLRData_Oracle_Details - Processing - 4 out of 19
+GetNLRData_Oracle_Details - Processing - 5 out of 19
+GetNLRData_Oracle_Details - Processing - 6 out of 19
+GetNLRData_Oracle_Details - Processing - 7 out of 19
+GetNLRData_Oracle_Details - Processing - 8 out of 19
+GetNLRData_Oracle_Details - Processing - 9 out of 19
+GetNLRData_Oracle_Details - Processing - 10 out of 19
+GetNLRData_Oracle_Details - Processing - 11 out of 19
+GetNLRData_Oracle_Details - Processing - 12 out of 19
+GetNLRData_Oracle_Details - Processing - 13 out of 19
+GetNLRData_Oracle_Details - Processing - 14 out of 19
+GetNLRData_Oracle_Details - Processing - 15 out of 19
+GetNLRData_Oracle_Details - Processing - 16 out of 19
+GetNLRData_Oracle_Details - Processing - 17 out of 19
+GetNLRData_Oracle_Details - Processing - 18 out of 19
+GetNLRData_Oracle_Details - Processing - 19 out of 19
+Get NLR Work Orders - Processing - 6 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 30
+GetNLRData_Oracle_Details - Processing - 2 out of 30
+GetNLRData_Oracle_Details - Processing - 3 out of 30
+GetNLRData_Oracle_Details - Processing - 4 out of 30
+GetNLRData_Oracle_Details - Processing - 5 out of 30
+GetNLRData_Oracle_Details - Processing - 6 out of 30
+GetNLRData_Oracle_Details - Processing - 7 out of 30
+GetNLRData_Oracle_Details - Processing - 8 out of 30
+GetNLRData_Oracle_Details - Processing - 9 out of 30
+GetNLRData_Oracle_Details - Processing - 10 out of 30
+GetNLRData_Oracle_Details - Processing - 11 out of 30
+GetNLRData_Oracle_Details - Processing - 12 out of 30
+GetNLRData_Oracle_Details - Processing - 13 out of 30
+GetNLRData_Oracle_Details - Processing - 14 out of 30
+GetNLRData_Oracle_Details - Processing - 15 out of 30
+GetNLRData_Oracle_Details - Processing - 16 out of 30
+GetNLRData_Oracle_Details - Processing - 17 out of 30
+GetNLRData_Oracle_Details - Processing - 18 out of 30
+GetNLRData_Oracle_Details - Processing - 19 out of 30
+GetNLRData_Oracle_Details - Processing - 20 out of 30
+GetNLRData_Oracle_Details - Processing - 21 out of 30
+GetNLRData_Oracle_Details - Processing - 22 out of 30
+GetNLRData_Oracle_Details - Processing - 23 out of 30
+GetNLRData_Oracle_Details - Processing - 24 out of 30
+GetNLRData_Oracle_Details - Processing - 25 out of 30
+GetNLRData_Oracle_Details - Processing - 26 out of 30
+GetNLRData_Oracle_Details - Processing - 27 out of 30
+GetNLRData_Oracle_Details - Processing - 28 out of 30
+GetNLRData_Oracle_Details - Processing - 29 out of 30
+GetNLRData_Oracle_Details - Processing - 30 out of 30
+Get NLR Work Orders - Processing - 7 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 23
+GetNLRData_Oracle_Details - Processing - 2 out of 23
+GetNLRData_Oracle_Details - Processing - 3 out of 23
+GetNLRData_Oracle_Details - Processing - 4 out of 23
+GetNLRData_Oracle_Details - Processing - 5 out of 23
+GetNLRData_Oracle_Details - Processing - 6 out of 23
+GetNLRData_Oracle_Details - Processing - 7 out of 23
+GetNLRData_Oracle_Details - Processing - 8 out of 23
+GetNLRData_Oracle_Details - Processing - 9 out of 23
+GetNLRData_Oracle_Details - Processing - 10 out of 23
+GetNLRData_Oracle_Details - Processing - 11 out of 23
+GetNLRData_Oracle_Details - Processing - 12 out of 23
+GetNLRData_Oracle_Details - Processing - 13 out of 23
+GetNLRData_Oracle_Details - Processing - 14 out of 23
+GetNLRData_Oracle_Details - Processing - 15 out of 23
+GetNLRData_Oracle_Details - Processing - 16 out of 23
+GetNLRData_Oracle_Details - Processing - 17 out of 23
+GetNLRData_Oracle_Details - Processing - 18 out of 23
+GetNLRData_Oracle_Details - Processing - 19 out of 23
+GetNLRData_Oracle_Details - Processing - 20 out of 23
+GetNLRData_Oracle_Details - Processing - 21 out of 23
+GetNLRData_Oracle_Details - Processing - 22 out of 23
+GetNLRData_Oracle_Details - Processing - 23 out of 23
+Get NLR Work Orders - Processing - 8 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 22
+GetNLRData_Oracle_Details - Processing - 2 out of 22
+GetNLRData_Oracle_Details - Processing - 3 out of 22
+GetNLRData_Oracle_Details - Processing - 4 out of 22
+GetNLRData_Oracle_Details - Processing - 5 out of 22
+GetNLRData_Oracle_Details - Processing - 6 out of 22
+GetNLRData_Oracle_Details - Processing - 7 out of 22
+GetNLRData_Oracle_Details - Processing - 8 out of 22
+GetNLRData_Oracle_Details - Processing - 9 out of 22
+GetNLRData_Oracle_Details - Processing - 10 out of 22
+GetNLRData_Oracle_Details - Processing - 11 out of 22
+GetNLRData_Oracle_Details - Processing - 12 out of 22
+GetNLRData_Oracle_Details - Processing - 13 out of 22
+GetNLRData_Oracle_Details - Processing - 14 out of 22
+GetNLRData_Oracle_Details - Processing - 15 out of 22
+GetNLRData_Oracle_Details - Processing - 16 out of 22
+GetNLRData_Oracle_Details - Processing - 17 out of 22
+GetNLRData_Oracle_Details - Processing - 18 out of 22
+GetNLRData_Oracle_Details - Processing - 19 out of 22
+GetNLRData_Oracle_Details - Processing - 20 out of 22
+GetNLRData_Oracle_Details - Processing - 21 out of 22
+GetNLRData_Oracle_Details - Processing - 22 out of 22
+Get NLR Work Orders - Processing - 9 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 9
+GetNLRData_Oracle_Details - Processing - 2 out of 9
+GetNLRData_Oracle_Details - Processing - 3 out of 9
+GetNLRData_Oracle_Details - Processing - 4 out of 9
+GetNLRData_Oracle_Details - Processing - 5 out of 9
+GetNLRData_Oracle_Details - Processing - 6 out of 9
+GetNLRData_Oracle_Details - Processing - 7 out of 9
+GetNLRData_Oracle_Details - Processing - 8 out of 9
+GetNLRData_Oracle_Details - Processing - 9 out of 9
+Get NLR Work Orders - Processing - 10 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 12
+GetNLRData_Oracle_Details - Processing - 2 out of 12
+GetNLRData_Oracle_Details - Processing - 3 out of 12
+GetNLRData_Oracle_Details - Processing - 4 out of 12
+GetNLRData_Oracle_Details - Processing - 5 out of 12
+GetNLRData_Oracle_Details - Processing - 6 out of 12
+GetNLRData_Oracle_Details - Processing - 7 out of 12
+GetNLRData_Oracle_Details - Processing - 8 out of 12
+GetNLRData_Oracle_Details - Processing - 9 out of 12
+GetNLRData_Oracle_Details - Processing - 10 out of 12
+GetNLRData_Oracle_Details - Processing - 11 out of 12
+GetNLRData_Oracle_Details - Processing - 12 out of 12
+Get NLR Work Orders - Processing - 11 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 14
+GetNLRData_Oracle_Details - Processing - 2 out of 14
+GetNLRData_Oracle_Details - Processing - 3 out of 14
+GetNLRData_Oracle_Details - Processing - 4 out of 14
+GetNLRData_Oracle_Details - Processing - 5 out of 14
+GetNLRData_Oracle_Details - Processing - 6 out of 14
+GetNLRData_Oracle_Details - Processing - 7 out of 14
+GetNLRData_Oracle_Details - Processing - 8 out of 14
+GetNLRData_Oracle_Details - Processing - 9 out of 14
+GetNLRData_Oracle_Details - Processing - 10 out of 14
+GetNLRData_Oracle_Details - Processing - 11 out of 14
+GetNLRData_Oracle_Details - Processing - 12 out of 14
+GetNLRData_Oracle_Details - Processing - 13 out of 14
+GetNLRData_Oracle_Details - Processing - 14 out of 14
+Get NLR Work Orders - Processing - 12 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 11
+GetNLRData_Oracle_Details - Processing - 2 out of 11
+GetNLRData_Oracle_Details - Processing - 3 out of 11
+GetNLRData_Oracle_Details - Processing - 4 out of 11
+GetNLRData_Oracle_Details - Processing - 5 out of 11
+GetNLRData_Oracle_Details - Processing - 6 out of 11
+GetNLRData_Oracle_Details - Processing - 7 out of 11
+GetNLRData_Oracle_Details - Processing - 8 out of 11
+GetNLRData_Oracle_Details - Processing - 9 out of 11
+GetNLRData_Oracle_Details - Processing - 10 out of 11
+GetNLRData_Oracle_Details - Processing - 11 out of 11

@@ -1,0 +1,60 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetSubTaskNumber_Oracle - Started
+GetWorkorder SubTaskNumber - Processing - 1 out of 52
+GetWorkorder SubTaskNumber - Processing - 2 out of 52
+GetWorkorder SubTaskNumber - Processing - 3 out of 52
+GetWorkorder SubTaskNumber - Processing - 4 out of 52
+GetWorkorder SubTaskNumber - Processing - 5 out of 52
+GetWorkorder SubTaskNumber - Processing - 6 out of 52
+GetWorkorder SubTaskNumber - Processing - 7 out of 52
+GetWorkorder SubTaskNumber - Processing - 8 out of 52
+UnitTrack Maximo GetSubTaskNumber_Oracle Failure
+GetSubTaskNumber_Oracle - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+=========================================================================
+GetWorkorder SubTaskNumber - Processing - 9 out of 52
+GetWorkorder SubTaskNumber - Processing - 10 out of 52
+GetWorkorder SubTaskNumber - Processing - 11 out of 52
+UnitTrack Maximo GetSubTaskNumber_Oracle Failure
+GetSubTaskNumber_Oracle - FailureError reading JObject from JsonReader. Current JsonReader item is not an object: String. Path '', line 1, position 6.
+=========================================================================
+GetWorkorder SubTaskNumber - Processing - 12 out of 52
+GetWorkorder SubTaskNumber - Processing - 13 out of 52
+GetWorkorder SubTaskNumber - Processing - 14 out of 52
+GetWorkorder SubTaskNumber - Processing - 15 out of 52
+GetWorkorder SubTaskNumber - Processing - 16 out of 52
+GetWorkorder SubTaskNumber - Processing - 17 out of 52
+GetWorkorder SubTaskNumber - Processing - 18 out of 52
+GetWorkorder SubTaskNumber - Processing - 19 out of 52
+GetWorkorder SubTaskNumber - Processing - 20 out of 52
+GetWorkorder SubTaskNumber - Processing - 21 out of 52
+GetWorkorder SubTaskNumber - Processing - 22 out of 52
+GetWorkorder SubTaskNumber - Processing - 23 out of 52
+GetWorkorder SubTaskNumber - Processing - 24 out of 52
+GetWorkorder SubTaskNumber - Processing - 25 out of 52
+GetWorkorder SubTaskNumber - Processing - 26 out of 52
+GetWorkorder SubTaskNumber - Processing - 27 out of 52
+GetWorkorder SubTaskNumber - Processing - 28 out of 52
+GetWorkorder SubTaskNumber - Processing - 29 out of 52
+GetWorkorder SubTaskNumber - Processing - 30 out of 52
+GetWorkorder SubTaskNumber - Processing - 31 out of 52
+GetWorkorder SubTaskNumber - Processing - 32 out of 52
+GetWorkorder SubTaskNumber - Processing - 33 out of 52
+GetWorkorder SubTaskNumber - Processing - 34 out of 52
+GetWorkorder SubTaskNumber - Processing - 35 out of 52
+GetWorkorder SubTaskNumber - Processing - 36 out of 52
+GetWorkorder SubTaskNumber - Processing - 37 out of 52
+GetWorkorder SubTaskNumber - Processing - 38 out of 52
+GetWorkorder SubTaskNumber - Processing - 39 out of 52
+GetWorkorder SubTaskNumber - Processing - 40 out of 52
+GetWorkorder SubTaskNumber - Processing - 41 out of 52
+GetWorkorder SubTaskNumber - Processing - 42 out of 52
+GetWorkorder SubTaskNumber - Processing - 43 out of 52
+GetWorkorder SubTaskNumber - Processing - 44 out of 52
+GetWorkorder SubTaskNumber - Processing - 45 out of 52
+GetWorkorder SubTaskNumber - Processing - 46 out of 52
+GetWorkorder SubTaskNumber - Processing - 47 out of 52
+GetWorkorder SubTaskNumber - Processing - 48 out of 52
+GetWorkorder SubTaskNumber - Processing - 49 out of 52
+GetWorkorder SubTaskNumber - Processing - 50 out of 52
+GetWorkorder SubTaskNumber - Processing - 51 out of 52
+GetWorkorder SubTaskNumber - Processing - 52 out of 52

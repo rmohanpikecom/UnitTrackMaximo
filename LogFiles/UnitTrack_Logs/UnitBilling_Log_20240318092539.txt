@@ -1,0 +1,22 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetNLRDatatoOracle - Started
+Get NLR Work Orders - Processing - 1 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started
+GetNLRData_Oracle_Details - Processing - 1 out of 16
+GetNLRData_Oracle_Details - Processing - 2 out of 16
+GetNLRData_Oracle_Details - Processing - 3 out of 16
+GetNLRData_Oracle_Details - Processing - 4 out of 16
+GetNLRData_Oracle_Details - Processing - 5 out of 16
+GetNLRData_Oracle_Details - Processing - 6 out of 16
+GetNLRData_Oracle_Details - Processing - 7 out of 16
+GetNLRData_Oracle_Details - Processing - 8 out of 16
+GetNLRData_Oracle_Details - Processing - 9 out of 16
+GetNLRData_Oracle_Details - Processing - 10 out of 16
+GetNLRData_Oracle_Details - Processing - 11 out of 16
+GetNLRData_Oracle_Details - Processing - 12 out of 16
+GetNLRData_Oracle_Details - Processing - 13 out of 16
+GetNLRData_Oracle_Details - Processing - 14 out of 16
+GetNLRData_Oracle_Details - Processing - 15 out of 16
+GetNLRData_Oracle_Details - Processing - 16 out of 16
+Get NLR Work Orders - Processing - 2 out of 12
+DynamicsPikeService - UnitTrackMaximo - GetNLRData_Oracle_Details - Started

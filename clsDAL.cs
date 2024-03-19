@@ -82,6 +82,24 @@ namespace UnitTrackMaximo
         }
         #endregion
 
+        #region WorkOrder_GetList_SubTask
+        public static DataSet WorkOrder_GetList_SubTask(DateTime ProcessDate)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_WORKORDER_GETLIST_SUBTASK";
+
+            SqlParameter[] commandParameters =
+           {
+                new SqlParameter("@ProcessDate",SqlDbType.Date)
+            };
+            commandParameters[0].Value = ProcessDate;
+
+            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+            DataTable dt = ds.Tables[0];
+            return ds;
+        }
+        #endregion
+
         #region WorkOrder_StatusUpdate
         public static int WorkOrder_StatusUpdate(int WorkOrder_Id, int Status)
         {
