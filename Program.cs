@@ -58,17 +58,17 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/18/2024");
+                //dt = Convert.ToDateTime("03/18/2024");
 
                 GetWorkorders_DYN(Writer, dt);
 
                 GetDukeMaximoUnits_List(Writer, dt);
 
-                //GetSubTaskNumber_Oracle(Writer, dt);
+                GetSubTaskNumber_Oracle(Writer, dt);
 
-                //GetNLRData_Oracle(Writer, dt);
+                GetNLRData_Oracle(Writer, dt);
 
-                //GetOracle_WorkORderList(Writer, dt);
+                GetOracle_WorkORderList(Writer, dt);
 
                 //Writer.WriteLine("DynamicsPikeService - UnitBilling CREATE Started :" + DateTime.Now.ToString("yyyyMMddHHmmss"));
                 Writer.Close();
@@ -720,7 +720,7 @@ namespace UnitTrackMaximo
             {
                 if (dsDetails.Tables[0].Rows.Count > 0)
                 {
-                    int RecordCount = 1;
+                    int RecordCount = 0;
                     for (int j = 0; j < dsDetails.Tables[0].Rows.Count; j++)
                     {
                         string oracle_status_details = "";
@@ -841,6 +841,8 @@ namespace UnitTrackMaximo
 
                                 if (response.Content != "" && response.StatusCode.ToString() == "Created")
                                 {
+                                    
+
                                     dynamic dyArray = JsonConvert.DeserializeObject<dynamic>(response.Content!)!;
                                     writer.WriteLine("Oracle Response for Detail Transaction Record :  " + response.Content!);
 
@@ -865,11 +867,13 @@ namespace UnitTrackMaximo
                                 }
                             }
 
+                            RecordCount++;
+
                             if (dsDetails.Tables[0].Rows.Count == RecordCount)
                             {
                                 clsDAL.WorkOrder_StatusUpdate(Convert.ToInt32(WorkOrder_Id), 5);
                             }
-                            RecordCount++;
+                            
                         }
                         catch (Exception exp)
                         {
