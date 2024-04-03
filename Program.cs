@@ -886,8 +886,10 @@ namespace UnitTrackMaximo
                             clsDAL.NLR_DataUpdate("", oracle_status_details, oracle_message_details, "", DetailRecordId);
                         }
                     }
-
-
+                }
+                else
+                {
+                    clsDAL.WorkOrder_StatusUpdate(Convert.ToInt32(WorkOrder_Id), 5);
                 }
             }
             catch (Exception exp)
