@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Dynamic;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Threading.Tasks;
+using Spire.Xls;
 
 namespace UnitTrackMaximo
 {
@@ -58,17 +59,19 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                //dt = Convert.ToDateTime("03/18/2024");
+                dt = Convert.ToDateTime("03/28/2024");
 
-                GetWorkorders_DYN(Writer, dt);
+                //GetWorkorders_DYN(Writer, dt);
 
-                GetDukeMaximoUnits_List(Writer, dt);
+                //GetDukeMaximoUnits_List(Writer, dt);
 
-                GetSubTaskNumber_Oracle(Writer, dt);
+                //GetSubTaskNumber_Oracle(Writer, dt);
 
-                GetNLRData_Oracle(Writer, dt);
+                //GetNLRData_Oracle(Writer, dt);
 
-                GetOracle_WorkORderList(Writer, dt);
+                //GetOracle_WorkORderList(Writer, dt);
+
+                GetMaximoData_Mailing(Writer, dt);
 
                 //Writer.WriteLine("DynamicsPikeService - UnitBilling CREATE Started :" + DateTime.Now.ToString("yyyyMMddHHmmss"));
                 Writer.Close();
@@ -903,6 +906,103 @@ namespace UnitTrackMaximo
 
 
             writer.WriteLine("DynamicsPikeService (Create) - " + AppName + " - Completed");
+        }
+        #endregion
+
+        #region GetMaximoData_Mailing
+        public static void GetMaximoData_Mailing(StreamWriter writer, DateTime dt)
+        {
+           
+            try
+            {
+                writer.WriteLine("DynamicsPikeService - " + AppName + " - GetMaximoData_Mailing - Started");
+                Console.WriteLine("DynamicsPikeService - " + AppName + " - GetMaximoData_Mailing - Started");
+
+                DataSet ds = clsDAL.GetMaximoData_Mailing(dt);
+
+                string SourcePath = System.Configuration.ConfigurationManager.AppSettings["ExcelFilePath"]!.ToString();
+
+                string date = DateTime.Now.ToString("MMddyyyyhhssmm");
+                string fileExtension = Path.GetExtension(SourcePath);
+                string DestPath = System.Configuration.ConfigurationManager.AppSettings["TemplFilePath"]!.ToString() + "DukeMaximo_Template_" + date + fileExtension;
+
+                string[] files = Directory.GetFiles(System.Configuration.ConfigurationManager.AppSettings["TemplFilePath"]!.ToString());
+
+                //Delete the file if morethan 3 days
+                foreach (string file in files)
+                {
+                    FileInfo fi = new FileInfo(file);
+                    if (fi.LastAccessTime < DateTime.Now.AddDays(-3))
+                        fi.Delete();
+                }
+
+
+                if (System.IO.File.Exists(SourcePath) == true)
+                {
+                    System.IO.File.Copy(SourcePath, DestPath);
+                }
+
+                DataTable dtAll = ds.Tables[0];
+                DataTable dtSubTask = ds.Tables[1];
+                DataTable dtNLR = ds.Tables[2];
+                DataTable dtMaximo = ds.Tables[3];
+                DataTable dtComplete = ds.Tables[4];
+                DataTable dtOracleFailure = ds.Tables[5];
+                DataTable dtCount = ds.Tables[6];
+                
+
+                Workbook workbook = new Workbook();
+                workbook.LoadFromFile(@DestPath);
+                Worksheet sheet = workbook.Worksheets[0];
+                sheet.InsertDataTable(dtAll, true, 1, 1);
+
+                Worksheet sheet1 = workbook.Worksheets[1];
+                sheet1.InsertDataTable(dtSubTask, true, 1, 1);
+
+                Worksheet sheet2 = workbook.Worksheets[2];
+                sheet2.InsertDataTable(dtNLR, true, 1, 1);
+
+                Worksheet sheet3 = workbook.Worksheets[3];
+                sheet3.InsertDataTable(dtMaximo, true, 1, 1);
+
+                Worksheet sheet4 = workbook.Worksheets[4];
+                sheet4.InsertDataTable(dtComplete, true, 1, 1);
+
+                Worksheet sheet5 = workbook.Worksheets[5];
+                sheet5.InsertDataTable(dtOracleFailure, true, 1, 1);
+
+                Worksheet sheet6 = workbook.Worksheets[6];
+                sheet6.InsertDataTable(dtCount, true, 1, 1);
+
+
+                //Worksheet Evaluation = workbook.Worksheets["Evaluation Warning"];
+                //Evaluation.Visibility = WorksheetVisibility.Hidden;
+
+                workbook.SaveToFile(DestPath);
+
+
+                int res = Mailer.Attachment_Mail(System.Configuration.ConfigurationManager.AppSettings["FromEmail"]!.ToString()!, System.Configuration.ConfigurationManager.AppSettings["ToEmail"]!.ToString()!, "Duke Maximo Data Status", "Duke Maximo Data Status Details", DestPath);
+
+                if (res > 0)
+                {
+                    //For Loop for Work Order and update the flag to 1
+                    if (ds.Tables[7].Rows.Count > 0)
+                    {
+                        int MailFlag = 1;
+                        int WorkorderId = 0;
+                        for (int i = 0; i < ds.Tables[7].Rows.Count; i++)
+                        {
+                            WorkorderId = Convert.ToInt32(ds.Tables[7].Rows[i]["WorkOrder_ID"].ToString());
+                            clsDAL.WorkOrder_MailFlag_Update(WorkorderId, MailFlag);
+                        }
+                    }
+                }
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
+                writer.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
+            }
         }
         #endregion
 

@@ -501,6 +501,40 @@ namespace UnitTrackMaximo
         }
         #endregion
 
+
+        #region GetMaximoData_Mailing
+        public static DataSet GetMaximoData_Mailing(DateTime RecordDate)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_MAXIMO_GET_DATA_MAILING";
+
+            SqlParameter[] commandParameters =
+           {
+                new SqlParameter("@RECORD_CREATED_DATE",SqlDbType.Date)
+            };
+            commandParameters[0].Value = RecordDate;
+
+            DataSet ds = SqlHelper.ExecuteDataset(dsn, CommandType.StoredProcedure, cmd, commandParameters);            
+            return ds;
+        }
+        #endregion
+
+        #region WorkOrder_MailFlag_Update
+        public static int WorkOrder_MailFlag_Update(int WorkOrder_Id, int MailFlag)
+        {
+            string dsn = System.Configuration.ConfigurationManager.AppSettings["DbConnectionString"]!.ToString();
+            string cmd = "SP_DUKE_WORKORDER_MAILING_FLAG_UPDATE";
+            SqlParameter[] commandParameters =
+            {
+                new SqlParameter("@WorkOrder_Id",SqlDbType.Int),
+                new SqlParameter("@Mail_Flag",SqlDbType.Int)
+            };
+            commandParameters[0].Value = WorkOrder_Id;
+            commandParameters[1].Value = MailFlag;
+
+            return SqlHelper.ExecuteNonQuery(dsn, CommandType.StoredProcedure, cmd, commandParameters);
+        }
+        #endregion
         #endregion
 
     }
