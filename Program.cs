@@ -59,17 +59,17 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/22/2024");
+                //dt = Convert.ToDateTime("04/05/2024");
 
-                //GetWorkorders_DYN(Writer, dt);
+                GetWorkorders_DYN(Writer, dt);
 
-                //GetDukeMaximoUnits_List(Writer, dt);
+                GetDukeMaximoUnits_List(Writer, dt);
 
-                //GetSubTaskNumber_Oracle(Writer, dt);
+                GetSubTaskNumber_Oracle(Writer, dt);
 
-                //GetNLRData_Oracle(Writer, dt);
+                GetNLRData_Oracle(Writer, dt);
 
-                //GetOracle_WorkORderList(Writer, dt);
+                GetOracle_WorkORderList(Writer, dt);
 
                 GetMaximoData_Mailing(Writer, dt);
 
