@@ -31,7 +31,7 @@ public class Mailer
         try
         {
             System.Net.Mail.MailMessage mailMsg = new System.Net.Mail.MailMessage();
-            mailMsg.From = new System.Net.Mail.MailAddress(from, "Email Id");
+            mailMsg.From = new System.Net.Mail.MailAddress(from, "E-Delivery");
             //string Path = ConfigurationSettings.AppSettings.Get("FileAttachmentPath_Temp");
 
             To = To.Replace(";", ",");

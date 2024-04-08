@@ -1,0 +1,125 @@
+﻿DynamicsPikeService - UnitTrackMaximo - Started
+DynamicsPikeService - UnitTrackMaximo - GetMaximoData_Mailing - Started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for all data - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for all data - completed
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for subtask - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for subtask - completed
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for NLR - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for NLR - completed
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for maximo - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for maximo - completed
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for oracle success - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for oracle success - completed
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for oracle failure - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for oracle failure - completed
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for total count - started
+DynamicsPikeService - UnitTrackMaximo - Binding MaximoData_Mailing into excel - for total count - completed
+GetMaximoData_Mailing - updating mailing flag - 1 out of 109
+GetMaximoData_Mailing - updating mailing flag - 2 out of 109
+GetMaximoData_Mailing - updating mailing flag - 3 out of 109
+GetMaximoData_Mailing - updating mailing flag - 4 out of 109
+GetMaximoData_Mailing - updating mailing flag - 5 out of 109
+GetMaximoData_Mailing - updating mailing flag - 6 out of 109
+GetMaximoData_Mailing - updating mailing flag - 7 out of 109
+GetMaximoData_Mailing - updating mailing flag - 8 out of 109
+GetMaximoData_Mailing - updating mailing flag - 9 out of 109
+GetMaximoData_Mailing - updating mailing flag - 10 out of 109
+GetMaximoData_Mailing - updating mailing flag - 11 out of 109
+GetMaximoData_Mailing - updating mailing flag - 12 out of 109
+GetMaximoData_Mailing - updating mailing flag - 13 out of 109
+GetMaximoData_Mailing - updating mailing flag - 14 out of 109
+GetMaximoData_Mailing - updating mailing flag - 15 out of 109
+GetMaximoData_Mailing - updating mailing flag - 16 out of 109
+GetMaximoData_Mailing - updating mailing flag - 17 out of 109
+GetMaximoData_Mailing - updating mailing flag - 18 out of 109
+GetMaximoData_Mailing - updating mailing flag - 19 out of 109
+GetMaximoData_Mailing - updating mailing flag - 20 out of 109
+GetMaximoData_Mailing - updating mailing flag - 21 out of 109
+GetMaximoData_Mailing - updating mailing flag - 22 out of 109
+GetMaximoData_Mailing - updating mailing flag - 23 out of 109
+GetMaximoData_Mailing - updating mailing flag - 24 out of 109
+GetMaximoData_Mailing - updating mailing flag - 25 out of 109
+GetMaximoData_Mailing - updating mailing flag - 26 out of 109
+GetMaximoData_Mailing - updating mailing flag - 27 out of 109
+GetMaximoData_Mailing - updating mailing flag - 28 out of 109
+GetMaximoData_Mailing - updating mailing flag - 29 out of 109
+GetMaximoData_Mailing - updating mailing flag - 30 out of 109
+GetMaximoData_Mailing - updating mailing flag - 31 out of 109
+GetMaximoData_Mailing - updating mailing flag - 32 out of 109
+GetMaximoData_Mailing - updating mailing flag - 33 out of 109
+GetMaximoData_Mailing - updating mailing flag - 34 out of 109
+GetMaximoData_Mailing - updating mailing flag - 35 out of 109
+GetMaximoData_Mailing - updating mailing flag - 36 out of 109
+GetMaximoData_Mailing - updating mailing flag - 37 out of 109
+GetMaximoData_Mailing - updating mailing flag - 38 out of 109
+GetMaximoData_Mailing - updating mailing flag - 39 out of 109
+GetMaximoData_Mailing - updating mailing flag - 40 out of 109
+GetMaximoData_Mailing - updating mailing flag - 41 out of 109
+GetMaximoData_Mailing - updating mailing flag - 42 out of 109
+GetMaximoData_Mailing - updating mailing flag - 43 out of 109
+GetMaximoData_Mailing - updating mailing flag - 44 out of 109
+GetMaximoData_Mailing - updating mailing flag - 45 out of 109
+GetMaximoData_Mailing - updating mailing flag - 46 out of 109
+GetMaximoData_Mailing - updating mailing flag - 47 out of 109
+GetMaximoData_Mailing - updating mailing flag - 48 out of 109
+GetMaximoData_Mailing - updating mailing flag - 49 out of 109
+GetMaximoData_Mailing - updating mailing flag - 50 out of 109
+GetMaximoData_Mailing - updating mailing flag - 51 out of 109
+GetMaximoData_Mailing - updating mailing flag - 52 out of 109
+GetMaximoData_Mailing - updating mailing flag - 53 out of 109
+GetMaximoData_Mailing - updating mailing flag - 54 out of 109
+GetMaximoData_Mailing - updating mailing flag - 55 out of 109
+GetMaximoData_Mailing - updating mailing flag - 56 out of 109
+GetMaximoData_Mailing - updating mailing flag - 57 out of 109
+GetMaximoData_Mailing - updating mailing flag - 58 out of 109
+GetMaximoData_Mailing - updating mailing flag - 59 out of 109
+GetMaximoData_Mailing - updating mailing flag - 60 out of 109
+GetMaximoData_Mailing - updating mailing flag - 61 out of 109
+GetMaximoData_Mailing - updating mailing flag - 62 out of 109
+GetMaximoData_Mailing - updating mailing flag - 63 out of 109
+GetMaximoData_Mailing - updating mailing flag - 64 out of 109
+GetMaximoData_Mailing - updating mailing flag - 65 out of 109
+GetMaximoData_Mailing - updating mailing flag - 66 out of 109
+GetMaximoData_Mailing - updating mailing flag - 67 out of 109
+GetMaximoData_Mailing - updating mailing flag - 68 out of 109
+GetMaximoData_Mailing - updating mailing flag - 69 out of 109
+GetMaximoData_Mailing - updating mailing flag - 70 out of 109
+GetMaximoData_Mailing - updating mailing flag - 71 out of 109
+GetMaximoData_Mailing - updating mailing flag - 72 out of 109
+GetMaximoData_Mailing - updating mailing flag - 73 out of 109
+GetMaximoData_Mailing - updating mailing flag - 74 out of 109
+GetMaximoData_Mailing - updating mailing flag - 75 out of 109
+GetMaximoData_Mailing - updating mailing flag - 76 out of 109
+GetMaximoData_Mailing - updating mailing flag - 77 out of 109
+GetMaximoData_Mailing - updating mailing flag - 78 out of 109
+GetMaximoData_Mailing - updating mailing flag - 79 out of 109
+GetMaximoData_Mailing - updating mailing flag - 80 out of 109
+GetMaximoData_Mailing - updating mailing flag - 81 out of 109
+GetMaximoData_Mailing - updating mailing flag - 82 out of 109
+GetMaximoData_Mailing - updating mailing flag - 83 out of 109
+GetMaximoData_Mailing - updating mailing flag - 84 out of 109
+GetMaximoData_Mailing - updating mailing flag - 85 out of 109
+GetMaximoData_Mailing - updating mailing flag - 86 out of 109
+GetMaximoData_Mailing - updating mailing flag - 87 out of 109
+GetMaximoData_Mailing - updating mailing flag - 88 out of 109
+GetMaximoData_Mailing - updating mailing flag - 89 out of 109
+GetMaximoData_Mailing - updating mailing flag - 90 out of 109
+GetMaximoData_Mailing - updating mailing flag - 91 out of 109
+GetMaximoData_Mailing - updating mailing flag - 92 out of 109
+GetMaximoData_Mailing - updating mailing flag - 93 out of 109
+GetMaximoData_Mailing - updating mailing flag - 94 out of 109
+GetMaximoData_Mailing - updating mailing flag - 95 out of 109
+GetMaximoData_Mailing - updating mailing flag - 96 out of 109
+GetMaximoData_Mailing - updating mailing flag - 97 out of 109
+GetMaximoData_Mailing - updating mailing flag - 98 out of 109
+GetMaximoData_Mailing - updating mailing flag - 99 out of 109
+GetMaximoData_Mailing - updating mailing flag - 100 out of 109
+GetMaximoData_Mailing - updating mailing flag - 101 out of 109
+GetMaximoData_Mailing - updating mailing flag - 102 out of 109
+GetMaximoData_Mailing - updating mailing flag - 103 out of 109
+GetMaximoData_Mailing - updating mailing flag - 104 out of 109
+GetMaximoData_Mailing - updating mailing flag - 105 out of 109
+GetMaximoData_Mailing - updating mailing flag - 106 out of 109
+GetMaximoData_Mailing - updating mailing flag - 107 out of 109
+GetMaximoData_Mailing - updating mailing flag - 108 out of 109
+GetMaximoData_Mailing - updating mailing flag - 109 out of 109

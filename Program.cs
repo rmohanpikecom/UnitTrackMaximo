@@ -59,7 +59,7 @@ namespace UnitTrackMaximo
                 //Get Workorder Details from Dynamics
 
                 DateTime dt= DateTime.Now;
-                dt = Convert.ToDateTime("03/28/2024");
+                dt = Convert.ToDateTime("03/22/2024");
 
                 //GetWorkorders_DYN(Writer, dt);
 
@@ -917,81 +917,171 @@ namespace UnitTrackMaximo
             {
                 writer.WriteLine("DynamicsPikeService - " + AppName + " - GetMaximoData_Mailing - Started");
                 Console.WriteLine("DynamicsPikeService - " + AppName + " - GetMaximoData_Mailing - Started");
+                Console.WriteLine("");
+                Console.WriteLine("");
 
                 DataSet ds = clsDAL.GetMaximoData_Mailing(dt);
-
-                string SourcePath = System.Configuration.ConfigurationManager.AppSettings["ExcelFilePath"]!.ToString();
-
-                string date = DateTime.Now.ToString("MMddyyyyhhssmm");
-                string fileExtension = Path.GetExtension(SourcePath);
-                string DestPath = System.Configuration.ConfigurationManager.AppSettings["TemplFilePath"]!.ToString() + "DukeMaximo_Template_" + date + fileExtension;
-
-                string[] files = Directory.GetFiles(System.Configuration.ConfigurationManager.AppSettings["TemplFilePath"]!.ToString());
-
-                //Delete the file if morethan 3 days
-                foreach (string file in files)
+                if (ds.Tables[7].Rows.Count > 0)
                 {
-                    FileInfo fi = new FileInfo(file);
-                    if (fi.LastAccessTime < DateTime.Now.AddDays(-3))
-                        fi.Delete();
-                }
+                    string SourcePath = System.Configuration.ConfigurationManager.AppSettings["ExcelFilePath"]!.ToString();
 
+                    string date = DateTime.Now.ToString("MMddyyyyhhssmm");
+                    string fileExtension = Path.GetExtension(SourcePath);
+                    string DestPath = System.Configuration.ConfigurationManager.AppSettings["TemplFilePath"]!.ToString() + "DukeMaximo_Template_" + date + fileExtension;
 
-                if (System.IO.File.Exists(SourcePath) == true)
-                {
-                    System.IO.File.Copy(SourcePath, DestPath);
-                }
+                    string[] files = Directory.GetFiles(System.Configuration.ConfigurationManager.AppSettings["TemplFilePath"]!.ToString());
 
-                DataTable dtAll = ds.Tables[0];
-                DataTable dtSubTask = ds.Tables[1];
-                DataTable dtNLR = ds.Tables[2];
-                DataTable dtMaximo = ds.Tables[3];
-                DataTable dtComplete = ds.Tables[4];
-                DataTable dtOracleFailure = ds.Tables[5];
-                DataTable dtCount = ds.Tables[6];
-                
-
-                Workbook workbook = new Workbook();
-                workbook.LoadFromFile(@DestPath);
-                Worksheet sheet = workbook.Worksheets[0];
-                sheet.InsertDataTable(dtAll, true, 1, 1);
-
-                Worksheet sheet1 = workbook.Worksheets[1];
-                sheet1.InsertDataTable(dtSubTask, true, 1, 1);
-
-                Worksheet sheet2 = workbook.Worksheets[2];
-                sheet2.InsertDataTable(dtNLR, true, 1, 1);
-
-                Worksheet sheet3 = workbook.Worksheets[3];
-                sheet3.InsertDataTable(dtMaximo, true, 1, 1);
-
-                Worksheet sheet4 = workbook.Worksheets[4];
-                sheet4.InsertDataTable(dtComplete, true, 1, 1);
-
-                Worksheet sheet5 = workbook.Worksheets[5];
-                sheet5.InsertDataTable(dtOracleFailure, true, 1, 1);
-
-                Worksheet sheet6 = workbook.Worksheets[6];
-                sheet6.InsertDataTable(dtCount, true, 1, 1);
-
-
-                //Worksheet Evaluation = workbook.Worksheets["Evaluation Warning"];
-                //Evaluation.Visibility = WorksheetVisibility.Hidden;
-
-                workbook.SaveToFile(DestPath);
-
-
-                int res = Mailer.Attachment_Mail(System.Configuration.ConfigurationManager.AppSettings["FromEmail"]!.ToString()!, System.Configuration.ConfigurationManager.AppSettings["ToEmail"]!.ToString()!, "Duke Maximo Data Status", "Duke Maximo Data Status Details", DestPath);
-
-                if (res > 0)
-                {
-                    //For Loop for Work Order and update the flag to 1
-                    if (ds.Tables[7].Rows.Count > 0)
+                    //Delete the file if morethan 3 days
+                    foreach (string file in files)
                     {
+                        FileInfo fi = new FileInfo(file);
+                        if (fi.LastAccessTime < DateTime.Now.AddDays(-1))
+                            fi.Delete();
+                    }
+
+
+                    if (System.IO.File.Exists(SourcePath) == true)
+                    {
+                        System.IO.File.Copy(SourcePath, DestPath);
+                    }
+
+                    DataTable dtAll = ds.Tables[0];
+                    DataTable dtSubTask = ds.Tables[1];
+                    DataTable dtNLR = ds.Tables[2];
+                    DataTable dtMaximo = ds.Tables[3];
+                    DataTable dtComplete = ds.Tables[4];
+                    DataTable dtOracleFailure = ds.Tables[5];
+                    DataTable dtCount = ds.Tables[6];
+
+                    //All Data
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for all data - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel  - for all data - started");
+
+                    Workbook workbook = new Workbook();
+                    workbook.LoadFromFile(@DestPath);
+                    Worksheet sheetComplete = workbook.Worksheets[0];
+                    sheetComplete.HideColumn(1);
+                    sheetComplete.HideColumn(2);
+                    sheetComplete.HideColumn(26);
+                    sheetComplete.InsertDataTable(dtAll, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for all data - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for all data - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+                    //SubTask
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for subtask - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for subtask - started");
+                    Worksheet sheetSubTask = workbook.Worksheets[1];
+                    sheetSubTask.HideColumn(1);
+                    sheetSubTask.HideColumn(2);
+                    sheetSubTask.InsertDataTable(dtSubTask, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for subtask - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for subtask - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+                    //NLR
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for NLR - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for NLR - started");
+                    Worksheet sheetNLR = workbook.Worksheets[2];
+                    sheetNLR.HideColumn(1);
+                    sheetNLR.HideColumn(2);
+                    sheetNLR.InsertDataTable(dtNLR, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for NLR - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for NLR - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+                    //Maximo
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for maximo - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for maximo - started");
+                    Worksheet sheetMaximo = workbook.Worksheets[3];
+                    sheetMaximo.HideColumn(1);
+                    sheetMaximo.HideColumn(22);
+                    sheetMaximo.InsertDataTable(dtMaximo, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for maximo - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for maximo - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+                    //Complete Data
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle success - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle success - started");
+
+                    Worksheet sheetOracleSuccess = workbook.Worksheets[4];
+                    sheetOracleSuccess.HideColumn(1);
+                    sheetOracleSuccess.HideColumn(2);
+                    sheetOracleSuccess.HideColumn(26);
+                    sheetOracleSuccess.InsertDataTable(dtComplete, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle success - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle success - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+                    //Oracle Failure
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle failure - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle failure - started");
+                    Worksheet sheetOracleFailure = workbook.Worksheets[5];
+                    sheetOracleFailure.HideColumn(1);
+                    sheetOracleFailure.HideColumn(2);
+                    sheetOracleFailure.HideColumn(26);
+                    sheetOracleFailure.InsertDataTable(dtOracleFailure, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle failure - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for oracle failure - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+                    //Count
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for total count - started");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for total count - started");
+                    Worksheet sheetCount = workbook.Worksheets[6];
+                    sheetCount.HideColumn(3);
+                    sheetCount.InsertDataTable(dtCount, true, 1, 1);
+
+                    writer.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for total count - completed");
+                    Console.WriteLine("DynamicsPikeService - " + AppName + " - Binding MaximoData_Mailing into excel - for total count - completed");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+
+
+                    //Worksheet Evaluation = workbook.Worksheets["Evaluation Warning"];
+                    //Evaluation.Visibility = WorksheetVisibility.Hidden;
+
+                    workbook.SaveToFile(DestPath);
+
+                 
+
+                    //Mail to Send
+                    string MailDate = dt.ToString("MM/dd/yyyy");
+                    string MailTime = dt.ToString("h tt");
+
+                    string SubJect = "Duke Maximo To Oracle - " + MailDate + " @"+ MailTime+ " - Total Work Orders - " + ds.Tables[7].Rows.Count;
+
+                    string body = "Hi All,";
+                    body = body + "<br/>";
+                    body = body + "<br/>";                   
+                    body = body + " Please find the attachment for the details of Duke Maximo to Oracle Import for " + MailDate + " executed @" + MailTime + " for Total Work Orders – "+ ds.Tables[7].Rows.Count + "<br/><br/> Thanks & Regards";
+               
+
+                    int res = Mailer.Attachment_Mail(System.Configuration.ConfigurationManager.AppSettings["FromEmail"]!.ToString()!, System.Configuration.ConfigurationManager.AppSettings["ToEmail"]!.ToString()!, SubJect, body, DestPath);
+
+                    if (res > 0)
+                    {
+                        //For Loop for Work Order and update the flag to 1
                         int MailFlag = 1;
                         int WorkorderId = 0;
                         for (int i = 0; i < ds.Tables[7].Rows.Count; i++)
                         {
+                            Console.WriteLine("GetMaximoData_Mailing - updating mailing flag - " + (i + 1).ToString() + " out of " + ds.Tables[7].Rows.Count.ToString());
+                            writer.WriteLine("GetMaximoData_Mailing - updating mailing flag - " + (i + 1).ToString() + " out of " + ds.Tables[7].Rows.Count.ToString());
+
                             WorkorderId = Convert.ToInt32(ds.Tables[7].Rows[i]["WorkOrder_ID"].ToString());
                             clsDAL.WorkOrder_MailFlag_Update(WorkorderId, MailFlag);
                         }
@@ -1000,8 +1090,8 @@ namespace UnitTrackMaximo
             }
             catch (Exception exp)
             {
-                Console.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
-                writer.WriteLine("GetDukeProjectTaskData - Failure" + exp.Message.ToString());
+                Console.WriteLine("GetMaximoData_Mailing - Failure" + exp.Message.ToString());
+                writer.WriteLine("GetMaximoData_Mailing - Failure" + exp.Message.ToString());
             }
         }
         #endregion
