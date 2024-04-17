@@ -723,6 +723,9 @@ namespace UnitTrackMaximo
             {
                 if (dsDetails.Tables[0].Rows.Count > 0)
                 {
+                    ExpenditureBatchName = dsDetails.Tables[0].Rows[0]["BatchName"].ToString()!;
+                    PPM_EXEC_ESSJOB(ExpenditureBatchName);
+
                     int RecordCount = 0;
                     for (int j = 0; j < dsDetails.Tables[0].Rows.Count; j++)
                     {
@@ -730,8 +733,7 @@ namespace UnitTrackMaximo
                         string oracle_message_details = "";
                         try
                         {
-                            ExpenditureBatchName = dsDetails.Tables[0].Rows[j]["BatchName"].ToString()!;
-                            //PPM_EXEC_ESSJOB(ExpenditureBatchName);
+                            
                             IntegrationBatchHeaderId = dsDetails.Tables[0].Rows[j]["IntegrationBatchHeaderId"].ToString()!;
                             UnprocessTransactionId = dsDetails.Tables[0].Rows[j]["UnprocessTransactionId"].ToString()!;
 
@@ -749,24 +751,12 @@ namespace UnitTrackMaximo
 
 
                             #region Check if the record got created
-                            writer.WriteLine("Checking if the Transaction is already pushed to PPM for Detail Record Id " + DetailRecordId);
+
                             string? PPM_QueryParam = "?q=OriginalTransactionReference=" + OriginalTransactionReference + ";NetZeroItemFlag is null&expand=ProjectStandardCostCollectionFlexFields";
                             writer.WriteLine("Payload for Getting the Transaction Number " + PPM_QueryParam);
 
-                            var PPMoptions = new RestClientOptions(Oracle_Url)
-                            {
-                                MaxTimeout = -1,
-                            };
-                            var PPMclient = new RestClient(PPMoptions);
-                            var PPMrequest = new RestRequest(PPM_SubUrl + PPM_QueryParam, Method.Get);
-                            PPMrequest.AddHeader("Content-Type", "application/json");
-                            PPMrequest.AddHeader("Authorization", "Basic " + credentials);
-
-                            RestResponse PPMresponse = PPMclient.Execute(PPMrequest);
-                            writer.WriteLine("PPM Response to get TransactionNumber : " + PPMresponse.Content);
-
-
                             #endregion
+                    
                             if (RecordFlag == 1)
                             {
 
@@ -871,12 +861,10 @@ namespace UnitTrackMaximo
                             }
 
                             RecordCount++;
-
                             if (dsDetails.Tables[0].Rows.Count == RecordCount)
                             {
                                 clsDAL.WorkOrder_StatusUpdate(Convert.ToInt32(WorkOrder_Id), 5);
                             }
-                            
                         }
                         catch (Exception exp)
                         {
@@ -889,6 +877,8 @@ namespace UnitTrackMaximo
                             clsDAL.NLR_DataUpdate("", oracle_status_details, oracle_message_details, "", DetailRecordId);
                         }
                     }
+
+                    PPM_EXEC_ESSJOB(ExpenditureBatchName);
                 }
                 else
                 {
@@ -1067,7 +1057,7 @@ namespace UnitTrackMaximo
                     string body = "Hi All,";
                     body = body + "<br/>";
                     body = body + "<br/>";                   
-                    body = body + " Please find the attachment for the details of Duke Maximo to Oracle Import for " + MailDate + " executed @" + MailTime + " for Total Work Orders – "+ ds.Tables[7].Rows.Count + "<br/><br/> Thanks & Regards";
+                    body = body + " Please find the attachment for the details of Duke Maximo to Oracle Import for " + MailDate + " executed @" + MailTime + " for Total Work Orders – "+ ds.Tables[7].Rows.Count + "<br/>Note - ESS Jobs are also executed. <br/><br/> Thanks & Regards";
                
 
                     int res = Mailer.Attachment_Mail(System.Configuration.ConfigurationManager.AppSettings["FromEmail"]!.ToString()!, System.Configuration.ConfigurationManager.AppSettings["ToEmail"]!.ToString()!, SubJect, body, DestPath);
@@ -1083,7 +1073,7 @@ namespace UnitTrackMaximo
                             writer.WriteLine("GetMaximoData_Mailing - updating mailing flag - " + (i + 1).ToString() + " out of " + ds.Tables[7].Rows.Count.ToString());
 
                             WorkorderId = Convert.ToInt32(ds.Tables[7].Rows[i]["WorkOrder_ID"].ToString());
-                            clsDAL.WorkOrder_MailFlag_Update(WorkorderId, MailFlag);
+                            //clsDAL.WorkOrder_MailFlag_Update(WorkorderId, MailFlag);
                         }
                     }
                 }
@@ -1166,7 +1156,52 @@ namespace UnitTrackMaximo
 
             return strEss_Job_Result!;
         }
-        #endregion       
+        #endregion
+
+        #region CheckPPMRecordCreateorNot
+        public static void CheckPPMRecordCreateorNot(string DetailRecordId, string PPM_QueryParam, string oracleurl, string credentials, StreamWriter writer , int WorkOrder_Id , string UnprocessTransactionId)
+        {
+            string TransactionNumber = "";
+            var PPMoptions = new RestClientOptions(Oracle_Url)
+            {
+                MaxTimeout = -1,
+            };
+            var PPMclient = new RestClient(PPMoptions);
+            var PPMrequest = new RestRequest(PPM_SubUrl + PPM_QueryParam, Method.Get);
+            PPMrequest.AddHeader("Content-Type", "application/json");
+            PPMrequest.AddHeader("Authorization", "Basic " + credentials);
+
+            RestResponse PPMresponse = PPMclient.Execute(PPMrequest);
+            //writer.WriteLine("PPM Response to get TransactionNumber : " + PPMresponse.Content);
+
+            //Console.WriteLine(PPMresponse.Content);
+            if (PPMresponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+
+                //Update the PPM Status
+                string Result = PPMresponse.Content!.ToString();
+                dynamic dyArray = JsonConvert.DeserializeObject<dynamic>(PPMresponse.Content!)!;
+
+                if (dyArray.count != 0)
+                    TransactionNumber = dyArray.items[0].TransactionNumber.ToString();
+
+                writer.WriteLine("TransactionNumber : " + TransactionNumber);
+                Console.WriteLine("TransactionNumber : " + TransactionNumber);
+                Console.WriteLine("");
+
+                if (TransactionNumber != null && TransactionNumber != "" && TransactionNumber != "0")
+                {
+                    writer.WriteLine("Updating the Details Record with the Transaction Number into Dynamics for Detail ID= " + DetailRecordId);
+                    clsDAL.WorkOrder_StatusUpdate(Convert.ToInt32(WorkOrder_Id), 6);
+
+                    string oracle_status_details = "Success";
+                    string oracle_message_details = "Transaction Number Updated";
+                    clsDAL.NLR_DataUpdate(TransactionNumber, oracle_status_details, oracle_message_details, UnprocessTransactionId, DetailRecordId);
+                    
+                }
+            }
+        } 
+        #endregion
 
         #region UpdateWorkorderStatus
         public static string UpdateWorkorderStatus(string WorkorderNumber)
